@@ -1,0 +1,30 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.125rem;
+    line-height: 2rem;
+  }
+
+  li a {
+    color: var(--hiq-text-color);
+  }
+
+  li.active a,
+  li a:hover {
+    margin-bottom: -2px;
+    border-bottom: 2px solid var(--hiq-color-primary);
+  }
+}

@@ -1,0 +1,13 @@
+/* Header */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--navbar-height);
+  margin-bottom: 1rem;
+  padding: .5rem 1.5rem;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,.1);
+  background-color: #fff;
+  line-height: calc(var(--navbar-height) - 1rem);
+}

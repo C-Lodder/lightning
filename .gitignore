@@ -8,7 +8,6 @@
 
 # JS/CSS Build #
 node_modules/
-css/
 
 # CSS map files #
 .map

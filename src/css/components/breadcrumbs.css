@@ -1,0 +1,20 @@
+/* Breadcrumbs */
+
+.breadcrumb {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;
+  list-style: none;
+  background-color: var(--hiq-color-gray-7);
+
+  li {
+    margin-right: .5rem;
+  }
+
+  li + li + li::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: var(--hiq-color-gray-5);
+    content: "/";
+  }
+}
