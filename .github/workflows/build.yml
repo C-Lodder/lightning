@@ -1,0 +1,33 @@
+name: Build
+on: [push, pull_request]
+env:
+  CI: true
+
+jobs:
+  run:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [13]
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Set Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: node --version
+      - run: npm --version
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: Build CSS
+        run: npm run postcss
+
