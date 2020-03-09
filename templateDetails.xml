@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site" method="upgrade">
+	<name>lightning</name>
+	<version>0.0.1</version>
+	<creationDate>9th March 2020</creationDate>
+	<author>JoomJunk</author>
+	<authorEmail>aadmin@joomjunk.co.uk</authorEmail>
+	<copyright>Copyright (C) 2020 JoomJunk. All rights reserved.</copyright>
+	<description>TPL_LIGHTNING_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>menu</position>
+		<position>search</position>
+		<position>banner</position>
+		<position>top-a</position>
+		<position>top-b</position>
+		<position>main-top</position>
+		<position>main-bottom</position>
+		<position>breadcrumbs</position>
+		<position>sidebar-left</position>
+		<position>sidebar-right</position>
+		<position>bottom-a</position>
+		<position>bottom-b</position>
+		<position>footer</position>
+		<position>debug</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_lightning.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_lightning.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field
+					name="logoFile"
+					type="media"
+					default=""
+					label="TPL_LIGHTNING_LOGO_LABEL"
+				/>
+
+				<field
+					name="siteTitle"
+					type="text"
+					default=""
+					label="JGLOBAL_TITLE"
+					filter="string"
+				/>
+
+				<field
+					name="siteDescription"
+					type="text"
+					default=""
+					label="JGLOBAL_DESCRIPTION"
+					filter="string"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

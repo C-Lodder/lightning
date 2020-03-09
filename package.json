@@ -1,0 +1,25 @@
+{
+  "name": "joomjunk",
+  "version": "0.0.1",
+  "description": "Joomla 4 template using HiQ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/C-Lodder/lightening"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postcss": "postcss src/css/hiq.css -o css/template.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "7.1.6",
+    "cssnano": "4.1.10",
+    "postcss": "6.0.14",
+    "postcss-cli": "7.1.0",
+    "postcss-custom-media": "6.0.0",
+    "postcss-custom-selectors": "4.0.1",
+    "postcss-discard-comments": "2.0.4",
+    "postcss-easy-import": "3.0.0",
+    "postcss-mixins": "6.2.0",
+    "postcss-nested": "3.0.0"
+  }
+}

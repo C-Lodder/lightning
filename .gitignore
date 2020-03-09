@@ -1,0 +1,28 @@
+# IDE & System Related Files #
+.buildpath
+.project
+.settings
+.DS_Store
+.idea
+.vscode
+
+# JS/CSS Build #
+node_modules/
+css/
+
+# CSS map files #
+.map
+
+# OSX #
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows #
+Thumbs.db
+Desktop.ini
+
+# Never ignore #
+# Only apply this rule to the main repository's gitignore files
+!/.gitignore
+!/build/.gitignore
