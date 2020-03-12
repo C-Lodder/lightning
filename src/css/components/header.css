@@ -8,6 +8,6 @@
   margin-bottom: 1rem;
   padding: .5rem 1.5rem;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,.1);
-  background-color: #fff;
+  background-color: var(--hiq-header-background-color);
   line-height: calc(var(--navbar-height) - 1rem);
 }

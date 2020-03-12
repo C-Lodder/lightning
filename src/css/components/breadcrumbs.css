@@ -5,7 +5,7 @@
   margin-bottom: 1rem;
   padding: .5rem 1rem;
   list-style: none;
-  background-color: var(--hiq-color-gray-7);
+  background-color: var(--hiq-breadcrumbs-background-color);
 
   li {
     margin-right: .5rem;

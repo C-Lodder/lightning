@@ -18,7 +18,7 @@
   --hiq-color-gray-8: hsl(220, 10%, 98%);
 
   /* semantic palette */
-  --hiq-color-primary: hsl(210, 100%, 50%);
+  --hiq-color-primary: hsl(210, 100%, 42%);
   --hiq-color-success: hsl(158, 73%, 48%);
   --hiq-color-warning: hsl(46, 97%, 64%);
   --hiq-color-danger: hsl(352, 95%, 61%);
@@ -316,4 +316,18 @@
 
   /* Custom variables */
   --hiq-grid-gutter: 15px;
+  --hiq-header-background-color: #fff;
+  --hiq-breadcrumbs-background-color: var(--hiq-color-gray-7);
+}
+
+:root.is-dark {
+  --hiq-html-background-color: #17191c;
+  --hiq-body-background-color: #17191c;
+  --hiq-text-color: var(--hiq-color-gray-6);
+  --hiq-selection-color: var(--hiq-color-gray-2);
+  --hiq-input-border-color: var(--hiq-color-gray-2);
+  --hiq-input-background-color: var(--hiq-color-gray-3);
+  --hiq-input-placeholder-color: var(--hiq-color-gray-5);
+  --hiq-header-background-color: #2e3138;
+  --hiq-breadcrumbs-background-color: var(--hiq-header-background-color);
 }

@@ -9,6 +9,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
@@ -26,6 +27,8 @@ $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
 $pageclass = $menu->getParams()->get('pageclass_sfx');
+
+HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -80,6 +83,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 				<div class="navbar-brand">
 					<a href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
+						<span class="sr-only">Logo</span>
 					</a>
 					<?php if ($this->params->get('siteDescription')) : ?>
 						<div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
@@ -96,7 +100,10 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-
+				<div class="onoffswitch">
+					<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+					<label class="onoffswitch-label" for="myonoffswitch"></label>
+				</div>
 			</nav>
 			<?php if ($this->countModules('banner')) : ?>
 			<div class="grid-child container-banner">
@@ -158,6 +165,12 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 	<jdoc:include type="modules" name="debug" style="none" />
 
+	<script>
+		const switcher = document.getElementById('myonoffswitch')
+		switcher.addEventListener('change', () => {
+			switcher.checked ? document.documentElement.classList.add('is-dark') : document.documentElement.classList.remove('is-dark')
+		})
+	</script>
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </body>
