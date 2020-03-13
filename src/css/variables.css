@@ -63,7 +63,7 @@
   /* responsive sizing */
 
   /* unitless base font size variables in px */
-  --hiq-unitless-min-font-size: 14;
+  --hiq-unitless-min-font-size: 16;
   --hiq-unitless-max-font-size: 16;
 
   /* unitless viewport widths in px when min/max font sizes will apply */
