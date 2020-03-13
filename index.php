@@ -89,7 +89,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 				<div class="navbar-brand">
 					<a href="<?php echo $this->baseurl; ?>/">
 						<?php echo $logo; ?>
-						<span class="sr-only">Logo</span>
+						<span class="sr-only"><?php echo Text::_('TPL_LIGHTNING_LOGO_LABEL'); ?></span>
 					</a>
 					<?php if ($this->params->get('siteDescription')) : ?>
 						<div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
