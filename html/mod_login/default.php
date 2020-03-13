@@ -31,12 +31,7 @@ HTMLHelper::_('behavior.keepalive');
 			<?php if (!$params->get('usetext', 0)) : ?>
 				<div class="input-group">
 					<input id="modlgn-username-<?php echo $module->id; ?>" type="text" name="username" class="form-control" autocomplete="username" placeholder="<?php echo Text::_('MOD_LOGIN_VALUE_USERNAME'); ?>">
-					<span class="input-group-append">
-						<label for="modlgn-username-<?php echo $module->id; ?>" class="sr-only"><?php echo Text::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
-						<span class="input-group-text" title="<?php echo Text::_('MOD_LOGIN_VALUE_USERNAME'); ?>">
-							<span class="fas fa-user" aria-hidden="true"></span>
-						</span>
-					</span>
+					<label for="modlgn-username-<?php echo $module->id; ?>" class="sr-only"><?php echo Text::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
 				</div>
 			<?php else : ?>
 				<label for="modlgn-username-<?php echo $module->id; ?>"><?php echo Text::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
@@ -57,15 +52,10 @@ HTMLHelper::_('behavior.keepalive');
 		</p>
 
 		<?php if (count($twofactormethods) > 1) : ?>
-			<div class="mod-login__twofactor form-group">
+			<p>
 				<?php if (!$params->get('usetext', 0)) : ?>
 					<div class="input-group">
-						<span class="input-group-prepend" title="<?php echo Text::_('JGLOBAL_SECRETKEY'); ?>">
-							<span class="input-group-text">
-								<span class="icon-star" aria-hidden="true"></span>
-							</span>
-							<label for="modlgn-secretkey-<?php echo $module->id; ?>" class="sr-only"><?php echo Text::_('JGLOBAL_SECRETKEY'); ?></label>
-						</span>
+						<label for="modlgn-secretkey-<?php echo $module->id; ?>" class="sr-only"><?php echo Text::_('JGLOBAL_SECRETKEY'); ?></label>
 						<input id="modlgn-secretkey-<?php echo $module->id; ?>" autocomplete="off" type="text" name="secretkey" class="form-control" placeholder="<?php echo Text::_('JGLOBAL_SECRETKEY'); ?>">
 						<span class="input-group-append" title="<?php echo Text::_('JGLOBAL_SECRETKEY_HELP'); ?>">
 							<span class="input-group-text">
@@ -80,7 +70,7 @@ HTMLHelper::_('behavior.keepalive');
 						<span class="fas fa-question" aria-hidden="true"></span>
 					</span>
 				<?php endif; ?>
-			</div>
+			</p>
 		<?php endif; ?>
 
 		<?php if (PluginHelper::isEnabled('system', 'remember')) : ?>
@@ -95,7 +85,7 @@ HTMLHelper::_('behavior.keepalive');
 		<?php endif; ?>
 
 		<?php foreach($extraButtons as $button): ?>
-			<div class="mod-login__submit form-group">
+			<p>
 				<button type="button"
 				        class="btn btn-secondary <?php echo $button['class'] ?? '' ?>"
 				        onclick="<?php echo $button['onclick'] ?>"
@@ -111,7 +101,7 @@ HTMLHelper::_('behavior.keepalive');
 					<?php endif; ?>
 					<?= Text::_($button['label']) ?>
 				</button>
-			</div>
+			</p>
 		<?php endforeach; ?>
 
 		<p>

@@ -66,6 +66,17 @@
 					label="JGLOBAL_DESCRIPTION"
 					filter="string"
 				/>
+
+				<field
+					name="theme-switcher"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="TPL_LIGHTNING_THEME_SWITCHER_LABEL"
+					>
+					<option value="true">JNO</option>
+					<option value="false">JYES</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

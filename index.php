@@ -28,7 +28,13 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
 $pageclass = $menu->getParams()->get('pageclass_sfx');
 
-HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
+// Template params
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
+
+if ($themeSwitcher)
+{
+	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
+}
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -100,10 +106,12 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-				<div class="onoffswitch">
-					<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-					<label class="onoffswitch-label" for="myonoffswitch"></label>
-				</div>
+				<?php if ($themeSwitcher) : ?>
+					<div class="color-scheme-switch">
+						<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
+						<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
+					</div>
+				<?php endif; ?>
 			</nav>
 			<?php if ($this->countModules('banner')) : ?>
 			<div class="grid-child container-banner">
@@ -165,12 +173,28 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 	<jdoc:include type="modules" name="debug" style="none" />
 
+	<?php if ($themeSwitcher) : ?>
 	<script>
-		const switcher = document.getElementById('myonoffswitch')
-		switcher.addEventListener('change', () => {
-			switcher.checked ? document.documentElement.classList.add('is-dark') : document.documentElement.classList.remove('is-dark')
-		})
+		(() => {
+			const switcher = document.getElementById('color-scheme-switch')
+
+			const theme = localStorage.getItem('theme') ?? 'is-light'
+			document.documentElement.classList.add(theme)
+			switcher.checked = theme === 'is-dark' ? true : false
+
+			switcher.addEventListener('change', () => {
+				if (switcher.checked) {
+					localStorage.setItem('theme', 'is-dark')
+					document.documentElement.classList.add('is-dark')
+				} else {
+					localStorage.setItem('theme', 'is-light')
+					document.documentElement.classList.remove('is-dark')
+				}
+			})
+		})()
 	</script>
+	<?php endif; ?>
+
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </body>
