@@ -96,13 +96,17 @@
 .container-sidebar-left {
   grid-area: side-l;
   padding-right: 1rem;
-  border-right: 1px solid var(--hiq-color-gray-6);
+  @media (--hiq-upper-font-range) {
+    border-right: 1px solid var(--hiq-sidebar-border-color);
+  }
 }
 
 .container-sidebar-right {
   grid-area: side-r;
   padding-left: 1rem;
-  border-left: 1px solid var(--hiq-color-gray-6);
+  @media (--hiq-upper-font-range) {
+    border-left: 1px solid var(--hiq-sidebar-border-color);
+  }
 }
 
 .container-main-top {

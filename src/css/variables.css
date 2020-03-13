@@ -40,12 +40,12 @@
   --hiq-block-element-margin-bottom: 1rem;
 
   /* border & outline */
-  --hiq-border-radius: 0.2rem;
-  --hiq-outline-width: 0.2rem;
+  --hiq-border-radius: .2rem;
+  --hiq-outline-width: .2rem;
   --hiq-outline-color: hsl(210, 100%, 85%);
 
   /* transitions */
-  --hiq-speed: 0.1s;
+  --hiq-speed: .1s;
   --hiq-easing: ease-out;
 
   /* typography variables */
@@ -76,7 +76,7 @@
   --hiq-font-size-3: 1.75rem;
   --hiq-font-size-4: 1.5rem;
   --hiq-font-size-5: 1rem;
-  --hiq-font-size-6: 0.875rem;
+  --hiq-font-size-6: .875rem;
   --hiq-font-size-base: var(--hiq-font-size-5);
   --hiq-font-size-large: var(--hiq-font-size-4);
   --hiq-font-size-small: var(--hiq-font-size-6);
@@ -131,7 +131,7 @@
 
   --hiq-button-height: 2.25rem;
   --hiq-button-vertical-padding: 0;
-  --hiq-button-horizontal-padding: 0.75rem;
+  --hiq-button-horizontal-padding: .75rem;
   --hiq-button-border-width: 1px;
   --hiq-button-border-radius: var(--hiq-border-radius);
   --hiq-button-font-weight: var(--hiq-font-weight-medium);
@@ -154,8 +154,8 @@
   /* code element variables */
 
   /* code */
-  --hiq-code-padding-vertical: 0.25rem;
-  --hiq-code-padding-horizontal: 0.5rem;
+  --hiq-code-padding-vertical: .25rem;
+  --hiq-code-padding-horizontal: .5rem;
   --hiq-code-border-color: var(--hiq-color-gray-6);
   --hiq-code-font-size: var(--hiq-font-size-small);
   --hiq-code-background-color: var(--hiq-color-gray-7);
@@ -169,8 +169,8 @@
   --hiq-pre-text-color: var(--hiq-color-gray-4);
 
   /* kbd */
-  --hiq-kbd-padding-vertical: 0.2rem;
-  --hiq-kbd-padding-horizontal: 0.4rem;
+  --hiq-kbd-padding-vertical: .2rem;
+  --hiq-kbd-padding-horizontal: .4rem;
   --hiq-kbd-border-color: var(--hiq-color-gray-6);
   --hiq-nested-kbd-font-weight: var(--hiq-font-weight-medium);
   --hiq-kbd-background-color: transparent;
@@ -178,7 +178,7 @@
 
   /* media/embed variables */
 
-  --hiq-figcaption-margin-top: 0.5rem;
+  --hiq-figcaption-margin-top: .5rem;
   --hiq-figcaption-font-weight: var(--hiq-font-weight-normal);
   --hiq-figcaption-text-color: var(--hiq-color-gray-5);
   --hiq-image-border-radius: var(--hiq-border-radius);
@@ -187,11 +187,11 @@
 
   --hiq-table-head-border-width: var(--hiq-table-cell-border-width);
   --hiq-table-foot-border-width: var(--hiq-table-cell-border-width);
-  --hiq-table-caption-padding-vertical: 0.5rem;
+  --hiq-table-caption-padding-vertical: .5rem;
   --hiq-table-caption-text-color: var(--hiq-color-gray-5);
   --hiq-table-caption-font-weight: var(--hiq-font-weight-semibold);
-  --hiq-table-cell-padding-vertical: 0.5rem;
-  --hiq-table-cell-padding-horizontal: 0.75rem;
+  --hiq-table-cell-padding-vertical: .5rem;
+  --hiq-table-cell-padding-horizontal: .75rem;
   --hiq-table-cell-border-width: 1px;
   --hiq-table-cell-border-color: var(--hiq-color-gray-6);
   --hiq-table-heading-background-color: var(--hiq-color-gray-7);
@@ -211,7 +211,7 @@
   --hiq-legend-font-weight: var(--hiq-font-weight-semibold);
 
   /* labels */
-  --hiq-label-margin-bottom: 0.5rem;
+  --hiq-label-margin-bottom: .5rem;
   --hiq-label-font-weight: var(--hiq-font-weight-semibold);
 
   /* input validation */
@@ -221,7 +221,7 @@
   /* text inputs */
   --hiq-input-height: 2.5rem;
   --hiq-input-padding-vertical: 0;
-  --hiq-input-padding-horizontal: 0.75rem;
+  --hiq-input-padding-horizontal: .75rem;
   --hiq-input-border-width: 1px;
   --hiq-input-border-radius: var(--hiq-border-radius);
 
@@ -242,18 +242,18 @@
   --hiq-input-focus-text-color: var(--hiq-input-text-color);
 
   /* textareas */
-  --hiq-textarea-padding-vertical: 0.5rem;
-  --hiq-textarea-padding-horizontal: 0.75rem;
+  --hiq-textarea-padding-vertical: .5rem;
+  --hiq-textarea-padding-horizontal: .75rem;
 
   /* selects */
   --hiq-select-background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2030%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28-137.000000%2C%20-145.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%22152%20161%20137%20145%20167%20145%22%3E%3C/polygon%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E');
   --hiq-select-background-position: right 1rem center;
-  --hiq-select-background-size: 0.75rem;
+  --hiq-select-background-size: .75rem;
   --hiq-select-multiple-checked-background-color: var(--hiq-color-primary);
-  --hiq-select-multiple-padding-vertical: 0.75rem;
+  --hiq-select-multiple-padding-vertical: .75rem;
 
   /* checkboxes */
-  --hiq-checkbox-margin-bottom: 0.5rem;
+  --hiq-checkbox-margin-bottom: .5rem;
   --hiq-checkbox-label-padding-horizontal: 2rem;
   --hiq-checkbox-label-font-weight: var(--hiq-font-weight-normal);
   --hiq-checkbox-width: 1rem;
@@ -266,14 +266,14 @@
   --hiq-checkbox-focus-background-color: var(--hiq-color-gray-5);
   --hiq-checkbox-checked-border-color: var(--hiq-color-primary);
   --hiq-checkbox-checked-background-color: var(--hiq-color-primary);
-  --hiq-checkbox-check-width: 0.25rem;
-  --hiq-checkbox-check-height: 0.5rem;
+  --hiq-checkbox-check-width: .25rem;
+  --hiq-checkbox-check-height: .5rem;
   --hiq-checkbox-check-border-width: 2px;
   --hiq-checkbox-check-color: white;
-  --hiq-checkbox-indeterminate-width: 0.5rem;
+  --hiq-checkbox-indeterminate-width: .5rem;
 
   /* radio buttons */
-  --hiq-radio-margin-bottom: 0.5rem;
+  --hiq-radio-margin-bottom: .5rem;
   --hiq-radio-label-padding-horizontal: 2rem;
   --hiq-radio-label-font-weight: var(--hiq-font-weight-normal);
   --hiq-radio-width: 1rem;
@@ -286,8 +286,8 @@
   --hiq-radio-focus-background-color: var(--hiq-color-gray-5);
   --hiq-radio-checked-border-color: var(--hiq-color-primary);
   --hiq-radio-checked-background-color: var(--hiq-color-primary);
-  --hiq-radio-check-width: 0.5rem;
-  --hiq-radio-check-height: 0.5rem;
+  --hiq-radio-check-width: .5rem;
+  --hiq-radio-check-height: .5rem;
   --hiq-radio-check-border-radius: 50%;
   --hiq-radio-check-background-color: white;
 
@@ -297,7 +297,7 @@
   --hiq-range-input-thumb-border-radius: 50%;
   --hiq-range-input-thumb-background-color: var(--hiq-color-primary);
   --hiq-range-input-thumb-disabled-background-color: var(--hiq-color-gray-6);
-  --hiq-range-input-track-height: 0.5rem;
+  --hiq-range-input-track-height: .5rem;
   --hiq-range-input-track-border-radius: var(--hiq-border-radius);
   --hiq-range-input-track-background-color: var(--hiq-color-gray-6);
 
@@ -316,18 +316,21 @@
 
   /* Custom variables */
   --hiq-grid-gutter: 15px;
-  --hiq-header-background-color: #fff;
+  --hiq-header-background-color: white;
   --hiq-breadcrumbs-background-color: var(--hiq-color-gray-7);
+  --hiq-sidebar-border-color: var(--hiq-color-gray-6);
 }
 
 :root.is-dark {
-  --hiq-html-background-color: #17191c;
-  --hiq-body-background-color: #17191c;
+  --hiq-html-background-color: hsl(216, 10%, 10%);
+  --hiq-body-background-color: hsl(216, 10%, 10%);
   --hiq-text-color: var(--hiq-color-gray-6);
+  --hiq-link-color: hsl(210, 100%, 62%);
   --hiq-selection-color: var(--hiq-color-gray-2);
   --hiq-input-border-color: var(--hiq-color-gray-2);
   --hiq-input-background-color: var(--hiq-color-gray-3);
   --hiq-input-placeholder-color: var(--hiq-color-gray-5);
-  --hiq-header-background-color: #2e3138;
+  --hiq-header-background-color: hsl(222, 10%, 20%);
   --hiq-breadcrumbs-background-color: var(--hiq-header-background-color);
+  --hiq-sidebar-border-color: var(--hiq-color-gray-4);
 }
