@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.3
 
 - Add Modal styling
 - Add Tabs styling
