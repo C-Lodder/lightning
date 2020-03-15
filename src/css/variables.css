@@ -314,6 +314,12 @@
   --hiq-progress-background-color: var(--hiq-color-gray-6);
   --hiq-progress-filled-color: var(--hiq-color-primary);
 
+  /* dropdown */
+  --hiq-dropdown-border-color: var(--hiq-color-gray-6);
+  --hiq-dropdown-background-color: white;
+  --hiq-dropdown-header-color: hsl(210, 9%, 55%);
+  --hiq-dropdown-item-hover-background-color: var(--hiq-color-gray-8);
+
   /* Custom variables */
   --hiq-grid-gutter: 15px;
   --hiq-header-background-color: white;
@@ -333,4 +339,8 @@
   --hiq-header-background-color: hsl(222, 10%, 20%);
   --hiq-breadcrumbs-background-color: var(--hiq-header-background-color);
   --hiq-sidebar-border-color: var(--hiq-color-gray-4);
+
+  --hiq-dropdown-border-color: var(--hiq-color-gray-4);
+  --hiq-dropdown-background-color: hsl(216, 10%, 10%);
+  --hiq-dropdown-item-hover-background-color: hsl(222, 10%, 20%);
 }
