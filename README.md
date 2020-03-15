@@ -10,7 +10,7 @@ Latest :heavy_check_mark: | Latest :heavy_check_mark: | Latest :heavy_check_mark
 ## Contributing
 - Clone the repository:
 ```bash
-git clone https://github.com/C-Lodder/lightening.git <path>
+git clone https://github.com/C-Lodder/lightning.git <path>
 ```
 - Go to the folder:
 ```bash
