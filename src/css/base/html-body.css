@@ -9,8 +9,6 @@ body {
 html {
   box-sizing: border-box;
   min-width: 300px;
-  overflow-x: hidden;
-  overflow-y: scroll;
   background-color: var(--hiq-html-background-color, white);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
