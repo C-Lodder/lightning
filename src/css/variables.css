@@ -327,6 +327,9 @@
   /* tabs */
   --hiq-tabs-background-color: white;
 
+  /* modal */
+  --hiq-modal-background-color: white;
+
   /* Custom variables */
   --hiq-grid-gutter: 15px;
   --hiq-header-background-color: white;
@@ -354,6 +357,9 @@
 
   /* tabs */
   --hiq-tabs-background-color: var(--hiq-dark-2);
+
+  /* modal */
+  --hiq-modal-background-color: var(--hiq-dark-2);
 
   /* dropdown */
   --hiq-dropdown-background-color: var(--hiq-dark-1);

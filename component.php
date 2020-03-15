@@ -8,27 +8,26 @@
 
 defined('_JEXEC') or die;
 
-/** @var JDocumentHtml $this */
-
-// Enable assets
-$wa = $this->getWebAssetManager();
-$wa->useStyle('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
-	->useStyle('template.active.language')
-	->useStyle('template.user')
-	->useScript('template.user');
-
-// Override 'template.active' asset to set correct ltr/rtl dependency
-$wa->registerStyle('template.active', '', [], [], ['template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
+// Fetch CSS
+$css = file_get_contents(__DIR__ . '/css/template.css');
 
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style><?php echo $css; ?></style>
 	<jdoc:include type="head" />
 </head>
 <body class="<?php echo $this->direction === 'rtl' ? 'rtl' : ''; ?>">
 	<jdoc:include type="message" />
 	<jdoc:include type="component" />
+
+	<script>
+		(() => {
+			const theme = localStorage.getItem('theme') ?? 'is-light'
+			document.documentElement.classList.add(theme)
+		})()
+	</script>
 </body>
 </html>
