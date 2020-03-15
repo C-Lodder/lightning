@@ -1,0 +1,148 @@
+/* Tabs */
+
+joomla-tab {
+  display: flex;
+  flex-direction: column;
+
+  > ul {
+    display: flex;
+    background-color: var(--hiq-tabs-background-color);
+    border-color: var(--hiq-border-color) var(--hiq-border-color) currentcolor;
+    border-radius: .25rem .25rem 0 0;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    margin: 0;
+    padding: 0;
+    list-style: outside none none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  a[role=tab] {
+    display: block;
+    color: var(--hiq-text-color);
+    padding: .75em 1em;
+    position: relative;
+    box-shadow: 1px 0 0 rgba(0, 0, 0, .05);
+    text-decoration: none;
+
+    &[active] {
+      border-left: 0 none;
+      border-right: 0 none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      box-shadow: 2px 0 1px -1px rgba(0, 0, 0, .08) inset, -2px 0 1px -1px rgba(0, 0, 0, .08) inset, 0 1px 0 rgba(0, 0, 0, .02) inset;
+
+      &::after {
+        background-color: var(--hiq-color-primary);
+        bottom: -1px;
+        content: "";
+        height: 5px;
+        left: 0;
+        opacity: .8;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  > section {
+    position: relative;
+    display: none;
+    border: 1px solid var(--hiq-border-color);
+    border-radius: 0 0 .25rem .25rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .04);
+    padding: 15px;
+
+    &[active] {
+      display: block;
+    }
+  }
+}
+
+joomla-tab[orientation=vertical] {
+  flex-direction: row;
+  align-items: flex-start;
+
+  > ul {
+    flex-direction: column;
+    min-width: 250px;
+    height: auto;
+    border: 1px solid var(--hiq-border-color);
+    border-radius: .25rem;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  li:last-of-type a {
+    border-bottom: 0;
+  }
+
+  a {
+    display: block;
+    color: var(--hiq-text-color);
+    padding: .75em 1em;
+    position: relative;
+    border-bottom: 1px solid var(--hiq-border-color);
+    box-shadow: none;
+    text-decoration: none;
+
+    &[active] {
+      border-left: 0 none;
+      border-right: 0 none;
+      background-color: rgba(0, 0, 0, .03);
+      background-image: none;
+      box-shadow: 2px 0 1px -1px rgba(0, 0, 0, .08) inset, -2px 0 1px -1px rgba(0, 0, 0, .08) inset, 0 1px 0 rgba(0, 0, 0, .02) inset;
+
+      &::after {
+        left: -1px;
+        width: 5px;
+        height: auto;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  > section {
+    flex-grow: 1;
+    border: 0 none;
+    box-shadow: none;
+    padding: 15px;
+  }
+
+  > ul {
+    flex-direction: column;
+    border-radius: .25rem;
+    white-space: normal;
+  }
+}
+
+
+joomla-tab[view=accordion] {
+  ul {
+    flex-direction: column;
+  }
+
+  section {
+    display: none;
+    padding: 15px;
+
+    &[active] {
+      display: block;
+      border-bottom: 1px solid var(--hiq-border-color);
+    }
+
+    a[role=tab] {
+      border-bottom: 1px solid var(--hiq-border-color);
+
+	  &[active]::after {
+        width: 5px;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

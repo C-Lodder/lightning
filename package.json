@@ -8,7 +8,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "postcss src/css/hiq.css -o css/template.css"
+    "postcss": "npm run __postcss-main && npm run __postcss-tab",
+    "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
+    "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css"
   },
   "devDependencies": {
     "autoprefixer": "9.7.4",
