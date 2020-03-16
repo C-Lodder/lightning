@@ -15,4 +15,16 @@
   &:hover {
     color: #fff;
   }
+
+  &.badge-success {
+    background-color: var(--hiq-color-success);
+  }
+
+  &.badge-warning {
+    background-color: var(--hiq-color-warning);
+  }
+
+  &.badge-danger {
+    background-color: var(--hiq-color-danger);
+  }
 }
