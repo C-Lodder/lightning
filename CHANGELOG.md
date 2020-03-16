@@ -5,6 +5,7 @@
 - Add input-group styling
 - Add dark theme for tables
 - Add pagination styling
+- Add small CSS form component
 
 ## 0.0.3
 
