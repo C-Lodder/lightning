@@ -1,0 +1,36 @@
+/* Input Group */
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  input {
+    flex: 1 1 0%;
+  }
+
+  button {
+    --hiq-button-height: var(--hiq-input-height);
+  }
+
+  > .input-group-prepend:not(:last-child) > * {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > .input-group-append:not(:first-child) > * {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > .form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > .form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
