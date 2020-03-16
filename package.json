@@ -8,10 +8,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal",
+    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination",
     "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
     "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
-    "__postcss-modal": "postcss src/css/modal.css -o css/modal.css"
+    "__postcss-modal": "postcss src/css/modal.css -o css/modal.css",
+    "__postcss-pagination": "postcss src/css/pagination.css -o css/pagination.css"
   },
   "devDependencies": {
     "autoprefixer": "9.7.4",
