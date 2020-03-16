@@ -195,6 +195,7 @@
   --hiq-table-cell-padding-horizontal: .75rem;
   --hiq-table-cell-border-width: 1px;
   --hiq-table-cell-border-color: var(--hiq-color-gray-6);
+  --hiq-table-cell-background-color: white;
   --hiq-table-heading-background-color: var(--hiq-color-gray-7);
   --hiq-table-heading-text-color: var(--hiq-color-gray-4);
   --hiq-table-heading-font-weight: var(--hiq-font-weight-medium);
@@ -364,4 +365,11 @@
   /* dropdown */
   --hiq-dropdown-background-color: var(--hiq-dark-1);
   --hiq-dropdown-item-hover-background-color: var(--hiq-dark-2);
+
+  /* table variables */
+  --hiq-table-caption-text-color: var(--hiq-color-gray-6);
+  --hiq-table-cell-border-color: var(--hiq-border-color);
+  --hiq-table-cell-background-color: var(--hiq-dark-2);
+  --hiq-table-heading-background-color: var(--hiq-dark-2);
+  --hiq-table-heading-text-color: var(--hiq-text-color);
 }

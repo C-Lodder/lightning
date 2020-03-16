@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Add badge colour variations
+
 ## 0.0.3
 
 - Add Modal styling
