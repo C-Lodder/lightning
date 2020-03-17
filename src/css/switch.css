@@ -1,0 +1,50 @@
+/* Switcher */
+
+.color-scheme-switch {
+  position: relative;
+  width: 70px;
+  user-select: none;
+}
+
+.color-scheme-switch-checkbox {
+  display: none;
+}
+
+.color-scheme-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  border: 2px solid #e3e3e3;
+  border-radius: 36px;
+  background-color: #fff;
+  transition: background-color .3s ease-in;
+  margin-bottom: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 36px;
+    margin: 0;
+    background: var(--hiq-body-background-color);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 33px;
+    border: 2px solid #e3e3e3;
+    border-radius: 36px;
+    transition: all .3s ease-in 0s;
+  }
+}
+
+.color-scheme-switch-checkbox:checked + .color-scheme-switch-label {
+  background-color: var(--hiq-header-background-color);
+  border-color: var(--hiq-body-background-color);
+
+  &::before {
+    right: 0;
+    border-color: var(--hiq-body-background-color);
+  }
+}
