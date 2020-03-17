@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Fix styling for error page
+
 ## 0.0.4
 - Add badge colour variations
 - Add input-group styling

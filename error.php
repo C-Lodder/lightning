@@ -9,6 +9,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
@@ -27,6 +28,17 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
+// Template params
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
+
+if ($themeSwitcher)
+{
+	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
+}
+
+// Fetch CSS
+$css = file_get_contents(__DIR__ . '/css/template.css');
+
 // Logo file or site title param
 if ($this->params->get('logoFile'))
 {
@@ -42,9 +54,6 @@ else
 }
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
-
-// Fetch CSS
-$css = file_get_contents(__DIR__ . '/css/template.css');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -71,108 +80,58 @@ $css = file_get_contents(__DIR__ . '/css/template.css');
 					<div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
 				<?php endif; ?>
 			</div>
-
-			<?php if ($this->countModules('menu') || $this->countModules('search')) : ?>
-				<div class="collapse navbar-collapse" id="navbar">
-					<jdoc:include type="modules" name="menu" style="none" />
-					<?php if ($this->countModules('search')) : ?>
-						<div class="form-inline">
-							<jdoc:include type="modules" name="search" style="none" />
-						</div>
-					<?php endif; ?>
+			<?php if ($themeSwitcher) : ?>
+				<div class="color-scheme-switch">
+					<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
+					<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
 				</div>
 			<?php endif; ?>
 		</nav>
-		<?php if ($this->countModules('banner')) : ?>
-		<div class="grid-child container-banner">
-			<jdoc:include type="modules" name="banner" style="xhtml" />
-		</div>
-		<?php endif; ?>
 	</header>
 
-	<?php if ($this->countModules('top-a')) : ?>
-	<div class="grid-child container-top-a">
-		<jdoc:include type="modules" name="top-a" style="cardGrey" />
-	</div>
-	<?php endif; ?>
-
-	<?php if ($this->countModules('top-b')) : ?>
-	<div class="grid-child container-top-b">
-		<jdoc:include type="modules" name="top-b" style="card" />
-	</div>
-	<?php endif; ?>
-
 	<div class="grid-child container-main">
-
-		<?php if ($this->countModules('sidebar-left')) : ?>
-		<div class="container-sidebar-left">
-			<jdoc:include type="modules" name="sidebar-left" style="default" />
-		</div>
-		<?php endif; ?>
-
 		<div class="container-component">
 			<h1><?php echo Text::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
 			<div class="card">
-				<div class="card-body">
-					<jdoc:include type="message" />
-					<p><strong><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></strong></p>
-					<p><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></p>
-					<ul>
-						<li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
-						<li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
-						<li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
-						<li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
-					</ul>
-					<p><?php echo Text::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
-					<p><a href="<?php echo $this->baseurl; ?>/index.php" class="btn btn-secondary"><span class="fas fa-home" aria-hidden="true"></span> <?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
-					<hr>
-					<p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
-					<blockquote>
-						<span class="badge badge-secondary"><?php echo $this->error->getCode(); ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
-					</blockquote>
-					<?php if ($this->debug) : ?>
-						<div>
-							<?php echo $this->renderBacktrace(); ?>
-							<?php // Check if there are more Exceptions and render their data as well ?>
-							<?php if ($this->error->getPrevious()) : ?>
-								<?php $loop = true; ?>
-								<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
-								<?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
-								<?php $this->setError($this->_error->getPrevious()); ?>
-								<?php while ($loop === true) : ?>
-									<p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
-									<p><?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
-									<?php echo $this->renderBacktrace(); ?>
-									<?php $loop = $this->setError($this->_error->getPrevious()); ?>
-								<?php endwhile; ?>
-								<?php // Reset the main error object to the base error ?>
-								<?php $this->setError($this->error); ?>
-							<?php endif; ?>
-						</div>
-					<?php endif; ?>
-				</div>
+				<jdoc:include type="message" />
+				<p><strong><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></strong></p>
+				<p><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></p>
+				<ul>
+					<li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
+					<li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
+					<li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
+					<li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
+				</ul>
+				<p><?php echo Text::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
+				<p><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
+				<hr>
+				<p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
+				<blockquote>
+					<span class="badge badge-primary"><?php echo $this->error->getCode(); ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
+				</blockquote>
+				<?php if ($this->debug) : ?>
+					<div>
+						<?php echo $this->renderBacktrace(); ?>
+						<?php // Check if there are more Exceptions and render their data as well ?>
+						<?php if ($this->error->getPrevious()) : ?>
+							<?php $loop = true; ?>
+							<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
+							<?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
+							<?php $this->setError($this->_error->getPrevious()); ?>
+							<?php while ($loop === true) : ?>
+								<p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
+								<p><?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
+								<?php echo $this->renderBacktrace(); ?>
+								<?php $loop = $this->setError($this->_error->getPrevious()); ?>
+							<?php endwhile; ?>
+							<?php // Reset the main error object to the base error ?>
+							<?php $this->setError($this->error); ?>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
-
-		<?php if ($this->countModules('sidebar-right')) : ?>
-		<div class="container-sidebar-right">
-			<jdoc:include type="modules" name="sidebar-right" style="default" />
-		</div>
-		<?php endif; ?>
-
 	</div>
-
-	<?php if ($this->countModules('bottom-a')) : ?>
-	<div class="grid-child container-bottom-a">
-		<jdoc:include type="modules" name="bottom-a" style="cardGrey" />
-	</div>
-	<?php endif; ?>
-
-	<?php if ($this->countModules('bottom-b')) : ?>
-	<div class="grid-child container-bottom-b">
-		<jdoc:include type="modules" name="bottom-b" style="card" />
-	</div>
-	<?php endif; ?>
 
 	<?php if ($this->countModules('footer')) : ?>
 	<footer class="grid-child container-footer footer">
@@ -184,5 +143,27 @@ $css = file_get_contents(__DIR__ . '/css/template.css');
 
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
+
+	<?php if ($themeSwitcher) : ?>
+	<script>
+		(() => {
+			const switcher = document.getElementById('color-scheme-switch')
+
+			const theme = localStorage.getItem('theme') ?? 'is-light'
+			document.documentElement.classList.add(theme)
+			switcher.checked = theme === 'is-dark' ? true : false
+
+			switcher.addEventListener('change', () => {
+				if (switcher.checked) {
+					localStorage.setItem('theme', 'is-dark')
+					document.documentElement.classList.add('is-dark')
+				} else {
+					localStorage.setItem('theme', 'is-light')
+					document.documentElement.classList.remove('is-dark')
+				}
+			})
+		})()
+	</script>
+	<?php endif; ?>
 </body>
 </html>
