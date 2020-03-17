@@ -8,6 +8,7 @@
 
 # JS/CSS Build #
 node_modules/
+/css/**/*.css
 
 # CSS map files #
 .map
@@ -22,6 +23,4 @@ Thumbs.db
 Desktop.ini
 
 # Never ignore #
-# Only apply this rule to the main repository's gitignore files
 !/.gitignore
-!/build/.gitignore
