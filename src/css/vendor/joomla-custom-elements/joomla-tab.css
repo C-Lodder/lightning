@@ -131,6 +131,7 @@ joomla-tab[view=accordion] {
 
     &[active] {
       display: block;
+      background-color: var(--hiq-body-background-color);
       border-bottom: 1px solid var(--hiq-border-color);
     }
 
