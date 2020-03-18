@@ -1,8 +1,9 @@
 # Changelog
 
 ## WIP
+- Add dark theme styling for Choices.js
+- Add dark theme styling for calendar
 - Fix styling for error page
-- Fix styling for Choices.js
 
 ## 0.0.4
 - Add badge colour variations

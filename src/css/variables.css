@@ -345,8 +345,12 @@
   --hiq-text-color: var(--hiq-color-gray-6);
   --hiq-link-color: hsl(210, 100%, 62%);
   --hiq-border-color: var(--hiq-color-gray-4);
+  --hiq-outline-color: hsl(210, 53%, 36%);
   --hiq-selection-color: var(--hiq-color-gray-2);
   --hiq-header-background-color: var(--hiq-dark-2);
+
+  --hiq-disabled-border-color: var(--hiq-color-gray-3);
+  --hiq-disabled-background-color: var(--hiq-color-gray-2);
 
   /* inputs */
   --hiq-input-border-color: var(--hiq-color-gray-2);

@@ -8,24 +8,25 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination && npm run __postcss-switch",
+    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-calendar",
     "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
     "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
     "__postcss-modal": "postcss src/css/modal.css -o css/modal.css",
     "__postcss-switch": "postcss src/css/switch.css -o css/switch.css",
     "__postcss-choices": "postcss src/css/choices.css -o css/vendor/choicesjs/choices.min.css",
+    "__postcss-calendar": "postcss src/css/calendar.css -o css/system/fields/calendar.min.css",
     "__postcss-pagination": "postcss src/css/pagination.css -o css/pagination.css"
   },
   "devDependencies": {
-    "autoprefixer": "9.7.4",
-    "cssnano": "4.1.10",
-    "postcss": "7.0.27",
-    "postcss-cli": "7.1.0",
-    "postcss-custom-media": "7.0.8",
-    "postcss-custom-selectors": "5.1.2",
-    "postcss-discard-comments": "4.0.2",
-    "postcss-easy-import": "3.0.0",
-    "postcss-mixins": "6.2.3",
-    "postcss-nested": "4.2.1"
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-discard-comments": "^4.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-mixins": "^6.2.3",
+    "postcss-nested": "^4.2.1"
   }
 }

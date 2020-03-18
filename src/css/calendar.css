@@ -1,0 +1,169 @@
+/**
+ * @copyright	Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+:root {
+  --calendar-background-color: white;
+  --calendar-table-cell-background-color: white;
+  --calendar-table-heading-background-color: white;
+  --calendar-box-shadow: 0 0 15px 4px rgba(0, 0, 0, .15);
+}
+
+:root.is-dark {
+  --calendar-background-color: var(--hiq-dark-1);
+  --calendar-table-cell-background-color: var(--hiq-dark-1);
+  --calendar-table-heading-background-color: var(--hiq-dark-1);
+  --calendar-box-shadow: 0 0 15px 4px rgba(255, 255, 255, .15);
+}
+
+.js-calendar {
+	box-shadow: var(--calendar-box-shadow);
+}
+.calendar-container {
+	z-index: 1100 !important;
+	background-color: var(--calendar-background-color);
+	border: 1px solid var(--hiq-border-color);
+
+	table {
+		max-width: 262px;
+		z-index: 1100 !important;
+		table-layout: fixed;
+		background-color: var(--calendar-background-color);
+
+		th {
+			background-color: var(--calendar-table-heading-background-color);
+		}
+
+		td {
+			background-color: var(--calendar-table-cell-background-color);
+		}
+
+		th,
+		td {
+			padding: 8px 0;
+			line-height: 1.1em;
+			text-align: center;
+		}
+
+		td.title { /* This holds the current "month, year" */
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		body td {
+			line-height: 2em;
+		}
+
+		thead {
+			td.headrow { /* Row <TR> containing navigation buttons */
+				background: #fff;
+				color: #000;
+			}
+
+			td.name { /* Cells <TD> containing the day names */
+				border-bottom: 1px solid #fff;
+				text-align: center;
+				color: #000;
+			}
+		}
+
+		tbody {	
+			td.day { /* Cells <TD> containing month days dates */
+				text-align: right;
+			}
+
+			td.wn {
+				background: #fff;
+			}
+
+			td.day {
+				border: 0;
+				cursor : pointer;
+				font-size: 12px;
+				min-width: 38px;
+			}
+
+			td.day.wn {
+				text-align: center;
+				background-color: var(--hiq-dark-2);
+			}
+
+			td.day.selected { /* Cell showing today date */
+				background: var(--hiq-color-primary);
+				color: #fff;
+				border: 0;
+			}
+
+			td.day:hover {
+				cursor: pointer;
+				background: var(--hiq-color-primary);
+				color: #fff;
+			}
+
+			td.today {
+				position: relative;
+				height: 100%;
+				width: auto;
+				font-weight: bold;
+			}
+			td.today::after {
+				position: absolute;
+				bottom: 3px;
+				left: 3px;
+				right: 3px;
+				content: "";
+				height: 3px;
+				border-radius: 1.5px;
+				background-color: var(--hiq-color-primary);
+			}
+			td.today.selected::after {
+				background-color: #fff;
+			}
+
+			td.disabled,
+			td.disabled:hover {
+				color: var(--hiq-disabled-text-color);
+				background-color: var(--hiq-disabled-background-color);
+			}
+
+			.emptycell { /* Empty cells (the best is to hide them) */
+				visibility: hidden;
+			}
+
+			.emptyrow { /* Empty row (some months need less than 6 rows) */
+				display: none;
+			}
+		}
+	}
+
+	.calendar-head-row td {
+		padding: 4px 0 !important;
+		border-bottom: none;
+	}
+	.day-name {
+		font-size: .7rem;
+		font-weight: bold;
+	}
+	.time td {
+		padding: 8px 0 8px 8px;
+	}
+
+	.time-wrapper {
+		display: flex;
+		align-items: center;
+		padding: .8rem;
+
+		> div:not(:last-child) {
+			margin-right: .5rem;
+		}
+	}
+}
+
+.buttons-wrapper {
+	padding: .8rem;
+
+	button:not(:last-child) {
+		margin-right: .5rem;
+	}
+}
