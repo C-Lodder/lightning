@@ -97,7 +97,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 				</div>
 
 				<?php if ($this->countModules('menu') || $this->countModules('search')) : ?>
-					<div>
+					<div class="navbar-menu">
 						<jdoc:include type="modules" name="menu" style="none" />
 						<?php if ($this->countModules('search')) : ?>
 							<div>
@@ -105,6 +105,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 							</div>
 						<?php endif; ?>
 					</div>
+					<span id="navbar-menu-toggle" class="navbar-menu-toggle"><span></span></span>
 				<?php endif; ?>
 				<?php if ($themeSwitcher) : ?>
 					<div class="color-scheme-switch">
@@ -190,7 +191,15 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 					localStorage.setItem('theme', 'is-light')
 					document.documentElement.classList.remove('is-dark')
 				}
-			})
+			});
+
+			function menuToggle() {
+				const toggle = document.getElementById('navbar-menu-toggle')
+				const body = document.body
+				body.classList.toggle('menu-open');
+			}
+			document.querySelector('.navbar-menu-toggle')
+				.addEventListener('click', menuToggle);
 		})()
 	</script>
 	<?php endif; ?>
