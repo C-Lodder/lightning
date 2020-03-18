@@ -16,7 +16,6 @@ use Joomla\CMS\Uri\Uri;
 /** @var JDocumentHtml $this */
 
 $app  = Factory::getApplication();
-$doc = Factory::getDocument();
 $lang = $app->getLanguage();
 
 // Detecting Active Variables
@@ -36,18 +35,6 @@ if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 }
-
-// Mobile menu toggle
-$doc->addScriptDeclaration("
-	function menuToggle() {
-		const toggle = document.getElementById('navbar-menu-toggle')
-		const body = document.body
-		body.classList.toggle('menu-open');
-	}
-	document.querySelector('.navbar-menu-toggle')
-		.addEventListener('click', menuToggle);
-");
-
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -204,7 +191,15 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 					localStorage.setItem('theme', 'is-light')
 					document.documentElement.classList.remove('is-dark')
 				}
-			})
+			});
+
+			function menuToggle() {
+				const toggle = document.getElementById('navbar-menu-toggle')
+				const body = document.body
+				body.classList.toggle('menu-open');
+			}
+			document.querySelector('.navbar-menu-toggle')
+				.addEventListener('click', menuToggle);
 		})()
 	</script>
 	<?php endif; ?>
