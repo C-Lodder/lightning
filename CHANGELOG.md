@@ -2,6 +2,7 @@
 
 ## WIP
 - Fix styling for error page
+- Fix styling for Choices.js
 
 ## 0.0.4
 - Add badge colour variations

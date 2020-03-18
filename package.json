@@ -13,6 +13,7 @@
     "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
     "__postcss-modal": "postcss src/css/modal.css -o css/modal.css",
     "__postcss-switch": "postcss src/css/switch.css -o css/switch.css",
+    "__postcss-choices": "postcss src/css/choices.css -o css/vendor/choicesjs/choices.min.css",
     "__postcss-pagination": "postcss src/css/pagination.css -o css/pagination.css"
   },
   "devDependencies": {
