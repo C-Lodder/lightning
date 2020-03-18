@@ -16,6 +16,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var JDocumentHtml $this */
 
 $app  = Factory::getApplication();
+$doc = Factory::getDocument();
 $lang = $app->getLanguage();
 
 // Detecting Active Variables
@@ -35,6 +36,18 @@ if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 }
+
+// Mobile menu toggle
+$doc->addScriptDeclaration("
+	function menuToggle() {
+		const toggle = document.getElementById('navbar-menu-toggle')
+		const body = document.body
+		body.classList.toggle('menu-open');
+	}
+	document.querySelector('.navbar-menu-toggle')
+		.addEventListener('click', menuToggle);
+");
+
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -97,7 +110,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 				</div>
 
 				<?php if ($this->countModules('menu') || $this->countModules('search')) : ?>
-					<div>
+					<div class="navbar-menu">
 						<jdoc:include type="modules" name="menu" style="none" />
 						<?php if ($this->countModules('search')) : ?>
 							<div>
@@ -105,6 +118,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 							</div>
 						<?php endif; ?>
 					</div>
+					<span id="navbar-menu-toggle" class="navbar-menu-toggle"><span></span></span>
 				<?php endif; ?>
 				<?php if ($themeSwitcher) : ?>
 					<div class="color-scheme-switch">
