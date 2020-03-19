@@ -18,6 +18,7 @@
 		<filename>template_thumbnail.png</filename>
 		<filename>template_thumbnail.png</filename>
 		<folder>css</folder>
+		<folder>js</folder>
 		<folder>html</folder>
 		<folder>language</folder>
 	</files>
