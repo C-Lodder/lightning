@@ -1,4 +1,7 @@
-/* Navbar */
+/* Menu */
+
+@custom-media --hiq-lower-font-range (min-width: 460px);
+@custom-media --hiq-upper-font-range (min-width: 900px);
 
 .navbar {
   display: flex;
@@ -93,7 +96,7 @@
     width: 100%;
     height: 5px;
     background-color: var(--hiq-text-color);
-    transition: all 0.3s;
+    transition: all .3s;
     backface-visibility: hidden;
     border-radius: 2px;
   }

@@ -183,18 +183,6 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	</script>
 	<?php endif; ?>
 
-	<script>
-		(() => {
-			const toggle = document.getElementById('navbar-menu-toggle')
-			if (toggle) {
-				toggle.addEventListener('click', () => {
-					const toggle = document.getElementById('navbar-menu-toggle')
-					body = document.body.classList.toggle('menu-open');
-				})
-			}
-		})()
-	</script>
-
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </body>

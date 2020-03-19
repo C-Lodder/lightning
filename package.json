@@ -8,13 +8,14 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-calendar",
+    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-calendar && npm run __postcss-menu",
     "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
     "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
     "__postcss-modal": "postcss src/css/modal.css -o css/modal.css",
     "__postcss-switch": "postcss src/css/switch.css -o css/switch.css",
     "__postcss-choices": "postcss src/css/choices.css -o css/vendor/choicesjs/choices.min.css",
     "__postcss-calendar": "postcss src/css/calendar.css -o css/system/fields/calendar.min.css",
+    "__postcss-menu": "postcss src/css/menu.css -o css/mod_menu/menu.min.css",
     "__postcss-pagination": "postcss src/css/pagination.css -o css/pagination.css"
   },
   "devDependencies": {
