@@ -30,10 +30,10 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
 // Template params
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
-
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
+	HTMLHelper::_('script', 'switch.js', ['version' => 'auto', 'relative' => true]);
 }
 
 // Fetch CSS
@@ -147,21 +147,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	<?php if ($themeSwitcher) : ?>
 	<script>
 		(() => {
-			const switcher = document.getElementById('color-scheme-switch')
-
 			const theme = localStorage.getItem('theme') ?? 'is-light'
 			document.documentElement.classList.add(theme)
-			switcher.checked = theme === 'is-dark' ? true : false
-
-			switcher.addEventListener('change', () => {
-				if (switcher.checked) {
-					localStorage.setItem('theme', 'is-dark')
-					document.documentElement.classList.add('is-dark')
-				} else {
-					localStorage.setItem('theme', 'is-light')
-					document.documentElement.classList.remove('is-dark')
-				}
-			})
 		})()
 	</script>
 	<?php endif; ?>

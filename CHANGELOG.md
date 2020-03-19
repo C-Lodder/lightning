@@ -4,6 +4,7 @@
 - Add dark theme styling for Choices.js
 - Add dark theme styling for calendar
 - Fix styling for error page
+- Fix top navigation for small devices
 - General styling fixes and improvements
 
 ## 0.0.4
