@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.5
 - Add dark theme styling for Choices.js
 - Add dark theme styling for calendar
 - Fix styling for error page

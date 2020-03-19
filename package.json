@@ -1,10 +1,10 @@
 {
   "name": "lightning",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Joomla 4 template using HiQ",
   "repository": {
     "type": "git",
-    "url": "https://github.com/C-Lodder/lightening"
+    "url": "https://github.com/C-Lodder/lightning"
   },
   "license": "MIT",
   "scripts": {
