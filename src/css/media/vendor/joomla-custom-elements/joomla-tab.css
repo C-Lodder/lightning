@@ -7,7 +7,7 @@ joomla-tab {
   > ul {
     display: flex;
     background-color: var(--hiq-tabs-background-color);
-    border-color: var(--hiq-border-color) var(--hiq-border-color) currentcolor;
+    border-color: var(--hiq-border-color) var(--hiq-border-color) currentColor;
     border-radius: .25rem .25rem 0 0;
     border-style: solid solid none;
     border-width: 1px 1px 0;
@@ -73,10 +73,7 @@ joomla-tab[orientation=vertical] {
     border-radius: .25rem;
     box-shadow: none;
     overflow: hidden;
-  }
-
-  li:last-of-type a {
-    border-bottom: 0;
+    white-space: normal;
   }
 
   a {
@@ -105,20 +102,17 @@ joomla-tab[orientation=vertical] {
     }
   }
 
+  li:last-of-type a {
+    border-bottom: 0;
+  }
+
   > section {
     flex-grow: 1;
     border: 0 none;
     box-shadow: none;
     padding: 15px;
   }
-
-  > ul {
-    flex-direction: column;
-    border-radius: .25rem;
-    white-space: normal;
-  }
 }
-
 
 joomla-tab[view=accordion] {
   ul {
@@ -138,7 +132,7 @@ joomla-tab[view=accordion] {
     a[role=tab] {
       border-bottom: 1px solid var(--hiq-border-color);
 
-	  &[active]::after {
+      &[active]::after {
         width: 5px;
         height: 100%;
         top: 0;

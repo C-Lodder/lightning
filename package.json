@@ -10,13 +10,14 @@
   "scripts": {
     "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-pagination && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-calendar && npm run __postcss-menu",
     "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
-    "__postcss-tab": "postcss src/css/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
-    "__postcss-modal": "postcss src/css/modal.css -o css/modal.css",
+    "__postcss-tab": "postcss src/css/media/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
+    "__postcss-modal": "postcss src/css/media/layouts/modal/modal.css -o css/modal.css",
     "__postcss-switch": "postcss src/css/switch.css -o css/switch.css",
-    "__postcss-choices": "postcss src/css/choices.css -o css/vendor/choicesjs/choices.min.css",
-    "__postcss-calendar": "postcss src/css/calendar.css -o css/system/fields/calendar.min.css",
-    "__postcss-menu": "postcss src/css/menu.css -o css/mod_menu/menu.min.css",
-    "__postcss-pagination": "postcss src/css/pagination.css -o css/pagination.css"
+    "__postcss-choices": "postcss src/css/media/vendor/choicesjs/choices.css -o css/vendor/choicesjs/choices.min.css",
+    "__postcss-calendar": "postcss src/css/media/system/fields/calendar.css -o css/system/fields/calendar.min.css",
+    "__postcss-menu": "postcss src/css/media/mod_menu/menu.css -o css/mod_menu/menu.min.css",
+    "__postcss-pagination": "postcss src/css/media/layouts/pagination/pagination.css -o css/pagination.css",
+    "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -28,6 +29,8 @@
     "postcss-discard-comments": "^4.0.2",
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^6.2.3",
-    "postcss-nested": "^4.2.1"
+    "postcss-nested": "^4.2.1",
+    "stylelint": "13.2.1",
+    "stylelint-config-standard": "20.0.0"
   }
 }

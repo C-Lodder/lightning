@@ -28,6 +28,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm ci
 
+      - name: Lint CSS
+        run: npm run lint
+
       - name: Build CSS
         run: npm run postcss
-

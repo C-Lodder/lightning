@@ -50,7 +50,7 @@
   margin-bottom: 0;
 }
 
-.dropdown-toggle:hover + .dropdown-menu,
-.dropdown-menu:hover {
+.dropdown-menu:hover,
+.dropdown-toggle:hover + .dropdown-menu {
   display: block;
 }
