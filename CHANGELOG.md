@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Fix input-group-append wrapping
+
 ## 0.0.5
 - Add dark theme styling for Choices.js
 - Add dark theme styling for calendar
