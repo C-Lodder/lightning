@@ -36,6 +36,9 @@ if ($themeSwitcher)
 	HTMLHelper::_('script', 'switch.js', ['version' => 'auto', 'relative' => true]);
 }
 
+// Font Awesome
+HTMLHelper::_('stylesheet', 'media/vendor/fontawesome-free/css/fontawesome.min.css', ['version' => 'auto']);
+
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
 

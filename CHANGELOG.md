@@ -2,6 +2,7 @@
 
 ## WIP
 - Add dropdown styling for navigation submenu items
+- Add FontAwesome temporarily until SVGs are supported in core
 - Fix input-group-append wrapping
 
 ## 0.0.5
