@@ -3,17 +3,6 @@
 @custom-media --hiq-lower-font-range (min-width: 460px);
 @custom-media --hiq-upper-font-range (min-width: 900px);
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
-  @media (--hiq-upper-font-range) {
-    flex-wrap: nowrap;
-  }
-}
-
 .navbar-menu {
   display: none;
   flex: 1 1 100%;

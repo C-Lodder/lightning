@@ -1,4 +1,15 @@
-/* Navbar */
+/* Nav */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (--hiq-upper-font-range) {
+    flex-wrap: nowrap;
+  }
+}
 
 .nav {
   margin: 0;
