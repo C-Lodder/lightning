@@ -28,6 +28,11 @@
       background-color: var(--hiq-dropdown-item-hover-background-color);
     }
   }
+
+  &.dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
 }
 
 .dropdown-divider {
