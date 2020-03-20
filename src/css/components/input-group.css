@@ -7,11 +7,17 @@
   width: 100%;
 
   input {
+    min-width: 0;
     flex: 1 1 0%;
   }
 
   button {
     --hiq-button-height: var(--hiq-input-height);
+  }
+
+  > .input-group-append {
+    display: flex;
+    margin-left: -1px;
   }
 
   > .input-group-prepend:not(:last-child) > * {
