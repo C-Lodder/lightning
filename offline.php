@@ -51,7 +51,7 @@ else
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<jdoc:include type="head" />
+	<jdoc:include type="metas" />
 	<style><?php echo $css; ?></style>
 </head>
 <body class="site-grid site">
@@ -129,5 +129,8 @@ else
 		})()
 	</script>
 	<?php endif; ?>
+
+	<jdoc:include type="styles" />
+	<jdoc:include type="scripts" />
 </body>
 </html>
