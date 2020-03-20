@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add dropdown styling for navigation submenu items
 - Fix input-group-append wrapping
 
 ## 0.0.5
