@@ -53,6 +53,4 @@
   white-space: nowrap;
   border: 1px solid var(--hiq-input-border-color);
   border-radius: var(--hiq-border-radius);
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }
