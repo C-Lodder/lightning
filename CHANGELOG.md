@@ -6,6 +6,7 @@
 - Fix input-group-append wrapping
 - Fix dark theme switch not working on offline page
 - Fix header styling on offline and error pages
+- Input group styling improvements
 
 ## 0.0.5
 - Add dark theme styling for Choices.js
