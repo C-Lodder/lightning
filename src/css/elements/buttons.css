@@ -88,7 +88,8 @@ apply mixin to:
   [type='button'],
   [type='submit'],
   [type='reset'],
-  .button;
+  .button,
+  .btn;
 
 :--button {
   @mixin button;

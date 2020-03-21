@@ -7,6 +7,7 @@
 - Fix dark theme switch not working on offline page
 - Fix header styling on offline and error pages
 - Input group styling improvements
+- Frontend editing JS rewrite and fixes
 
 ## 0.0.5
 - Add dark theme styling for Choices.js

@@ -145,3 +145,7 @@
     display: none;
   }
 }
+
+.nav-item {
+  position: relative;
+}
