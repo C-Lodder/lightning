@@ -31,5 +31,8 @@ jobs:
       - name: Lint CSS
         run: npm run lint
 
-      - name: Build CSS
+      - name: Compile CSS
+        run: npm run postcss
+
+      - name: Build Zip
         run: npm run postcss
