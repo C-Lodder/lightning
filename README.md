@@ -24,11 +24,17 @@ git checkout -b <branch name>
 ```bash
 npm i
 ```
+
+## Build tasks
 - Build CSS:
 ```bash
 npm run postcss
 ```
 - Build a Zip file:
 ```bash
-node package.js
+npm run package
+```
+- Lint CSS:
+```bash
+npm run lint
 ```
