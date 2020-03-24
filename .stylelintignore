@@ -2,4 +2,5 @@ src/css/base/**/*.css
 src/css/elements/**/*.css
 src/css/typography/**/*.css
 src/css/utility/**/*.css
+src/css/mediamanager/**/*.css
 src/css/media/vendor/choicesjs/**/*.css
