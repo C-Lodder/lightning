@@ -1,0 +1,66 @@
+.media-toolbar {
+  position: relative;
+  display: flex;
+  padding: 0;
+  background-color: var(--mediamanager-toolbar-bg);
+  border-bottom: 1px solid var(--mediamanager-border-color);
+  border-radius: var(--mediamanager-border-radius) var(--mediamanager-border-radius) 0 0;
+  input {
+    padding: .375rem .75rem;
+    color: #495057;
+    border: 1px solid #ced4da;
+  }
+}
+
+.media-toolbar-icon {
+  width: var(--mediamanager-toolbar-icon-width);
+  font-size: 1.3rem;
+  text-align: center;
+
+  &:not(:first-child) {
+    margin-left: .5rem;
+  }
+}
+
+.media-view-icons {
+  display: flex;
+  align-items: center;
+  
+  .disabled {
+    span {
+      opacity: .3;
+    }
+    &:hover,
+	span:hover {
+      cursor: default;
+    }
+  }
+}
+
+.media-view-search-input {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.media-loader {
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  height: var(--mediamanager-toolbar-loader-height);
+  background-image: var(--mediamanager-toolbar-loader-color);
+  animation: 10s ease 0s normal none 1 running mediaLoader;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mediaLoader {
+  from {
+    right: 100%;
+  }
+
+  to {
+    right: 0;
+  }
+}

@@ -2,5 +2,5 @@
 /* Use by Joomla */
 
 .hidden {
-  display: none;
+  display: none !important;
 }

@@ -26,7 +26,7 @@
   /* global applied colors */
   --hiq-html-background-color: white;
   --hiq-body-background-color: white;
-  --hiq-disabled-border-color: var(--hiq-color-gray-7);
+  --hiq-disabled-border-color: var(--hiq-color-gray-6);
   --hiq-disabled-background-color: var(--hiq-color-gray-7);
   --hiq-disabled-text-color: var(--hiq-color-gray-5);
   --hiq-border-color: var(--hiq-color-gray-6);

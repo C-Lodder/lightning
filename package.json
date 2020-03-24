@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-frontediting && npm run __postcss-calendar && npm run __postcss-menu && npm run __postcss-pagination",
+    "postcss": "npm run __postcss-main && npm run __postcss-tab && npm run __postcss-modal && npm run __postcss-switch && npm run __postcss-choices && npm run __postcss-frontediting && npm run __postcss-calendar && npm run __postcss-field-media && npm run __postcss-menu && npm run __postcss-pagination && npm run __postcss-mediamanager",
     "__postcss-main": "postcss src/css/hiq.css -o css/template.css",
     "__postcss-tab": "postcss src/css/media/vendor/joomla-custom-elements/joomla-tab.css -o css/vendor/joomla-custom-elements/joomla-tab.css",
     "__postcss-modal": "postcss src/css/media/layouts/modal/modal.css -o css/modal.css",
@@ -16,8 +16,10 @@
     "__postcss-choices": "postcss src/css/media/vendor/choicesjs/choices.css -o css/vendor/choicesjs/choices.min.css",
     "__postcss-frontediting": "postcss src/css/media/system/frontediting.css -o css/system/frontediting.css",
     "__postcss-calendar": "postcss src/css/media/system/fields/calendar.css -o css/system/fields/calendar.min.css",
+    "__postcss-field-media": "postcss src/css/media/system/fields/joomla-field-media.css -o css/system/fields/joomla-field-media.min.css",
     "__postcss-menu": "postcss src/css/media/mod_menu/menu.css -o css/mod_menu/menu.min.css",
     "__postcss-pagination": "postcss src/css/media/layouts/pagination/pagination.css -o css/pagination.css",
+    "__postcss-mediamanager": "postcss src/css/mediamanager/mediamanager.css -o css/com_media/mediamanager.min.css",
     "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {

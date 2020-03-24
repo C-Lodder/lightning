@@ -8,8 +8,16 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
+
+if (Factory::getApplication()->input->get('option') === 'com_media')
+{
+	Joomla\CMS\HTML\HTMLHelper::_('stylesheet',
+		Joomla\CMS\Uri\Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
+}
 
 ?>
 <!DOCTYPE html>

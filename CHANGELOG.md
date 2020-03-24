@@ -1,5 +1,9 @@
 # Changelog
 
+## WIP
+- Add dark theme styling for Madia Manager
+- Media Manager now uses CSS Grid
+
 ## 0.0.6
 - Add dropdown styling for navigation submenu items
 - Add FontAwesome temporarily until SVGs are supported in core

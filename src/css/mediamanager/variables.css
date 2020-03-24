@@ -1,0 +1,112 @@
+/* Variables */
+
+:root {
+  --mediamanager-gutter-width:                      var(--hiq-grid-gutter);
+  --mediamanager-highlight-color:                   #2a69b8;
+  --mediamanager-border-color:                      var(--hiq-border-color);
+  --mediamanager-border-radius:                     var(--hiq-border-radius);
+
+  /* Layout */
+  --mediamanager-col-main-panel-width:              83.3333%;
+  --mediamanager-col-side-panel-width:              16.6667%;
+  --mediamanager-col-gutter-width:                  var(--mediamanager-gutter-width);
+  --mediamanager-col-box-shadow:                    0 0 3px rgba(0, 0, 0, .075);
+
+  /* Sidebar */
+  --mediamanager-sidebar-drive-bg:                  var(--hiq-body-background-color);
+  --mediamanager-sidebar-tree-line-color:           var(--mediamanager-border-color);
+  --mediamanager-sidebar-tree-icon-color:           #aaa;
+  --mediamanager-sidebar-tree-line-height:          26px;
+  --mediamanager-sidebar-tree-folder-icon:          "\f07b";
+  --mediamanager-sidebar-active-icon-color:         var(--mediamanager-sidebar-highlight-color);
+
+  /* Toolbar */
+  --mediamanager-toolbar-height:                    46px;
+  --mediamanager-toolbar-bg:                        var(--hiq-color-gray-7);
+  --mediamanager-toolbar-icon-width:                50px;
+  --mediamanager-toolbar-icon-color:                var(--hiq-text-color);
+  --mediamanager-toolbar-icon-bg-hover:             #f0f0f0;
+  --mediamanager-toolbar-loader-color:              linear-gradient(to right, #59afff 0, #59daff 100%);
+  --mediamanager-toolbar-loader-height:             2px;
+
+  /* Breadcrumbs */
+  --mediamanager-breadcrumbs-bg:                    #fafafa;
+  --mediamanager-breadcrumbs-current-bg:            var(--hiq-color-gray-6);
+
+  /* Media Browser Grid */
+  --mediamanager-grid-gutter-width:                 var(--mediamanager-col-gutter-width);
+  --mediamanager-grid-outside-padding:              var(--mediamanager-col-gutter-width);
+  --mediamanager-grid-item-hover-color:             rgba(#000, .5);
+  --mediamanager-grid-item-border-radius:           var(--hiq-border-radius);
+  --mediamanager-grid-item-icon-size:               1.3rem;
+  --mediamanager-grid-item-icon-color:              #fff;
+  --mediamanager-grid-item-icon-bg-color:           rgba(0,0,0,.8);
+  --mediamanager-grid-item-icon-color-hover:        rgba(0,0,0,.8);
+  --mediamanager-grid-item-icon-bg-color-hover:     #fff;
+  --mediamanager-grid-item-icon-warning-icon-bg:    #d9534f;
+  --mediamanager-grid-item-no-preview-bg:           var(--hiq-color-gray-7);
+
+  /* Media Browser Table */
+  --mediamanager-table-item-height:                 30px;
+  --mediamanager-table-item-icon-size:              1.2rem;
+  --mediamanager-table-item-icon-color:             var(--hiq-text-color);
+  --mediamanager-table-item-icon-bg:                rgba(0, 0, 0, .015);
+  --mediamanager-table-item-icon-color-selected:    #fff;
+  --mediamanager-table-item-icon-bg-selected:       #006898;
+  --mediamanager-table-item-bg-hover:               rgba(0, 0, 0, .03);
+
+  /* Media Info bar */
+  --mediamanager-info-bg:                           #fafafa;
+  --mediamanager-info-title-bg:                     #f6f6f6;
+  --mediamanager-info-title-height:                 2rem;
+  --mediamanager-info-dt-width:                     33.33333%;
+  --mediamanager-info-dt-color:                     rgba(0, 0, 0, .54);
+  --mediamanager-info-dd-width:                     66.66667%;
+  --mediamanager-info-close-color:                  #ccc;
+  --mediamanager-info-close-color-hover:            #aaa;
+
+  /* Table Icon Mapping */
+  --mediamanager-icon-type-default:                 "\f016";
+  --mediamanager-icon-type-folder:                  "\f07b";
+  --mediamanager-icon-type-images:                  "\f1c5";
+  --mediamanager-icon-type-video:                   "\f1c8";
+  --mediamanager-icon-type-audio:                   "\f1c7";
+  --mediamanager-icon-type-docs:                    "\f0f6";
+  --mediamanager-icon-type-code:                    "\f1c9";
+
+  /* Drag n Drop Upload */
+  --mediamanager-dnd-bg:                            rgba(245, 245, 245, .8);
+  --mediamanager-dnd-icon-color:                    #1c3d5c;
+  --mediamanager-dnd-border:                        3px dashed var(--hiq-border-color);
+
+  /* Modal */
+  --mediamanager-modal-backdrop-color:              rgba(0, 0, 0, .7);
+  --mediamanager-modal-box-shadow:                  0 0 10px rgba(0, 0, 0, .5);
+  --mediamanager-modal-preview-text-color:          var(--hiq-text-color);
+
+  /* Image */
+  --mediamanager-transparent-bg-color:              var(--hiq-html-background-color);
+  --mediamanager-transparent-bg-image:              linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%), linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%);
+}
+
+:root.is-dark {
+  /* Toolbar */
+  --mediamanager-toolbar-bg:                        var(--hiq-dark-2);
+
+  /* Breadcrumbs */
+  --mediamanager-breadcrumbs-bg:                    var(--hiq-dark-2);
+  --mediamanager-breadcrumbs-current-bg:            var(--hiq-dark-1);
+
+  /* Media Info bar */
+  --mediamanager-info-bg:                           var(--hiq-dark-2);
+  --mediamanager-info-dt-color:                     var(--hiq-text-color);
+
+  /* Media Browser Grid */
+  --mediamanager-grid-item-no-preview-bg:           var(--hiq-dark-2);
+
+  /* Sidebar */
+  --mediamanager-sidebar-tree-icon-color:           #fff;
+
+  /* Image */
+  --mediamanager-transparent-bg-image:              linear-gradient(45deg, var(--hiq-dark-2) 25%, transparent 25%, transparent 75%, var(--hiq-dark-2) 75%, var(--hiq-dark-2) 100%), linear-gradient(45deg, var(--hiq-dark-2) 25%, transparent 25%, transparent 75%, var(--hiq-dark-2) 75%, var(--hiq-dark-2) 100%);
+}
