@@ -3,6 +3,7 @@
 ## WIP
 - Add dark theme styling for Madia Manager
 - Media Manager now uses CSS Grid
+- Fix pagenavigation plugin styling
 
 ## 0.0.6
 - Add dropdown styling for navigation submenu items
