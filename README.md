@@ -28,3 +28,7 @@ npm i
 ```bash
 npm run postcss
 ```
+- Build a Zip file:
+```bash
+node package.js
+```
