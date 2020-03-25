@@ -6,6 +6,7 @@
 - Fix pagenavigation plugin styling
 - Fix sidebar padding on smaller devices
 - Fix sticky header
+- Fix bage component font size relativity
 - General CSS improvements
 
 ## 0.0.6
