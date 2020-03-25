@@ -60,24 +60,6 @@
   grid-template-columns: [full-start] minmax(0, 1fr) [main-start] repeat(4, minmax(0, 270px)) [main-end] minmax(0, 1fr) [full-end];
   grid-gap: 0 var(--hiq-grid-gutter);
 
-  > [class^='container-'],
-  > [class*=' container-'] {
-    width: auto;
-    max-width: none;
-    margin: 0 0 var(--hiq-grid-gutter);
-  }
-
-  .container-component,
-  .container-sidebar-left,
-  .container-sidebar-right {
-    display: flex;
-    flex-direction: column;
-
-    > div + div {
-      margin-top: var(--hiq-grid-gutter);
-    }
-  }
-
   &:not(.has-sidebar-left) .container-component {
     grid-column-start: main-start;
   }
