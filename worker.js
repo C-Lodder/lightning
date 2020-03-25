@@ -1,4 +1,5 @@
 const { Worker, isMainThread, parentPort } = require('worker_threads')
+const fs = require('fs')
 const buildCss = require('./build-css.js')
 
 const files = {
@@ -16,6 +17,11 @@ const files = {
 }
 
 if (isMainThread) {
+  // Delete the CSS directory from the main thread
+  fs.rmdir(`${__dirname}/css`, { recursive: true }, (err) => {
+    if (err) throw err
+  })
+
   const worker = new Worker(__filename);
   worker.postMessage('message');
 } else {
