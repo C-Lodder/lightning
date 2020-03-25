@@ -86,44 +86,43 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	. $hasClass;
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
-	<div class="grid-child container-header full-width">
-		<header class="header">
-			<nav class="grid-child navbar">
-				<div class="navbar-brand">
-					<a href="<?php echo $this->baseurl; ?>/">
-						<?php echo $logo; ?>
-						<span class="sr-only"><?php echo Text::_('TPL_LIGHTNING_LOGO_LABEL'); ?></span>
-					</a>
-					<?php if ($this->params->get('siteDescription')) : ?>
-						<div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
+	<header class="grid-child container-header full-width header">
+		<nav class="navbar">
+			<div class="navbar-brand">
+				<a href="<?php echo $this->baseurl; ?>/">
+					<?php echo $logo; ?>
+					<span class="sr-only"><?php echo Text::_('TPL_LIGHTNING_LOGO_LABEL'); ?></span>
+				</a>
+				<?php if ($this->params->get('siteDescription')) : ?>
+					<div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
+				<?php endif; ?>
+			</div>
+
+			<?php if ($this->countModules('menu') || $this->countModules('search')) : ?>
+				<div class="navbar-menu">
+					<jdoc:include type="modules" name="menu" style="none" />
+					<?php if ($this->countModules('search')) : ?>
+						<div>
+							<jdoc:include type="modules" name="search" style="none" />
+						</div>
 					<?php endif; ?>
 				</div>
-
-				<?php if ($this->countModules('menu') || $this->countModules('search')) : ?>
-					<div class="navbar-menu">
-						<jdoc:include type="modules" name="menu" style="none" />
-						<?php if ($this->countModules('search')) : ?>
-							<div>
-								<jdoc:include type="modules" name="search" style="none" />
-							</div>
-						<?php endif; ?>
-					</div>
-					<span id="navbar-menu-toggle" class="navbar-menu-toggle"><span></span></span>
-				<?php endif; ?>
-				<?php if ($themeSwitcher) : ?>
-					<div class="color-scheme-switch">
-						<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
-						<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
-					</div>
-				<?php endif; ?>
-			</nav>
-			<?php if ($this->countModules('banner')) : ?>
-			<div class="grid-child container-banner">
-				<jdoc:include type="modules" name="banner" style="html5" />
-			</div>
+				<span id="navbar-menu-toggle" class="navbar-menu-toggle"><span></span></span>
 			<?php endif; ?>
-		</header>
+			<?php if ($themeSwitcher) : ?>
+				<div class="color-scheme-switch">
+					<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
+					<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
+				</div>
+			<?php endif; ?>
+		</nav>
+	</header>
+
+	<?php if ($this->countModules('banner')) : ?>
+	<div class="grid-child container-banner">
+		<jdoc:include type="modules" name="banner" style="html5" />
 	</div>
+	<?php endif; ?>
 
 	<?php if ($this->countModules('top-a')) : ?>
 	<div class="grid-child container-top-a">

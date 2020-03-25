@@ -5,6 +5,8 @@
 - Media Manager now uses CSS Grid
 - Fix pagenavigation plugin styling
 - Fix sidebar padding on smaller devices
+- Fix sticky header
+- General CSS improvements
 
 ## 0.0.6
 - Add dropdown styling for navigation submenu items
