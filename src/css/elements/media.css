@@ -28,12 +28,8 @@ figcaption {
 }
 
 img {
-  /* scoped property */
-  --image-border-radius: var(--hiq-image-border-radius, var(--hiq-border-radius, 0.2rem));
-
   display: block;
   border-style: none;
-  border-radius: var(--image-border-radius);
   vertical-align: middle;
 }
 
