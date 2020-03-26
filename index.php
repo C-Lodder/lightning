@@ -56,16 +56,23 @@ else
 	$logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" height="50"><path fill="hsl(210, 100%, 50%)" d="M403.712 201.04H256.288L329.792 0 105.216 307.888H252.64l-73.504 201.04z"/></svg>';
 }
 
-$hasClass = '';
+$hasSidebar = '';
 
 if ($this->countModules('sidebar-left'))
 {
-	$hasClass .= ' has-sidebar-left';
+	$hasSidebar .= ' has-sidebar-left';
 }
 
 if ($this->countModules('sidebar-right'))
 {
-	$hasClass .= ' has-sidebar-right';
+	$hasSidebar .= ' has-sidebar-right';
+}
+
+$hasBanner = '';
+
+if ($this->countModules('banner'))
+{
+	$hasBanner = 'has-banner';
 }
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
@@ -83,10 +90,10 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	. ($task ? ' task-' . $task : ' no-task')
 	. ($itemid ? ' itemid-' . $itemid : '')
 	. ' ' . $pageclass
-	. $hasClass;
+	. $hasSidebar;
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
-	<header class="grid-child container-header full-width header">
+	<header class="grid-child container-header full-width header <?php echo $hasBanner; ?>">
 		<nav class="navbar">
 			<div class="navbar-brand">
 				<a href="<?php echo $this->baseurl; ?>/">
@@ -119,7 +126,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	</header>
 
 	<?php if ($this->countModules('banner')) : ?>
-	<div class="grid-child container-banner">
+	<div class="grid-child full-width container-banner">
 		<jdoc:include type="modules" name="banner" style="html5" />
 	</div>
 	<?php endif; ?>
