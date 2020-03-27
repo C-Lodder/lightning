@@ -1,6 +1,6 @@
 {
   "name": "lightning",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Joomla 4 template using HiQ",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.1",
-    "stylelint": "13.2.1",
-    "stylelint-config-standard": "20.0.0"
+    "stylelint": "^13.2.1",
+    "stylelint-config-standard": "^20.0.0"
   }
 }

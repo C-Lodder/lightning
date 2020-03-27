@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.7
 - Add dark theme styling for Madia Manager
 - Media Manager now uses CSS Grid
 - Fix pagenavigation plugin styling
