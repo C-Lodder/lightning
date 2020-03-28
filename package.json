@@ -8,7 +8,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "postcss": "node worker.js",
+    "build": "node build-css.js && node build-js.js && node build-zip.js",
+    "css": "node build-css.js",
+    "js": "node build-js.js",
     "package": "node build-zip.js",
     "lint": "npx stylelint src/css/**/*.css"
   },
@@ -16,6 +18,7 @@
     "archiver": "^3.1.1",
     "autoprefixer": "^9.7.5",
     "cssnano": "^4.1.10",
+    "path": "^0.12.7",
     "postcss": "^7.0.27",
     "postcss-cli": "^7.1.0",
     "postcss-custom-media": "^7.0.8",
@@ -25,6 +28,7 @@
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.1",
     "stylelint": "^13.2.1",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "terser": "^4.6.7"
   }
 }

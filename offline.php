@@ -25,7 +25,7 @@ $themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
-	HTMLHelper::_('script', 'switch.js', ['version' => 'auto', 'relative' => true]);
+	HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true]);
 }
 
 // Fetch CSS

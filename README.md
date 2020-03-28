@@ -20,21 +20,30 @@ cd <path>
 ```bash
 git checkout -b <branch name>
 ```
-- Install npm packages:
+- Install dependencies:
 ```bash
-npm i
+npm ci
 ```
 
 ## Build tasks
-- Build CSS:
+- Compile CSS:
 ```bash
-npm run postcss
+npm run css
 ```
-- Build a Zip file:
+- Copy &amp; minify Javascript:
+```bash
+npm run js
+```
+- Create a Zip file:
 ```bash
 npm run package
 ```
 - Lint CSS:
 ```bash
 npm run lint
+```
+- Build project:
+This will process all Javascript, CSS and also create a zip file
+```bash
+npm run build
 ```

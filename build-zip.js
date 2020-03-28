@@ -1,7 +1,7 @@
-const fs = require('fs')
+const { createWriteStream } = require('fs')
 const archiver = require('archiver')
 
-const output = fs.createWriteStream(`${__dirname}/lightning.zip`)
+const output = createWriteStream(`${__dirname}/lightning.zip`)
 
 const archive = archiver('zip', {
   zlib: { level: 9 }
@@ -9,7 +9,7 @@ const archive = archiver('zip', {
 
 // Listen for all archive data to be written
 output.on('close', () => {
-  console.log(`Template has been packaged successfully. File size = ${archive.pointer()}`)
+  console.log(`Template has been packaged successfully`)
 })
 
 // Catch this error explicitly
