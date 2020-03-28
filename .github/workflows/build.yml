@@ -32,7 +32,10 @@ jobs:
         run: npm run lint
 
       - name: Compile CSS
-        run: npm run postcss
+        run: node build-css.js
+
+      - name: Process JS
+        run: node build-js.js
 
       - name: Build Zip
-        run: npm run postcss
+        run: node build-zip.js
