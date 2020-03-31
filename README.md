@@ -47,3 +47,11 @@ This will process all Javascript, CSS and also create a zip file
 ```bash
 npm run build
 ```
+
+## Screenshots
+
+### Light
+![Light](https://i.imgur.com/U2wfJYK.png)
+
+### Dark
+![Light](https://i.imgur.com/N3PvtIj.png)
