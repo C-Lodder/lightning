@@ -2,5 +2,6 @@
 
 .card {
   position: relative;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }

@@ -34,7 +34,7 @@
   /* layout variables */
 
   /* containers */
-  --hiq-max-container-width: 50rem;
+  --hiq-max-container-width: 74rem;
   --hiq-container-horizontal-gap: 2rem;
 
   /* spacing */
@@ -331,8 +331,9 @@
   --hiq-modal-background-color: white;
 
   /* Custom variables */
-  --hiq-grid-gutter: 15px;
+  --hiq-grid-gutter: 1rem;
   --hiq-header-background-color: white;
+  --hiq-footer-background-color: var(--hiq-color-gray-8);
   --hiq-sidebar-border-color: var(--hiq-border-color);
 }
 
@@ -347,6 +348,7 @@
   --hiq-outline-color: hsl(210, 53%, 36%);
   --hiq-selection-color: var(--hiq-color-gray-2);
   --hiq-header-background-color: var(--hiq-dark-2);
+  --hiq-footer-background-color: var(--hiq-dark-2);
   --hiq-disabled-border-color: var(--hiq-color-gray-3);
   --hiq-disabled-background-color: var(--hiq-color-gray-2);
 

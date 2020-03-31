@@ -127,19 +127,19 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 	<?php if ($this->countModules('banner')) : ?>
 	<div class="grid-child full-width container-banner">
-		<jdoc:include type="modules" name="banner" style="html5" />
+		<jdoc:include type="modules" name="banner" style="default" />
 	</div>
 	<?php endif; ?>
 
 	<?php if ($this->countModules('top-a')) : ?>
 	<div class="grid-child container-top-a">
-		<jdoc:include type="modules" name="top-a" style="cardGrey" />
+		<jdoc:include type="modules" name="top-a" style="default" />
 	</div>
 	<?php endif; ?>
 
 	<?php if ($this->countModules('top-b')) : ?>
 	<div class="grid-child container-top-b">
-		<jdoc:include type="modules" name="top-b" style="card" />
+		<jdoc:include type="modules" name="top-b" style="default" />
 	</div>
 	<?php endif; ?>
 
@@ -150,11 +150,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	<?php endif; ?>
 
 	<div class="grid-child container-component">
-		<jdoc:include type="modules" name="main-top" style="cardGrey" />
+		<jdoc:include type="modules" name="main-top" style="default" />
 		<jdoc:include type="message" />
 		<jdoc:include type="modules" name="breadcrumbs" style="none" />
 		<jdoc:include type="component" />
-		<jdoc:include type="modules" name="main-bottom" style="cardGrey" />
+		<jdoc:include type="modules" name="main-bottom" style="default" />
 	</div>
 
 	<?php if ($this->countModules('sidebar-right')) : ?>
@@ -165,19 +165,21 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 	<?php if ($this->countModules('bottom-a')) : ?>
 	<div class="grid-child container-bottom-a">
-		<jdoc:include type="modules" name="bottom-a" style="cardGrey" />
+		<jdoc:include type="modules" name="bottom-a" style="default" />
 	</div>
 	<?php endif; ?>
 
 	<?php if ($this->countModules('bottom-b')) : ?>
 	<div class="grid-child container-bottom-b">
-		<jdoc:include type="modules" name="bottom-b" style="card" />
+		<jdoc:include type="modules" name="bottom-b" style="default" />
 	</div>
 	<?php endif; ?>
 
 	<?php if ($this->countModules('footer')) : ?>
-	<footer class="grid-child container-footer footer">
-		<jdoc:include type="modules" name="footer" style="none" />
+	<footer class="grid-child container-footer full-width footer">
+		<div class="container">
+			<jdoc:include type="modules" name="footer" style="none" />
+		</div>
 	</footer>
 	<?php endif; ?>
 

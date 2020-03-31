@@ -1,5 +1,10 @@
 # Changelog
 
+## WIP
+- Footer now uses CSS Grid
+- Add basic footer styling
+- Grid and container tweaks
+
 ## 0.0.7
 - Add dark theme styling for Madia Manager
 - Media Manager now uses CSS Grid
