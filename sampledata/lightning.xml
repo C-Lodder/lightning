@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="sampledata" method="upgrade">
+	<name>plg_sampledata_lightning</name>
+	<version>0.0.7</version>
+	<author>JoomJunk</author>
+	<creationDate>1st April 2020</creationDate>
+	<copyright>Copyright (C) 2020 JoomJunk. All rights reserved.</copyright>
+	<authorEmail>admin@joomjunk.co.uk</authorEmail>
+	<description>PLG_SAMPLEDATA_LIGHTNING_XML_DESCRIPTION</description>
+	<files>
+		<folder>language</folder>
+		<filename plugin="lightning">lightning.php</filename>
+	</files>
+</extension>

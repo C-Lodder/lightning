@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add sample data plugin
 - Footer now uses CSS Grid
 - Add basic footer styling
 - Grid and container tweaks
