@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Project version appended to generated zip file name
+
 ## 0.0.8
 - Add sample data plugin
 - Footer now uses CSS Grid

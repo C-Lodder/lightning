@@ -1,8 +1,9 @@
 const { createWriteStream } = require('fs')
 const archiver = require('archiver')
+const pkg = require('./package.json')
 
-const templateOutput = createWriteStream(`${__dirname}/lightning.zip`)
-const pluginOutput = createWriteStream(`${__dirname}/plg_sampledata-lightning.zip`)
+const templateOutput = createWriteStream(`${__dirname}/lightning_v${pkg.version}.zip`)
+const pluginOutput = createWriteStream(`${__dirname}/plg_sampledata-lightning_v${pkg.version}.zip`)
 
 const template = archiver('zip', {
   zlib: { level: 9 }
