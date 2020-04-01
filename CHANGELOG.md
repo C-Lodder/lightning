@@ -1,10 +1,12 @@
 # Changelog
 
-## WIP
+## 0.0.8
 - Add sample data plugin
 - Footer now uses CSS Grid
 - Add basic footer styling
 - Grid and container tweaks
+- Language string improvements
+- Build script improvements
 
 ## 0.0.7
 - Add dark theme styling for Madia Manager

@@ -7,6 +7,13 @@ Joomla 4 template using HiQ CSS
 --- | --- | --- | --- | --- | --- |
 Latest :heavy_check_mark: | Latest :heavy_check_mark: | Latest :heavy_check_mark: | 11+ :x: | Latest :heavy_check_mark: | Latest :heavy_check_mark: |
 
+## Installation
+Install the template zip file like you would any other extension.
+There is also a sampledata plugin available to use, which will demonstrate the available module positions with some demo data.
+
+**Important:** This _cannot_ be installed if another sample data plugin has already been used.
+
+
 ## Contributing
 - Clone the repository:
 ```bash
@@ -47,6 +54,8 @@ This will process all Javascript, CSS and also create a zip file
 ```bash
 npm run build
 ```
+
+
 
 ## Screenshots
 
