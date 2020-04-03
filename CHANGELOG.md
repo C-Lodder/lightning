@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Use logical CSS properties to streamline directions
 - Project version appended to generated zip file name
 
 ## 0.0.8
