@@ -8,12 +8,12 @@
   background-color: var(--hiq-breadcrumbs-background-color);
 
   li {
-    margin-right: .5rem;
+    margin-inline-end: .5rem;
   }
 
   li + li + li::before {
     display: inline-block;
-    padding-right: .5rem;
+    padding-inline-end: .5rem;
     color: var(--hiq-color-gray-5);
     content: "/";
   }

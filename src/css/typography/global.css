@@ -42,7 +42,7 @@ html {
 
 /* allow text alignment to be inherited */
 body {
-  text-align: left;
+  text-align: start;
 
   /* text color */
   color: var(--hiq-text-color, var(--hiq-color-gray-2, hsl(220, 10%, 10%)));

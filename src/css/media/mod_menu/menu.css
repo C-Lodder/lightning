@@ -19,7 +19,7 @@
     > li {
       position: relative;
       display: inline-block;
-      margin-left: 0;
+      margin-inline-start: 0;
 
       > a {
         display: inline-block;
@@ -44,7 +44,7 @@
       flex-direction: row;
 
       > li {
-        margin-left: 1.125rem;
+        margin-inline-start: 1.125rem;
       }
     }
   }
@@ -93,7 +93,10 @@
   max-width: 38px;
   width: 38px;
   height: 40px;
-  margin: 12px 20px 10px auto;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  margin-inline-start: auto;
+  margin-inline-end: 20px;
 
   &:hover {
     cursor: pointer;

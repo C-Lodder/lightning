@@ -17,8 +17,9 @@ joomla-field-media {
     overflow: hidden;
     background-color: var(--hiq-field-media-background-color);
     border: 1px solid var(--hiq-field-media-border-color);
-    border-width: 1px 1px 0;
-    border-radius: var(--hiq-border-radius) var(--hiq-border-radius) 0 0;
+    border-bottom-width: 0;
+    border-start-start-radius: var(--hiq-border-radius);
+    border-start-end-radius: var(--hiq-border-radius);
   }
 
   .field-media-preview-icon {
@@ -29,11 +30,7 @@ joomla-field-media {
   }
 
   .field-media-input {
-    border-top-left-radius: 0;
-  }
-
-  .button-clear {
-    border-top-right-radius: 0;
+    border-start-start-radius: 0;
   }
 
   img {

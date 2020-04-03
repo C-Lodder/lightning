@@ -2,7 +2,7 @@
 
 .list-inline,
 .list-unstyled {
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -11,5 +11,5 @@
 }
 
 .list-inline-item:not(:last-child) {
-  margin-right: .5rem;
+  margin-inline-end: .5rem;
 }

@@ -30,9 +30,8 @@
     margin: 0;
     background: var(--hiq-body-background-color);
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 33px;
+    inset-block: 0;
+    inset-inline-end: 33px;
     border: 2px solid #e3e3e3;
     border-radius: 36px;
     transition: all .3s ease-in 0s;
@@ -44,7 +43,7 @@
   border-color: var(--hiq-body-background-color);
 
   &::before {
-    right: 0;
+    inset-inline-end: 0;
     border-color: var(--hiq-body-background-color);
   }
 }

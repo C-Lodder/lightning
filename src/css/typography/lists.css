@@ -9,7 +9,8 @@
   --list-margin-left: var(--hiq-list-margin-left, 1rem);
 
   margin: 0 0 var(--hiq-block-element-margin-bottom, 1rem);
-  padding: 0 0 0 var(--list-margin-left);
+  padding: 0;
+  padding-inline-start: var(--list-margin-left);
 }
 
 ul {
@@ -30,7 +31,7 @@ li {
 }
 
 @define-mixin is-unstyled {
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 

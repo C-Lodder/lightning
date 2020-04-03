@@ -7,7 +7,7 @@
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  inset-inline-start: 0;
   z-index: 3;
   display: none;
   min-width: 10rem;
@@ -30,8 +30,8 @@
   }
 
   &.dropdown-menu-right {
-    right: 0;
-    left: auto;
+    inset-inline-end: 0;
+    inset-inline-start: auto;
   }
 }
 

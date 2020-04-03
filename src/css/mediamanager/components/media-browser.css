@@ -52,10 +52,7 @@
   border-radius: var(--mediamanager-grid-item-border-radius);
   &::after {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     content: "";
     background-color: var(--mediamanager-grid-item-hover-color);
     border-radius: var(--mediamanager-grid-item-border-radius);
@@ -183,8 +180,7 @@
 .image-browser-action {
   width: calc(var(--mediamanager-grid-item-icon-size) * 1.55);
   height: calc(var(--mediamanager-grid-item-icon-size) * 1.55);
-  margin-right: 4px;
-  margin-left: 4px;
+  margin-inline: 4px;
   color: var(--mediamanager-grid-item-icon-color);
   text-align: center;
   cursor: pointer;
@@ -226,10 +222,7 @@
 
 .file-icon, .folder-icon {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,10 +231,8 @@
 
 .media-dragoutline {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  bottom: 1px;
-  left: 6px;
+  inset-block: 6px 1px;
+  inset-inline: 6px;
   z-index: 1040;
   display: flex;
   flex-direction: column;
@@ -302,7 +293,7 @@
   }
   .size {
     width: 15%;
-    text-align: right;
+    text-align: end;
   }
   .dimension {
     width: 15%;
@@ -322,7 +313,7 @@
     line-height: var(--mediamanager-table-item-height);
     text-align: center;
     background-color: var(--mediamanager-table-item-icon-bg);
-    border-right: 1px solid rgba(0, 0, 0, .03);
+    border-inline-end: 1px solid rgba(0, 0, 0, .03);
     &::before,
 	&::after {
       transition: all .2s cubic-bezier(.4, .0, .2, 1);
@@ -336,10 +327,9 @@
     }
     &::after {
       position: absolute;
-      top: -1px;
-      right: 100%;
-      bottom: -1px;
-      left: 0;
+      inset-block: -1px;
+      inset-inline-end: 100%;
+      inset-inline-start: 0;
       z-index: -1;
       content: "";
       background-color: var(--mediamanager-table-item-icon-bg-selected);
@@ -362,7 +352,7 @@
       color: #fff;
     }
     &::after {
-      right: 0;
+      inset-inline-end: 0;
     }
   }
 }

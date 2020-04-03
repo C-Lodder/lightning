@@ -75,7 +75,7 @@
     tbody {
       td.day {
         /* Cells <TD> containing month days dates */
-        text-align: right;
+        text-align: end;
         border: 0;
         cursor: pointer;
         font-size: 12px;
@@ -114,8 +114,7 @@
       td.today::after {
         position: absolute;
         bottom: 3px;
-        left: 3px;
-        right: 3px;
+        inset-inline: 3px;
         content: "";
         height: 3px;
         border-radius: 1.5px;
@@ -164,7 +163,7 @@
     padding: .8rem;
 
     > div:not(:last-child) {
-      margin-right: .5rem;
+      margin-inline-end: .5rem;
     }
   }
 }
@@ -173,6 +172,6 @@
   padding: .8rem;
 
   button:not(:last-child) {
-    margin-right: .5rem;
+    margin-inline-end: .5rem;
   }
 }

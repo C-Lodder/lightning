@@ -61,7 +61,7 @@
 .media-preview-close {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   margin: 5px 20px;
   font-size: 3rem;
   background: none;

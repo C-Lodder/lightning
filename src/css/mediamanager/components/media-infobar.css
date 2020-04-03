@@ -1,15 +1,14 @@
 .media-infobar {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset-block: 0;
+  inset-inline-end: 0;
   z-index: 4;
   float: none;
   width: 25%;
   padding: var(--mediamanager-gutter-width);
   overflow-y: scroll;
   background-color: var(--mediamanager-info-bg);
-  border-left: 1px solid var(--mediamanager-border-color);
+  border-inline-start: 1px solid var(--mediamanager-border-color);
 
   h2 {
     padding-bottom: 1rem;
@@ -40,7 +39,7 @@
 .infobar-close {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   z-index: 2;
   padding: 0 var(--mediamanager-gutter-width);
   font-size: 2.6rem;
@@ -65,25 +64,4 @@
   color: var(--hiq-text-color);
   border: 2px solid var(--mediamanager-border-color);
   border-radius: 50%;
-}
-
-/* RTL override */
-html[dir=rtl] .media-infobar {
-  right: auto;
-  left: 0;
-}
-
-html[dir=rtl] .infobar-close {
-  right: auto;
-  left: 0;
-}
-
-html[dir=rtl] .media-infobar dd {
-  margin-right: 0;
-  margin-left: auto;
-  direction: ltr;
-}
-
-html[dir=rtl] .media-infobar h2 {
-  padding: 20px var(--mediamanager-gutter-width) 10px 0;
 }

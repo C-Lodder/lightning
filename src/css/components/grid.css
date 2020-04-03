@@ -8,7 +8,7 @@
   grid-area: side-l;
 
   @media (--hiq-upper-font-range) {
-    border-right: 1px solid var(--hiq-sidebar-border-color);
+    border-inline-end: 1px solid var(--hiq-sidebar-border-color);
   }
 }
 
@@ -16,7 +16,7 @@
   grid-area: side-r;
 
   @media (--hiq-upper-font-range) {
-    border-left: 1px solid var(--hiq-sidebar-border-color);
+    border-inline-start: 1px solid var(--hiq-sidebar-border-color);
   }
 }
 

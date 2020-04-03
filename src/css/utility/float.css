@@ -1,10 +1,10 @@
 /* floats */
 
 .float-right {
-  float: right !important;
+  float: inline-end !important;
 }
 
 .float-left {
-  float: left !important;
+  float: inline-start !important;
 }
 

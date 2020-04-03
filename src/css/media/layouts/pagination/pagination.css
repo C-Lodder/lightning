@@ -2,7 +2,7 @@
 
 .pagination {
   display: flex;
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -25,7 +25,7 @@
 
 .page-item {
   &:not(:first-child) .page-link {
-    margin-left: .5rem;
+    margin-inline-start: .5rem;
   }
 
   &.active .page-link {
