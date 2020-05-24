@@ -1,5 +1,9 @@
 # Changelog
 
+## WIP
+- Revert some logical properties to support Chrome, Edge and Safari
+- Fix some JS errors in Frontend Editing
+
 ## 0.0.9
 - Use logical CSS properties to streamline directions
 - Project version appended to generated zip file name

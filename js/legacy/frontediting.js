@@ -28,8 +28,10 @@
       module.insertBefore(editButton, module.firstChild)
     })
 
-    module.addEventListener('mouseleave', (event) => {
-      event.target.querySelector('.jmodedit').remove()
+    module.addEventListener('mouseleave', ({ target }) => {
+      if (target.querySelector('.jmodedit') !== null) {
+        target.querySelector('.jmodedit').remove()
+      }
     })
   })
 
@@ -40,28 +42,32 @@
 
     item.addEventListener('mouseenter', () => {
       parent = item.closest('.jmoddiv')
-      const link = item.querySelector('a')
-      const id = /\bitem-(\d+)\b/.exec(item.getAttribute('class'));
-      const url = parent.getAttribute('data-jmodediturl').replace(/\/index.php\?option=com_config&view=modules([^\d]+).+$/, `/administrator/index.php?option=com_menus&view=item&layout=edit$1${id[1]}`)
+      if (parent.getAttribute('data-jmenuedittip') !== null) {
+        const link = item.querySelector('a')
+        const id = /\bitem-(\d+)\b/.exec(item.getAttribute('class'));
+        const url = parent.getAttribute('data-jmodediturl').replace(/\/index.php\?option=com_config&view=modules([^\d]+).+$/, `/administrator/index.php?option=com_menus&view=item&layout=edit$1${id[1]}`)
 
-      const editButton = document.createElement('a')
-      editButton.classList.add('btn', 'jfedit-menu')
-      editButton.setAttribute('href', url)
-      editButton.setAttribute('target', '_blank')
-      editButton.setAttribute('title', parent.getAttribute('data-jmenuedittip').replace('%s', id[1]))
+        const editButton = document.createElement('a')
+        editButton.classList.add('btn', 'jfedit-menu')
+        editButton.setAttribute('href', url)
+        editButton.setAttribute('target', '_blank')
+        editButton.setAttribute('title', parent.getAttribute('data-jmenuedittip').replace('%s', id[1]))
 
-      const icon = document.createElement('span')
-      icon.classList.add('fas', 'fa-edit')
+        const icon = document.createElement('span')
+        icon.classList.add('fas', 'fa-edit')
 
-      // Append icon
-      editButton.appendChild(icon)
+        // Append icon
+        editButton.appendChild(icon)
 
-      // Append link
-      item.insertBefore(editButton, item.firstChild)
+        // Append link
+        item.insertBefore(editButton, item.firstChild)
+      }
     })
 
-    item.addEventListener('mouseleave', (event) => {
-      parent.querySelector('.jfedit-menu').remove()
+    item.addEventListener('mouseleave', () => {
+      if (parent && parent.getAttribute('data-jmenuedittip') !== null) {
+        parent.querySelector('.jfedit-menu').remove()
+      }
     })
   })
 })();
