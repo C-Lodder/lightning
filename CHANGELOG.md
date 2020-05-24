@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.10
 - Revert some logical properties to support Chrome, Edge and Safari
 - Fix some JS errors in Frontend Editing
 

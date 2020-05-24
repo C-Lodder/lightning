@@ -13,7 +13,6 @@ There is also a sampledata plugin available to use, which will demonstrate the a
 
 **Important:** This _cannot_ be installed if another sample data plugin has already been used.
 
-
 ## Contributing
 - Clone the repository:
 ```bash
@@ -23,13 +22,13 @@ git clone https://github.com/C-Lodder/lightning.git <path>
 ```bash
 cd <path>
 ```
-- Checkout a new branch:
-```bash
-git checkout -b <branch name>
-```
 - Install dependencies:
 ```bash
 npm ci
+```
+- Checkout a new branch:
+```bash
+git checkout -b <branch name>
 ```
 
 ## Build tasks
@@ -54,8 +53,6 @@ This will process all Javascript, CSS and also create a zip file
 ```bash
 npm run build
 ```
-
-
 
 ## Screenshots
 
