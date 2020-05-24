@@ -25,9 +25,7 @@
   /* prevent button text from being selected */
   @mixin is-unselectable;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   width: auto;
   height: var(--button-height);
   margin: 0;
@@ -39,6 +37,7 @@
   font-size: inherit;
   font-weight: var(--button-font-weight);
   line-height: inherit;
+  text-align: center;
   text-decoration: none;
   color: var(--button-text-color);
   transition: border-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out), background-color var(--hiq-speed, 0.1s) var(--hiq-easing, ease-out);

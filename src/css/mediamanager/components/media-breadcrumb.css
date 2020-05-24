@@ -66,3 +66,8 @@
 .breadcrumb-item + .breadcrumb-item::before {
   display: none;
 }
+
+/* RTL override */
+html[dir=rtl] .media-breadcrumb-item::after, .media-breadcrumb-item::before {
+  right: 100%;
+}
