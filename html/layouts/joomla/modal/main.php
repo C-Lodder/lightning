@@ -7,7 +7,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('JPATH_BASE') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
@@ -76,7 +76,7 @@ if (isset($params['url']))
 HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
 ?>
 <div id="<?php echo $selector; ?>" role="dialog" <?php echo ArrayHelper::toString($modalAttributes); ?> <?php echo $url ?? ''; ?> <?php echo isset($url) ? 'data-iframe="'.trim($iframeHtml).'"' : ''; ?>>
-	<div class="modal-dialog modal-lg<?php echo $modalDialogClass; ?>" role="document">
+	<div class="modal-dialog modal-lg<?php echo $modalDialogClass; ?>">
 		<div class="modal-content">
 			<?php
 				// Header
