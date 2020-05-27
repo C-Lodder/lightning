@@ -3,7 +3,6 @@
 /* button mixin */
 @define-mixin button {
   /* scoped properties */
-  --button-height: var(--hiq-button-height, 2.25rem);
   --button-vertical-padding: var(--hiq-button-vertical-padding, 0);
   --button-horizontal-padding: var(--hiq-button-horizontal-padding, 1rem);
   --button-border-width: var(--hiq-button-border-width, 1px);
@@ -27,7 +26,6 @@
 
   display: inline-block;
   width: auto;
-  height: var(--button-height);
   margin: 0;
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   border: var(--button-border-width) solid var(--button-border-color);

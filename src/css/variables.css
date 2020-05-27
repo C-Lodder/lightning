@@ -129,9 +129,7 @@
   --hiq-link-text-decoration: none;
 
   /* button variables */
-
-  --hiq-button-height: 2.25rem;
-  --hiq-button-vertical-padding: 0;
+  --hiq-button-vertical-padding: .4rem;
   --hiq-button-horizontal-padding: .75rem;
   --hiq-button-border-width: 1px;
   --hiq-button-border-radius: var(--hiq-border-radius);
