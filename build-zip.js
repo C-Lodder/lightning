@@ -2,7 +2,7 @@ const { createWriteStream } = require('fs')
 const archiver = require('archiver')
 const pkg = require('./package.json')
 
-const templateOutput = createWriteStream(`${__dirname}/lightning_v${pkg.version}.zip`)
+const templateOutput = createWriteStream(`${__dirname}/tpl_lightning-v${pkg.version}.zip`)
 const pluginOutput = createWriteStream(`${__dirname}/plg_sampledata-lightning_v${pkg.version}.zip`)
 
 const template = archiver('zip', {

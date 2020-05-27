@@ -1,10 +1,11 @@
 # Changelog
 
 ## WIP
+- Add update server
+- Add various favicons
 - Template rendering performance improvements
 - General performance improvements
 - Switcher improvements
-- Add various favicons
 - Fix component grid position on error page
 - Fix menu toggle causing JS error
 
