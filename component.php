@@ -32,7 +32,9 @@ if (Factory::getApplication()->input->get('option') === 'com_media')
 
 	<script>
 		(() => {
-			const theme = localStorage.getItem('theme') ?? 'is-light'
+			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
+			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
+			const theme = localStorage.getItem('theme') ?? colourScheme
 			document.documentElement.classList.add(theme)
 		})()
 	</script>

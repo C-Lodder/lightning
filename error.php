@@ -132,7 +132,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	<?php if ($themeSwitcher) : ?>
 	<script>
 		(() => {
-			const theme = localStorage.getItem('theme') ?? 'is-light'
+			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
+			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
+			const theme = localStorage.getItem('theme') ?? colourScheme
 			document.documentElement.classList.add(theme)
 		})()
 	</script>

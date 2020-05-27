@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Use OS prefered colour scheme if theme hasn't been set
+
 ## 0.0.11
 - Add update server
 - Add various favicons
