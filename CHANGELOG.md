@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.11
 - Add update server
 - Add various favicons
 - Template rendering performance improvements
