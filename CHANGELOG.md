@@ -1,5 +1,13 @@
 # Changelog
 
+## WIP
+- Template rendering performance improvements
+- General performance improvements
+- Switcher improvements
+- Add various favicons
+- Fix component grid position on error page
+- Fix menu toggle causing JS error
+
 ## 0.0.10
 - Revert some logical properties to support Chrome, Edge and Safari
 - Fix some JS errors in Frontend Editing

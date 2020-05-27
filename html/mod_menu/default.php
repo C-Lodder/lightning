@@ -1,9 +1,8 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  mod_menu
+ * @package     Lightning
  *
- * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2020 JoomJunk. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -12,7 +11,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 
-HTMLHelper::_('script', 'mod_menu/menu.min.js', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('script', 'mod_menu/menu.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 HTMLHelper::_('stylesheet', 'mod_menu/menu.min.css', ['version' => 'auto', 'relative' => true]);
 
 $id = '';

@@ -18,7 +18,6 @@ if (Factory::getApplication()->input->get('option') === 'com_media')
 	Joomla\CMS\HTML\HTMLHelper::_('stylesheet',
 		Joomla\CMS\Uri\Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -27,7 +26,7 @@ if (Factory::getApplication()->input->get('option') === 'com_media')
 	<style><?php echo $css; ?></style>
 	<jdoc:include type="head" />
 </head>
-<body class="<?php echo $this->direction === 'rtl' ? 'rtl' : ''; ?>">
+<body>
 	<jdoc:include type="message" />
 	<jdoc:include type="component" />
 

@@ -1,9 +1,8 @@
 <?php
 /**
- * @package     Joomla.Plugin
- * @subpackage  Content.pagenavigation
+ * @package     Lightning
  *
- * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2020 JoomJunk. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 

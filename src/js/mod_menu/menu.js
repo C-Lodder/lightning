@@ -9,7 +9,7 @@
   if (toggle) {
     toggle.addEventListener('click', () => {
       const toggle = document.getElementById('navbar-menu-toggle')
-      body = document.body.classList.toggle('menu-open');
+      document.body.classList.toggle('menu-open');
     })
   }
 

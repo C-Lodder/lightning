@@ -15,25 +15,17 @@ use Joomla\CMS\Uri\Uri;
 
 /** @var JDocumentError $this */
 
-$app  = Factory::getApplication();
-$lang = Factory::getLanguage();
-
-// Detecting Active Variables
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
-$sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$menu     = $app->getMenu()->getActive();
-$pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+$app           = Factory::getApplication();
+$sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
+$menu          = $app->getMenu()->getActive();
+$pageclass     = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
 
 // Template params
-$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
-	HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true]);
+	HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 }
 
 // Fetch CSS
@@ -62,15 +54,8 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 	<style><?php echo $css; ?></style>
 </head>
 
-<body class="site-grid site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ' ' . $pageclass;
-	echo ($this->direction == 'rtl' ? ' rtl' : '');
-?>">
-	<header class="header full-width">
+<body class="site-grid site <?php echo $pageclass; ?>">
+	<header class="grid-child container-header full-width header">
 		<nav class="navbar">
 			<div class="navbar-brand">
 				<a href="<?php echo $this->baseurl; ?>/">
@@ -89,53 +74,53 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 		</nav>
 	</header>
 
-	<div class="grid-child container-main">
-		<div class="container-component">
-			<h1><?php echo Text::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
-			<div class="card">
-				<jdoc:include type="message" />
-				<p><strong><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></strong></p>
-				<p><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></p>
-				<ul>
-					<li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
-					<li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
-					<li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
-					<li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
-				</ul>
-				<p><?php echo Text::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
-				<p><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
-				<hr>
-				<p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
-				<blockquote>
-					<span class="badge badge-primary"><?php echo $this->error->getCode(); ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
-				</blockquote>
-				<?php if ($this->debug) : ?>
-					<div>
-						<?php echo $this->renderBacktrace(); ?>
-						<?php // Check if there are more Exceptions and render their data as well ?>
-						<?php if ($this->error->getPrevious()) : ?>
-							<?php $loop = true; ?>
-							<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
-							<?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
-							<?php $this->setError($this->_error->getPrevious()); ?>
-							<?php while ($loop === true) : ?>
-								<p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
-								<p><?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
-								<?php echo $this->renderBacktrace(); ?>
-								<?php $loop = $this->setError($this->_error->getPrevious()); ?>
-							<?php endwhile; ?>
-							<?php // Reset the main error object to the base error ?>
-							<?php $this->setError($this->error); ?>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
-			</div>
+	<div class="grid-child container-component">
+		<h1><?php echo Text::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
+		<div class="card">
+			<jdoc:include type="message" />
+			<p><strong><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></strong></p>
+			<p><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></p>
+			<ul>
+				<li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
+				<li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
+				<li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
+				<li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
+			</ul>
+			<p><?php echo Text::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
+			<p><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
+			<hr>
+			<p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
+			<blockquote>
+				<span class="badge badge-primary"><?php echo $this->error->getCode(); ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
+			</blockquote>
+			<?php if ($this->debug) : ?>
+				<div>
+					<?php echo $this->renderBacktrace(); ?>
+					<?php // Check if there are more Exceptions and render their data as well ?>
+					<?php if ($this->error->getPrevious()) : ?>
+						<?php $loop = true; ?>
+						<?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
+						<?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
+						<?php $this->setError($this->_error->getPrevious()); ?>
+						<?php while ($loop === true) : ?>
+							<p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
+							<p><?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
+							<?php echo $this->renderBacktrace(); ?>
+							<?php $loop = $this->setError($this->_error->getPrevious()); ?>
+						<?php endwhile; ?>
+						<?php // Reset the main error object to the base error ?>
+						<?php $this->setError($this->error); ?>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 
 	<?php if ($this->countModules('footer')) : ?>
-	<footer class="grid-child container-footer footer">
-		<jdoc:include type="modules" name="footer" style="none" />
+	<footer class="grid-child container-footer full-width footer">
+		<div class="container">
+			<jdoc:include type="modules" name="footer" style="none" />
+		</div>
 	</footer>
 	<?php endif; ?>
 

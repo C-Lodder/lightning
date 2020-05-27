@@ -3,6 +3,7 @@
 .color-scheme-switch {
   position: relative;
   width: 70px;
+  flex: 0 0 70px;
   user-select: none;
 }
 
@@ -20,22 +21,23 @@
   border: 2px solid #e3e3e3;
   border-radius: 36px;
   background-color: #fff;
-  transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in-out;
   margin-bottom: 0;
 
   &::before {
-    content: "";
-    display: block;
-    width: 36px;
-    margin: 0;
-    background: var(--hiq-body-background-color);
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 33px;
-    border: 2px solid #e3e3e3;
-    border-radius: 36px;
-    transition: all .3s ease-in 0s;
+    left: 0;
+    display: block;
+    width: 36px;
+    margin: 0;
+    content: "";
+    background: var(--hiq-body-background-color);
+    border: inherit;
+    border-radius: inherit;
+    transform: translateX(0);
+    transition: transform .3s ease-in-out;
   }
 }
 
@@ -44,7 +46,7 @@
   border-color: var(--hiq-body-background-color);
 
   &::before {
-    right: 0;
-    border-color: var(--hiq-body-background-color);
+    transform: translateX(33px);
+    transition: transform .3s ease-in-out;
   }
 }
