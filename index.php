@@ -198,13 +198,14 @@ $cachesStyleSheets = json_encode(array_values($styles));
 
 	<?php echo $debug; ?>
 
-	<?php if ($themeSwitcher) : ?>
 	<script>
 		(() => {
+			<?php if ($themeSwitcher) : ?>
 			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
 			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
 			const theme = localStorage.getItem('theme') ?? colourScheme
 			document.documentElement.classList.add(theme)
+			<?php endif; ?>
 
 			const styles = <?php echo $cachesStyleSheets; ?>;
 			styles.forEach(item => {
@@ -212,7 +213,6 @@ $cachesStyleSheets = json_encode(array_values($styles));
 			})
 		})()
 	</script>
-	<?php endif; ?>
 
 	<?php echo $scripts; ?>
 </body>
