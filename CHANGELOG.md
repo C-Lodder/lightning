@@ -2,6 +2,7 @@
 
 ## WIP
 - Use OS prefered colour scheme if theme hasn't been set
+- Fix CSS not being loaded if theme switcher was disabled
 
 ## 0.0.11
 - Add update server
