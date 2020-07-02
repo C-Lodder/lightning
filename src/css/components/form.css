@@ -13,3 +13,11 @@
     margin-bottom: 0;
   }
 }
+
+.invalid {
+  color: var(--hiq-color-danger);
+}
+
+.form-control-feedback {
+  display: block;
+}
