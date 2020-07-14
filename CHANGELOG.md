@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.12
 - Use OS prefered colour scheme if theme hasn't been set
 - Fix CSS not being loaded if theme switcher was disabled
 - Fix styling for invalid field feedback
