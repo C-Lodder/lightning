@@ -13,27 +13,29 @@ use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Router\Route;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 
-$params         = $displayData->params;
-$images         = json_decode($displayData->images);
-$templateParams = \Joomla\CMS\Factory::getApplication()->getTemplate(true)->params;
-$autoResize     = $templateParams->get('auto-resize', 1);
-
-$imageLayout    = new FileLayout('lightning.picture_element');
-$pictureElement = $imageLayout->render([
-	'file'          => $images->image_intro,
-	'caption'       => $images->image_intro_caption,
-	'alt'           => $images->image_intro_alt,
-	'resize'        => $autoResize,
-	'webp'          => function_exists('imagewebp'),
-	'webp_priority' => true,
-	'lazy'          => true,
-	'attributes'    => [
-		'itemprop' => 'thumbnailUrl',
-	],
-]);
+$params = $displayData->params;
+$images = json_decode($displayData->images);
 
 ?>
 <?php if (!empty($images->image_intro)) : ?>
+	<?php
+	$templateParams = \Joomla\CMS\Factory::getApplication()->getTemplate(true)->params;
+	$autoResize     = $templateParams->get('auto-resize', 1);
+
+	$imageLayout    = new FileLayout('lightning.picture_element');
+	$pictureElement = $imageLayout->render([
+		'file'          => $images->image_intro,
+		'caption'       => $images->image_intro_caption,
+		'alt'           => $images->image_intro_alt,
+		'resize'        => $autoResize,
+		'webp'          => function_exists('imagewebp'),
+		'webp_priority' => true,
+		'lazy'          => true,
+		'attributes'    => [
+			'itemprop' => 'thumbnailUrl',
+		],
+	]);
+	?>
 	<?php $imgfloat = empty($images->float_intro) ? $params->get('float_intro') : $images->float_intro; ?>
 	<figure class="float-<?php echo htmlspecialchars($imgfloat, ENT_COMPAT, 'UTF-8'); ?> item-image">
 		<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
