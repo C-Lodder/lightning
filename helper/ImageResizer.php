@@ -308,9 +308,6 @@ class ImageResizer
 				continue;
 			}
 
-			// Update the max width we've already created
-			$minWidth = min($minWidth, $pixelSize);
-
 			// Get the path to the resized image
 			$resizedPath         = $this->getCachePath(
 				$filePath, $pixelSize, $toWebP ? 'webp' : $imageType
@@ -327,6 +324,9 @@ class ImageResizer
 			}
 
 			$images[$pixelSize] = $resizedPath;
+
+			// Update the max width we've already created
+			$minWidth = min($minWidth, $pixelSize);
 		}
 
 		$ext = $toWebP ? '.webp' : '.jpg';
@@ -345,7 +345,7 @@ class ImageResizer
 			return trim(Uri::root(false) . $src . ' ' . $pixelSize . 'w');
 		}, array_values($images), array_keys($images)));
 
-		return [$sizes, $srcSet, $images[$minWidth]];
+		return [$sizes, $srcSet, $images[$minWidth] ?? $url];
 	}
 
 	/**
