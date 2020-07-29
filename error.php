@@ -25,8 +25,8 @@ $themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
-	HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 }
+HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -128,16 +128,5 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
-
-	<?php if ($themeSwitcher) : ?>
-	<script>
-		(() => {
-			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
-			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
-			const theme = localStorage.getItem('theme') ?? colourScheme
-			document.documentElement.classList.add(theme)
-		})()
-	</script>
-	<?php endif; ?>
 </body>
 </html>

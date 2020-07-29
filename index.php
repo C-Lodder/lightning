@@ -28,8 +28,8 @@ $themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
-	HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 }
+HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Font Awesome
 HTMLHelper::_('stylesheet', 'media/vendor/fontawesome-free/css/fontawesome.min.css', ['version' => 'auto']);
@@ -130,8 +130,10 @@ $cachesStyleSheets = json_encode(array_values($styles));
 				<span id="navbar-menu-toggle" class="navbar-menu-toggle"><span></span></span>
 			<?php endif; ?>
 			<?php if ($themeSwitcher) : ?>
-				<div class="color-scheme-switch">
-					<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
+				<div class="color-scheme-switch" id="color-scheme-switch">
+					<input type="radio" name="color-scheme-switch" value="light" class="color-scheme-switch-radio" aria-label="Light color scheme">
+					<input type="radio" name="color-scheme-switch" value="system" class="color-scheme-switch-radio" aria-label="System color scheme">
+					<input type="radio" name="color-scheme-switch" value="dark" class="color-scheme-switch-radio" aria-label="Dark color scheme">
 					<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
 				</div>
 			<?php endif; ?>
@@ -200,13 +202,6 @@ $cachesStyleSheets = json_encode(array_values($styles));
 
 	<script>
 		(() => {
-			<?php if ($themeSwitcher) : ?>
-			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
-			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
-			const theme = localStorage.getItem('theme') ?? colourScheme
-			document.documentElement.classList.add(theme)
-			<?php endif; ?>
-
 			const styles = <?php echo $cachesStyleSheets; ?>;
 			styles.forEach(item => {
 				document.body.insertAdjacentHTML('beforeend', item);
