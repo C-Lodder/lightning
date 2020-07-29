@@ -3,6 +3,7 @@
 ## 0.0.12
 - Add support for automatic intro/full text image resizing (Thanks @nikosdion)
 - Use OS prefered colour scheme if theme hasn't been set
+- Fix "show theme switcher" parameter not working (Thanks @nikosdion)
 - Fix CSS not being loaded if theme switcher was disabled
 - Fix styling for invalid field feedback
 
