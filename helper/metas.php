@@ -137,6 +137,12 @@ class metasRenderer extends DocumentRenderer
 			$buffer .= '>';
 		}
 
+		// Add the custom tags to the buffer
+		foreach ($this->_doc->_custom as $tag)
+		{
+			$buffer .= $tag;
+		}
+
 		return ltrim($buffer);
 	}
 }
