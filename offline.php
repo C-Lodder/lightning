@@ -67,11 +67,13 @@ else
 					<?php endif; ?>
 				</div>
 				<?php if ($themeSwitcher) : ?>
-					<div class="color-scheme-switch">
-						<input type="checkbox" name="color-scheme-switch" class="color-scheme-switch-checkbox" id="color-scheme-switch">
-						<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
-					</div>
-				<?php endif; ?>
+				<div class="color-scheme-switch" id="color-scheme-switch">
+					<input type="radio" name="color-scheme-switch" value="is-light" class="color-scheme-switch-radio" aria-label="Light color scheme">
+					<input type="radio" name="color-scheme-switch" value="is-system" class="color-scheme-switch-radio" aria-label="System color scheme">
+					<input type="radio" name="color-scheme-switch" value="is-dark" class="color-scheme-switch-radio" aria-label="Dark color scheme">
+					<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
+				</div>
+			<?php endif; ?>
 			</nav>
 		</header>
 		<div class="grid-child container-component">

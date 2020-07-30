@@ -131,9 +131,9 @@ $cachesStyleSheets = json_encode(array_values($styles));
 			<?php endif; ?>
 			<?php if ($themeSwitcher) : ?>
 				<div class="color-scheme-switch" id="color-scheme-switch">
-					<input type="radio" name="color-scheme-switch" value="light" class="color-scheme-switch-radio" aria-label="Light color scheme">
-					<input type="radio" name="color-scheme-switch" value="system" class="color-scheme-switch-radio" aria-label="System color scheme">
-					<input type="radio" name="color-scheme-switch" value="dark" class="color-scheme-switch-radio" aria-label="Dark color scheme">
+					<input type="radio" name="color-scheme-switch" value="is-light" class="color-scheme-switch-radio" aria-label="Light color scheme">
+					<input type="radio" name="color-scheme-switch" value="is-system" class="color-scheme-switch-radio" aria-label="System color scheme">
+					<input type="radio" name="color-scheme-switch" value="is-dark" class="color-scheme-switch-radio" aria-label="Dark color scheme">
 					<label class="color-scheme-switch-label" for="color-scheme-switch"></label>
 				</div>
 			<?php endif; ?>
