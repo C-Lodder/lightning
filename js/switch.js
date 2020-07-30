@@ -28,26 +28,23 @@
 
     // Set the default input to be checked
     if (storedTheme !== THEME.system) {
-      switcher.querySelector(`input[value="${storedTheme.replace(/is-/g, '')}"]`).checked = true
+      switcher.querySelector(`input[value="${storedTheme}"]`).checked = true
       applyClass(storedTheme)
     } else {
       // Set default theme
+      switcher.querySelector(`input[value="${THEME.system}"]`).checked = true
       matchMedia.matches ? applyClass(THEME.dark) : applyClass(THEME.light)
     }
 
     // Loop through all switcher inputs
     switcher.querySelectorAll('input').forEach((input) => {
       input.addEventListener('change', ({ target }) => {
-        if (target.value === 'dark') {
-          localStorage.setItem('theme', THEME.dark)
-          applyClass(THEME.dark)
-        } else if (target.value === 'light') {
-          localStorage.setItem('theme', THEME.light)
-          applyClass(THEME.light)
+        if (target.value === THEME.dark || target.value === THEME.light) {
+          localStorage.setItem('theme', target.value)
+          applyClass(target.value)
         } else {
-          applyClass(THEME.system)
-          html.classList.add(colourScheme)
           localStorage.setItem('theme', THEME.system)
+          applyClass(colourScheme)
         }
       })
     })
@@ -60,7 +57,7 @@
   matchMedia.addListener((event) => {
     // If the switcher is disabled or enabled BUT set to the system preference, change the theme
     // The theme will not change if it has manually been set by the switcher 
-    if (!switcher || (switcher && switcher.querySelector('input[value="system"]').checked)) {
+    if (!switcher || (switcher && switcher.querySelector(`input[value="${THEME.system}"]`).checked)) {
       return event.matches ? applyClass(THEME.dark) : applyClass(THEME.light)
     }
   })
