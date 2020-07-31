@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="sampledata" method="upgrade">
 	<name>plg_sampledata_lightning</name>
-	<version>0.0.12</version>
+	<version>0.0.13</version>
 	<author>JoomJunk</author>
 	<creationDate>1st April 2020</creationDate>
 	<copyright>Copyright (C) 2020 JoomJunk. All rights reserved.</copyright>
