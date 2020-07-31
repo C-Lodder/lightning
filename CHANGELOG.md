@@ -4,6 +4,7 @@
 - Add support for automatic intro/full text image resizing (Thanks @nikosdion)
 - Add system preference to theme switcher
 - Fix "show theme switcher" parameter not working (Thanks @nikosdion)
+- Fix favicons not showing
 
 ## 0.0.12
 - Use OS prefered colour scheme if theme hasn't been set
