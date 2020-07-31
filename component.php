@@ -18,6 +18,8 @@ if (Factory::getApplication()->input->get('option') === 'com_media')
 	Joomla\CMS\HTML\HTMLHelper::_('stylesheet',
 		Joomla\CMS\Uri\Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
 }
+HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -29,14 +31,5 @@ if (Factory::getApplication()->input->get('option') === 'com_media')
 <body>
 	<jdoc:include type="message" />
 	<jdoc:include type="component" />
-
-	<script>
-		(() => {
-			const prefersColourScheme = window.matchMedia('(prefers-color-scheme:light)')
-			const colourScheme = prefersColourScheme.matches ? 'is-light' : 'is-dark'
-			const theme = localStorage.getItem('theme') ?? colourScheme
-			document.documentElement.classList.add(theme)
-		})()
-	</script>
 </body>
 </html>

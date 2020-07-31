@@ -1,52 +1,53 @@
 /* Switcher */
 
 .color-scheme-switch {
+  --switcher-width: 75px;
+  --switcher-height: 36px;
+  --switcher-toggle-bg-color: hsl(216, 10%, 10%);
+  --switcher-bg-color: #fff;
+  --switcher-border-color: hsl(0, 0%, 89%);
+
   position: relative;
-  width: 70px;
-  flex: 0 0 70px;
+  display: flex;
+  height: var(--switcher-height);
+  flex: 0 0 var(--switcher-width);
+  flex-wrap: nowrap;
   user-select: none;
-}
+  border: 2px solid var(--switcher-border-color);
+  border-radius: var(--switcher-height);
+  background-color: var(--switcher-bg-color);
+  box-sizing: content-box;
 
-.color-scheme-switch-checkbox {
-  display: none;
-}
+  input {
+    height: var(--switcher-height);
+    margin: 0;
+    flex: 1 1 33%;
+    opacity: 0;
+    appearance: none;
+  }
 
-.color-scheme-switch-label {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  height: 36px;
-  padding: 0;
-  line-height: 36px;
-  border: 2px solid #e3e3e3;
-  border-radius: 36px;
-  background-color: #fff;
-  transition: background-color .3s ease-in-out;
-  margin-bottom: 0;
-
-  &::before {
+  label {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     display: block;
-    width: 36px;
+    width: var(--switcher-height);
+    height: var(--switcher-height);
     margin: 0;
     content: "";
-    background: var(--hiq-body-background-color);
-    border: inherit;
-    border-radius: inherit;
-    transform: translateX(0);
+    background: var(--switcher-toggle-bg-color);
+    border-radius: var(--switcher-height);
     transition: transform .3s ease-in-out;
   }
-}
 
-.color-scheme-switch-checkbox:checked + .color-scheme-switch-label {
-  background-color: var(--hiq-header-background-color);
-  border-color: var(--hiq-body-background-color);
-
-  &::before {
-    transform: translateX(33px);
-    transition: transform .3s ease-in-out;
+  input:first-child:checked ~ label {
+    transform: translateX(0);
+  }
+  input:nth-child(2):checked ~ label {
+    transform: translateX(calc(calc(var(--switcher-width) / 2) - 50%));
+  }
+  input:nth-child(3):checked ~ label {
+    transform: translateX(calc(var(--switcher-width) - 100%));
   }
 }
