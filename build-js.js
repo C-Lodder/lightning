@@ -18,13 +18,12 @@ async function* recursiveSearch(dir) {
 async function processJs() {
   for await (const file of recursiveSearch(`${__dirname}/src/js/`)) {
     readFile(file, { encoding: 'utf8' })
-      .then((data) => {
+      .then(async (response) => {
         const dest = file.replace(/src\\/g, '')
-        mkdir(dest.substring(0, dest.lastIndexOf('\\')), { recursive: true })
-          .then(() => {
-            copyFile(file, dest)
-            writeFile(`${dest.substr(0, dest.lastIndexOf('.'))}.min.js`, Terser.minify(data).code)
-          })
+        await mkdir(dest.substring(0, dest.lastIndexOf('\\')), { recursive: true })
+        await copyFile(file, dest)
+        const data = await Terser.minify(response)
+        writeFile(`${dest.substr(0, dest.lastIndexOf('.'))}.min.js`, data.code)
       })
   }
 }
