@@ -19,7 +19,7 @@ $app           = Factory::getApplication();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu          = $app->getMenu()->getActive();
 $pageclass     = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
-$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 
 // Template params
 if ($themeSwitcher)

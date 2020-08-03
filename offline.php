@@ -21,7 +21,7 @@ $twofactormethods = AuthenticationHelper::getTwoFactorMethods();
 $app              = Factory::getApplication();
 
 // Template params
-$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
