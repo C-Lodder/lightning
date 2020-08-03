@@ -22,7 +22,7 @@ include_once __DIR__ . '/helper/scripts.php';
 $app           = Factory::getApplication();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $pageclass     = $app->getMenu()->getActive()->getParams()->get('pageclass_sfx');
-$themeSwitcher = (boolean)$this->params->get('theme-switcher', true);
+$themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 
 // Template params
 if ($themeSwitcher)

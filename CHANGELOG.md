@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Fix default "theme-switcher" parameter value
+
 ## 0.0.13
 - Add support for automatic intro/full text image resizing (Thanks @nikosdion)
 - Add system preference to theme switcher
