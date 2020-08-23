@@ -23,8 +23,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Database object
 	 *
 	 * @var    DatabaseDriver
-	 *
-	 * @since  3.8.0
 	 */
 	protected $db;
 
@@ -32,8 +30,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Application object
 	 *
 	 * @var    AdministratorApplication
-	 *
-	 * @since  3.8.0
 	 */
 	protected $app;
 
@@ -41,8 +37,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Affects constructor behavior. If true, language files will be loaded automatically.
 	 *
 	 * @var    boolean
-	 *
-	 * @since  3.8.0
 	 */
 	protected $autoloadLanguage = true;
 
@@ -50,8 +44,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Get an overview of the proposed sampledata.
 	 *
 	 * @return  object  Object containing the name, title, description, icon and steps.
-	 *
-	 * @since  3.8.0
 	 */
 	public function onSampledataGetOverview()
 	{
@@ -69,8 +61,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Eighth step to enter the sampledata. Modules.
 	 *
 	 * @return  array or void  Will be converted into the JSON response to the module.
-	 *
-	 * @since  3.8.0
 	 */
 	public function onAjaxSampledataApplyStep1()
 	{
@@ -89,16 +79,14 @@ class PlgSampledataLightning extends CMSPlugin
 		}
 
 		$model = $this->app->bootComponent('com_modules')->getMVCFactory()->createModel('Module', 'Administrator', ['ignore_request' => true]);
-		$access = (int) $this->app->get('access', 1);
 
-		$modules = array(
+		$modules = [
 			[
 				'title'     => Text::_('PLG_SAMPLEDATA_LIGHTNING_SAMPLEDATA_MODULES_BANNER_TITLE'),
 				'content'   => Text::_('PLG_SAMPLEDATA_LIGHTNING_SAMPLEDATA_MODULES_BANNER_CONTENT'),
 				'ordering'  => 1,
 				'position'  => 'banner',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 0,
 				'params'    => [
 					'target'          => 1,
@@ -119,7 +107,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -140,7 +127,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -161,7 +147,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -182,7 +167,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -204,7 +188,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -225,7 +208,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -246,7 +228,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -267,7 +248,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'top-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -290,7 +270,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -311,7 +290,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -332,7 +310,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -353,7 +330,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-a',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -375,7 +351,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -396,7 +371,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -417,7 +391,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -438,7 +411,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'bottom-b',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -460,7 +432,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'main-top',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -481,7 +452,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'main-bottom',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 1,
 				'params'    => [
 					'target'          => 1,
@@ -502,7 +472,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'footer',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 0,
 				'params'    => [
 					'target'          => 1,
@@ -522,7 +491,6 @@ class PlgSampledataLightning extends CMSPlugin
 				'ordering'  => 1,
 				'position'  => 'footer',
 				'module'    => 'mod_custom',
-				'access'    => $access,
 				'showtitle' => 0,
 				'params'    => [
 					'target'          => 1,
@@ -536,9 +504,7 @@ class PlgSampledataLightning extends CMSPlugin
 					'cache_time'      => 900
 				],
 			],
-		);
-
-		$modulesIds = [];
+		];
 
 		foreach ($modules as $module)
 		{
@@ -548,6 +514,7 @@ class PlgSampledataLightning extends CMSPlugin
 			$module['language']    = '*';
 			$module['description'] = '';
 			$module['assignment']  = 0;
+			$module['access']      = (int) $this->app->get('access', 1);;
 
 			if (!isset($module['published']))
 			{
@@ -598,9 +565,6 @@ class PlgSampledataLightning extends CMSPlugin
 
 				return $response;
 			}
-
-			// Get ID from category we just added
-			$modulesIds[] = $model->getItem()->id;
 		}
 
 		$response            = [];
@@ -614,8 +578,6 @@ class PlgSampledataLightning extends CMSPlugin
 	 * Final step to show completion of sampledata.
 	 *
 	 * @return  array or void  Will be converted into the JSON response to the module.
-	 *
-	 * @since  4.0.0
 	 */
 	public function onAjaxSampledataApplyStep2()
 	{
