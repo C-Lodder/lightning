@@ -514,7 +514,7 @@ class PlgSampledataLightning extends CMSPlugin
 			$module['language']    = '*';
 			$module['description'] = '';
 			$module['assignment']  = 0;
-			$module['access']      = (int) $this->app->get('access', 1);;
+			$module['access']      = (int) $this->app->get('access', 1);
 
 			if (!isset($module['published']))
 			{
