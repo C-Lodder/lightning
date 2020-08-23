@@ -3,6 +3,7 @@
 ## WIP
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
+- Sample data plugin now only installs Lightning specific data
 
 ## 0.0.13
 - Add support for automatic intro/full text image resizing (Thanks @nikosdion)
