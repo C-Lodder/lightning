@@ -14,8 +14,6 @@ Latest :heavy_check_mark: | Latest :heavy_check_mark: | Latest :heavy_check_mark
 Install the template zip file like you would any other extension.
 There is also a sampledata plugin available to use, which will demonstrate the available module positions with some demo data.
 
-**Important:** This _cannot_ be installed if another sample data plugin has already been used.
-
 ## Contributing
 - Clone the repository:
 ```bash
