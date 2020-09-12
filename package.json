@@ -15,7 +15,7 @@
     "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {
-    "archiver": "^5.0.1",
+    "archiver": "^5.0.2",
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "path": "^0.12.7",
