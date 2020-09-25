@@ -27,7 +27,7 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.3",
-    "stylelint": "^13.7.1",
+    "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0",
     "terser": "^5.3.2"
   }
