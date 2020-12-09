@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "archiver": "^5.1.0",
-    "autoprefixer": "^10.0.4",
+    "autoprefixer": "^10.1.0",
     "cssnano": "^4.1.10",
     "path": "^0.12.7",
     "postcss": "^8.2.0",
