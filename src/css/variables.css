@@ -336,11 +336,11 @@
 }
 
 :root.is-dark {
-  --hiq-dark-1: hsl(216, 10%, 10%);
-  --hiq-dark-2: hsl(222, 10%, 20%);
+  --hiq-dark-1: hsl(216, 28%, 7%);
+  --hiq-dark-2: hsl(215, 21%, 11%);
   --hiq-html-background-color: var(--hiq-dark-1);
   --hiq-body-background-color: var(--hiq-dark-1);
-  --hiq-text-color: var(--hiq-color-gray-6);
+  --hiq-text-color: hsl(212, 9%, 58%);
   --hiq-link-color: hsl(210, 100%, 62%);
   --hiq-border-color: var(--hiq-color-gray-4);
   --hiq-outline-color: hsl(210, 53%, 36%);

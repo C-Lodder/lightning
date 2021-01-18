@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Default colour tweaks
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
 - Sample data plugin now only installs Lightning specific data
