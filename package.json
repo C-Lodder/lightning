@@ -8,8 +8,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "node build-css.js && node build-js.js && node build-zip.js",
+    "build": "node build-css.js && node build-deps.js && node build-js.js && node build-zip.js",
     "css": "node build-css.js",
+    "deps": "node build-deps.js",
     "js": "node build-js.js",
     "package": "node build-zip.js",
     "lint": "npx stylelint src/css/**/*.css"
@@ -18,6 +19,7 @@
     "archiver": "^5.2.0",
     "autoprefixer": "^10.2.1",
     "cssnano": "^4.1.10",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "postcss-custom-media": "^8.0.0",

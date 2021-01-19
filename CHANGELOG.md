@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add option to load Font Awesome
 - Default colour tweaks
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules

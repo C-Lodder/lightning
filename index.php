@@ -23,6 +23,7 @@ $app           = Factory::getApplication();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $pageclass     = $app->getMenu()->getActive()->getParams()->get('pageclass_sfx');
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
+$fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 
 // Template params
 if ($themeSwitcher)
@@ -32,7 +33,10 @@ if ($themeSwitcher)
 HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Font Awesome
-HTMLHelper::_('stylesheet', 'media/vendor/fontawesome-free/css/fontawesome.min.css', ['version' => 'auto']);
+if ($fontAwesome)
+{
+	HTMLHelper::_('stylesheet', 'fontawesome.css', ['version' => 'auto', 'relative' => true]);
+}
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
@@ -109,6 +113,7 @@ $cachesStyleSheets = json_encode(array_values($styles));
 	<header class="grid-child container-header full-width header <?php echo $this->countModules('banner') ? 'has-banner' : ''; ?>">
 		<nav class="navbar">
 			<div class="navbar-brand">
+				<span class="fas fa-user"></span>
 				<a href="<?php echo $this->baseurl; ?>/">
 					<?php echo $logo; ?>
 					<span class="sr-only"><?php echo Text::_('TPL_LIGHTNING_LOGO_LABEL'); ?></span>

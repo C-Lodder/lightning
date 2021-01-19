@@ -1,5 +1,5 @@
 const { Worker, isMainThread, parentPort } = require('worker_threads')
-const { readFile, mkdir, writeFile, rmdir } = require('fs')
+const { readFile, mkdir, writeFile, rmdir, copyFile } = require('fs').promises
 const postcss = require('postcss')
 
 const plugins = [
@@ -29,18 +29,18 @@ const files = {
   'src/css/mediamanager/mediamanager.css': 'css/com_media/mediamanager.min.css',
 }
 
-const ProcessCss = (file, dest) => {
-  const dir = dest.substring(0, dest.lastIndexOf('/'))
-  readFile(file, (err, css) => {
-    postcss(plugins)
-      .process(css, { from: file, to: dest })
-      .then((result) => {
-        mkdir(`${__dirname}/${dir}`, { recursive: true }, (err) => {
-          if (err) throw err
-          writeFile(dest, result.css, { flag: 'wx' }, () => true)
-        })
-      })
-  })
+const ProcessCss = async(path, dest) => {
+  try {
+    // Compile and write CSS files
+    const dir = dest.substring(0, dest.lastIndexOf('/'))
+    const css = await readFile(path)
+    const compiled = await postcss(plugins).process(css, { from: path, to: dest })
+    await mkdir(`${__dirname}/${dir}`, { recursive: true })
+
+    writeFile(dest, compiled.css, { flag: 'wx' }, () => true)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 if (isMainThread) {

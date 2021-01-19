@@ -48,6 +48,7 @@ template.directory('helper/')
 template.directory('html/')
 template.directory('js/')
 template.directory('language/')
+template.directory('webfonts/')
 plugin.directory('sampledata/')
 
 // Finalise the template (ie we are done appending files but streams have to finish yet)
