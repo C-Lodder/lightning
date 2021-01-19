@@ -7,6 +7,7 @@
   display: none;
   flex: 1 1 100%;
   order: 1;
+  flex-direction: column;
 
   .menu-open & {
     display: flex;
@@ -42,6 +43,7 @@
 
     > ul {
       flex-direction: row;
+      align-items: center;
 
       > li {
         margin-inline-start: 1.125rem;
@@ -83,6 +85,13 @@
   .mod-menu__sub:hover,
   li a:hover + .mod-menu__sub {
     display: block;
+  }
+
+  @media (--hiq-upper-font-range) {
+    .navbar-end {
+      margin-left: auto;
+      margin-right: 2rem;
+    }
   }
 }
 

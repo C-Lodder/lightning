@@ -10,6 +10,7 @@ const plugins = [
   require('autoprefixer'),
   require('postcss-custom-media'),
   require('postcss-discard-comments'),
+  require('postcss-each'),
   require('cssnano')({
     preset: 'default',
   })

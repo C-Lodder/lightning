@@ -3,6 +3,8 @@
 ## WIP
 - Add option to load Font Awesome
 - Default colour tweaks
+- Fix navbar menu item alignment
+- Fix navbar search position
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
 - Sample data plugin now only installs Lightning specific data

@@ -126,7 +126,7 @@ $cachesStyleSheets = json_encode(array_values($styles));
 				<div class="navbar-menu">
 					<?php echo $menu; ?>
 					<?php if ($this->countModules('search')) : ?>
-						<div>
+						<div class="navbar-end">
 							<?php echo $search; ?>
 						</div>
 					<?php endif; ?>

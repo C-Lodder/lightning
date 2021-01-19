@@ -16,15 +16,16 @@
     "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "archiver": "^5.2.0",
     "autoprefixer": "^10.2.1",
     "cssnano": "^4.1.10",
-    "@fortawesome/fontawesome-free": "^5.15.2",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-selectors": "^6.0.0",
     "postcss-discard-comments": "^4.0.2",
+    "postcss-each": "^0.10.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^7.0.2",
     "postcss-nested": "^5.0.3",
