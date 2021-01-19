@@ -113,7 +113,6 @@ $cachesStyleSheets = json_encode(array_values($styles));
 	<header class="grid-child container-header full-width header <?php echo $this->countModules('banner') ? 'has-banner' : ''; ?>">
 		<nav class="navbar">
 			<div class="navbar-brand">
-				<span class="fas fa-user"></span>
 				<a href="<?php echo $this->baseurl; ?>/">
 					<?php echo $logo; ?>
 					<span class="sr-only"><?php echo Text::_('TPL_LIGHTNING_LOGO_LABEL'); ?></span>

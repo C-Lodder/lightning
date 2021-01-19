@@ -8,7 +8,7 @@ const CopyFontAwesome = async() => {
     copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/css/all.min.css`, `${__dirname}/css/fontawesome.css`)
     copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2`, `${__dirname}/webfonts/fa-brands-400.woff2`)
     copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2`, `${__dirname}/webfonts/fa-regular-400.woff2`)
-    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2`, `${__dirname}/webfonts/fa-solid-400.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2`, `${__dirname}/webfonts/fa-solid-900.woff2`)
   } catch (error) {
     console.log(error)
   }
