@@ -37,10 +37,6 @@ git checkout -b <branch name>
 ```bash
 npm run css
 ```
-- Copy dependencies:
-```bash
-npm run deps
-```
 - Copy &amp; minify Javascript:
 ```bash
 npm run js

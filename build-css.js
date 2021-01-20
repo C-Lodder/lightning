@@ -30,21 +30,45 @@ const files = {
   'src/css/mediamanager/mediamanager.css': 'css/com_media/mediamanager.min.css',
 }
 
-const ProcessCss = async(path, dest) => {
+// Copy Font Awesome files
+async function CopyFontAwesome() {
+  await mkdir(`${__dirname}/webfonts`)
   try {
-    // Compile and write CSS files
-    const dir = dest.substring(0, dest.lastIndexOf('/'))
-    const css = await readFile(path)
-    const compiled = await postcss(plugins).process(css, { from: path, to: dest })
-    await mkdir(`${__dirname}/${dir}`, { recursive: true })
-
-    writeFile(dest, compiled.css, { flag: 'wx' }, () => true)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/css/all.min.css`, `${__dirname}/css/fontawesome.css`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2`, `${__dirname}/webfonts/fa-brands-400.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2`, `${__dirname}/webfonts/fa-regular-400.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2`, `${__dirname}/webfonts/fa-solid-900.woff2`)
   } catch (error) {
     console.log(error)
   }
 }
 
+// Process CSS
+async function ProcessCss() {
+  await mkdir(`${__dirname}/css`)
+
+  CopyFontAwesome()
+
+  Object.entries(files).forEach(async([path, dest]) => {
+    try {
+      const dir = dest.substring(0, dest.lastIndexOf('/'))
+      const css = await readFile(path)
+      const compiled = await postcss(plugins).process(css, { from: path, to: dest })
+      await mkdir(`${__dirname}/${dir}`, { recursive: true })
+
+      writeFile(dest, compiled.css, { flag: 'wx' }, () => true)
+    } catch (error) {
+      console.log(error)
+    }
+  })
+}
+
 if (isMainThread) {
+  // Delete the webfonts directory from the main thread
+  rmdir(`${__dirname}/webfonts`, { recursive: true }, (err) => {
+    if (err) throw err
+  })
+
   // Delete the CSS directory from the main thread
   rmdir(`${__dirname}/css`, { recursive: true }, (err) => {
     if (err) throw err
@@ -54,8 +78,6 @@ if (isMainThread) {
   worker.postMessage('message')
 } else {
   parentPort.once('message', () => {
-    Object.entries(files).forEach(([key, val]) => {
-      ProcessCss(key, val)
-    })
+    ProcessCss()
   })
 }

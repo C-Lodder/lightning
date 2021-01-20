@@ -34,9 +34,6 @@ jobs:
       - name: Compile CSS
         run: node build-css.js
 
-      - name: Copy Dependencies
-        run: node build-deps.js
-
       - name: Process JS
         run: node build-js.js
 
