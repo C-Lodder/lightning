@@ -39,7 +39,7 @@ npm run css
 ```
 - Copy dependencies:
 ```bash
-npm run css
+npm run deps
 ```
 - Copy &amp; minify Javascript:
 ```bash
