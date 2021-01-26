@@ -247,6 +247,7 @@
   /* selects */
   --hiq-select-background-image: url("data:image/svg+xml,%3Csvg width='30' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 16L0 0h30z' fill='%23000' fill-rule='evenodd'/%3E%3C/svg%3E");
   --hiq-select-background-position: right 1rem center;
+  --hiq-select-background-color: transparent;
   --hiq-select-background-size: .75rem;
   --hiq-select-multiple-checked-background-color: var(--hiq-color-primary);
   --hiq-select-multiple-padding-vertical: .75rem;
@@ -345,13 +346,14 @@
   --hiq-border-color: var(--hiq-color-gray-4);
   --hiq-outline-color: hsl(210, 53%, 36%);
   --hiq-selection-color: var(--hiq-color-gray-2);
-  --hiq-header-background-color: var(--hiq-dark-2);
-  --hiq-footer-background-color: var(--hiq-dark-2);
+  --hiq-header-background-color: hsl(215, 21%, 11%);
+  --hiq-footer-background-color: hsl(215, 21%, 11%);
   --hiq-disabled-border-color: var(--hiq-color-gray-3);
   --hiq-disabled-background-color: var(--hiq-color-gray-2);
 
   /* selects */
   --hiq-select-background-image: url("data:image/svg+xml,%3Csvg width='30' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 16L0 0h30z' fill='%23e3e5e8' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --hiq-select-option-background-color: hsl(216, 28%, 7%);
 
   /* inputs */
   --hiq-input-border-color: var(--hiq-color-gray-3);
@@ -361,19 +363,19 @@
   --hiq-breadcrumbs-background-color: var(--hiq-header-background-color);
 
   /* tabs */
-  --hiq-tabs-background-color: var(--hiq-dark-2);
+  --hiq-tabs-background-color: hsl(215, 21%, 11%);
 
   /* modal */
-  --hiq-modal-background-color: var(--hiq-dark-2);
+  --hiq-modal-background-color: hsl(215, 21%, 11%);
 
   /* dropdown */
-  --hiq-dropdown-background-color: var(--hiq-dark-1);
-  --hiq-dropdown-item-hover-background-color: var(--hiq-dark-2);
+  --hiq-dropdown-background-color: hsl(216, 28%, 7%);
+  --hiq-dropdown-item-hover-background-color: hsl(215, 21%, 11%);
 
   /* table variables */
   --hiq-table-caption-text-color: var(--hiq-color-gray-6);
   --hiq-table-cell-border-color: var(--hiq-border-color);
-  --hiq-table-cell-background-color: var(--hiq-dark-2);
-  --hiq-table-heading-background-color: var(--hiq-dark-2);
+  --hiq-table-cell-background-color: hsl(216, 28%, 7%);
+  --hiq-table-heading-background-color: hsl(215, 21%, 11%);
   --hiq-table-heading-text-color: var(--hiq-text-color);
 }

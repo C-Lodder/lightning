@@ -15,6 +15,10 @@ select {
   height: var(--hiq-input-height, 2.5rem);
   padding: var(--hiq-input-padding-vertical, 0) var(--hiq-input-padding-horizontal, 0.75rem);
 
+  & option {
+    background-color: var(--hiq-select-option-background-color);
+  }
+
   &:not([multiple]) {
     /* if select does not have `multiple` attribute it receives a caret on the right-hand side */
     background-image: var(--select-background-image);
