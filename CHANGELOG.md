@@ -7,6 +7,7 @@
 - Fix navbar search position
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
+- Fix select option background colour for dark theme
 - Sample data plugin now only installs Lightning specific data
 
 ## 0.0.13
