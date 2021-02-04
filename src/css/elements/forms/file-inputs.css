@@ -7,7 +7,7 @@ input[type='file'] {
   cursor: pointer;
 
   &:focus {
-    outline: var(--hiq-outline-color, hsl(210, 100%, 85%)) solid var(--hiq-outline-width, 0.2rem);
+    outline: var(--hiq-outline-color) solid var(--hiq-outline-width);
   }
 
   &:disabled,

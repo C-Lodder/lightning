@@ -2,5 +2,5 @@
 
 strong,
 b {
-  font-weight: var(--hiq-font-weight-bold, 700);
+  font-weight: var(--hiq-font-weight-bold);
 }

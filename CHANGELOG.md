@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add GUI to override CSS variables
 - Add option to load Font Awesome
 - Default colour tweaks
 - Fix navbar menu item alignment
@@ -8,7 +9,9 @@
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
 - Fix select option background colour for dark theme
+- Fix modal layout path
 - Sample data plugin now only installs Lightning specific data
+- Template CSS file now 20% smaller
 
 ## 0.0.13
 - Add support for automatic intro/full text image resizing (Thanks @nikosdion)

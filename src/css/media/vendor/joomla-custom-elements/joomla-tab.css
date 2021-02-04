@@ -38,6 +38,7 @@ joomla-tab {
         position: absolute;
         bottom: -1px;
         left: 0;
+        width: 100%;
         height: 5px;
         background-color: var(--hiq-color-primary);
         content: "";

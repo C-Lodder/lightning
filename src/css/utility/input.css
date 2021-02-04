@@ -6,51 +6,35 @@
 
 /* input mixin */
 @define-mixin input {
-  /* scoped properties */
-  --input-border-width: var(--hiq-input-border-width);
-  --input-border-color: var(--hiq-input-border-color);
-  --input-border-radius: var(--hiq-input-border-radius);
-  --input-background-color: var(--hiq-input-background-color);
-  --input-text-color: var(--hiq-input-text-color);
-  --input-placeholder-color: var(--hiq-input-placeholder-color);
-  --input-hover-border-color: var(--hiq-input-hover-border-color);
-  --input-hover-background-color: var(--hiq-input-hover-background-color);
-  --input-hover-text-color: var(--hiq-input-hover-text-color);
-  --input-focus-border-color: var(--hiq-input-focus-border-color);
-  --input-focus-background-color: var(--hiq-input-focus-background-color);
-  --input-focus-text-color: var(--hiq-input-focus-text-color);
-  --input-invalid-border-color: var(--hiq-input-invalid-border-color);
-  --input-valid-border-color: var(--hiq-input-valid-border-color);
-
   /* remove default browser appearance */
   @mixin is-controlled;
 
   margin: 0;
-  border: var(--input-border-width) solid var(--input-border-color);
-  border-radius: var(--input-border-radius);
-  background-color: var(--input-background-color);
+  border: var(--hiq-input-border-width) solid var(--hiq-input-border-color);
+  border-radius: var(--hiq-input-border-radius);
+  background-color: var(--hiq-input-background-color);
   font-family: inherit;
   font-size: inherit;
-  font-weight: var(--hiq-font-weight-base, 400);
+  font-weight: var(--hiq-font-weight-base);
   line-height: inherit;
-  color: var(--input-text-color);
+  color: var(--hiq-input-text-color);
   transition: border-color var(--hiq-speed) var(--hiq-easing), color var(--hiq-speed) var(--hiq-easing), background-color var(--hiq-speed) var(--hiq-easing);
 
   &::placeholder {
-    color: var(--input-placeholder-color);
+    color: var(--hiq-input-placeholder-color);
   }
 
   &:hover {
-    border-color: var(--input-hover-border-color);
-    background-color: var(--input-hover-background-color);
-    color: var(--input-hover-text-color);
+    border-color: var(--hiq-input-hover-border-color);
+    background-color: var(--hiq-input-hover-background-color);
+    color: var(--hiq-input-hover-text-color);
   }
 
   &:focus {
-    border-color: var(--input-focus-border-color);
-    background-color: var(--input-focus-background-color);
+    border-color: var(--hiq-input-focus-border-color);
+    background-color: var(--hiq-input-focus-background-color);
     outline: var(--hiq-outline-color) solid var(--hiq-outline-width);
-    color: var(--input-focus-text-color);
+    color: var(--hiq-input-focus-text-color);
   }
 
   :--not-writable {
@@ -68,10 +52,10 @@
   }
 
   &:required:invalid:not(:focus) {
-    border-color: var(--input-invalid-border-color);
+    border-color: var(--hiq-input-invalid-border-color);
   }
 
   &:required:valid:not(:focus) {
-    border-color: var(--input-valid-border-color);
+    border-color: var(--hiq-input-valid-border-color);
   }
 }

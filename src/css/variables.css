@@ -24,8 +24,8 @@
   --hiq-color-danger: hsl(352, 95%, 61%);
 
   /* global applied colors */
-  --hiq-html-background-color: white;
-  --hiq-body-background-color: white;
+  --hiq-html-background-color: hsl(0, 0%, 100%);
+  --hiq-body-background-color: hsl(0, 0%, 100%);
   --hiq-disabled-border-color: var(--hiq-color-gray-6);
   --hiq-disabled-background-color: var(--hiq-color-gray-7);
   --hiq-disabled-text-color: var(--hiq-color-gray-5);
@@ -138,17 +138,17 @@
   /* static colors */
   --hiq-button-border-color: var(--hiq-color-primary);
   --hiq-button-background-color: var(--hiq-color-primary);
-  --hiq-button-text-color: white;
+  --hiq-button-text-color: hsl(0, 0%, 100%);
 
   /* hover colors */
   --hiq-button-hover-border-color: hsl(210, 100%, 40%);
   --hiq-button-hover-background-color: hsl(210, 100%, 40%);
-  --hiq-button-hover-text-color: white;
+  --hiq-button-hover-text-color: hsl(0, 0%, 100%);
 
   /* active colors */
   --hiq-button-active-border-color: hsl(210, 100%, 30%);
   --hiq-button-active-background-color: hsl(210, 100%, 30%);
-  --hiq-button-active-text-color: white;
+  --hiq-button-active-text-color: hsl(0, 0%, 100%);
 
   /* code element variables */
 
@@ -192,7 +192,7 @@
   --hiq-table-cell-padding-horizontal: .75rem;
   --hiq-table-cell-border-width: 1px;
   --hiq-table-cell-border-color: var(--hiq-color-gray-6);
-  --hiq-table-cell-background-color: white;
+  --hiq-table-cell-background-color: hsl(0, 0%, 100%);
   --hiq-table-heading-background-color: var(--hiq-color-gray-7);
   --hiq-table-heading-text-color: var(--hiq-color-gray-4);
   --hiq-table-heading-font-weight: var(--hiq-font-weight-medium);
@@ -269,7 +269,7 @@
   --hiq-checkbox-check-width: .25rem;
   --hiq-checkbox-check-height: .5rem;
   --hiq-checkbox-check-border-width: 2px;
-  --hiq-checkbox-check-color: white;
+  --hiq-checkbox-check-color: hsl(0, 0%, 100%);
   --hiq-checkbox-indeterminate-width: .5rem;
 
   /* radio buttons */
@@ -289,7 +289,7 @@
   --hiq-radio-check-width: .5rem;
   --hiq-radio-check-height: .5rem;
   --hiq-radio-check-border-radius: 50%;
-  --hiq-radio-check-background-color: white;
+  --hiq-radio-check-background-color: hsl(0, 0%, 100%);
 
   /* range inputs */
   --hiq-range-input-thumb-width: 1.5rem;
@@ -319,19 +319,25 @@
 
   /* dropdown */
   --hiq-dropdown-border-color: var(--hiq-border-color);
-  --hiq-dropdown-background-color: white;
+  --hiq-dropdown-background-color: hsl(0, 0%, 100%);
   --hiq-dropdown-header-color: hsl(210, 9%, 55%);
   --hiq-dropdown-item-hover-background-color: var(--hiq-color-gray-8);
 
   /* tabs */
-  --hiq-tabs-background-color: white;
+  --hiq-tabs-background-color: hsl(0, 0%, 100%);
 
   /* modal */
-  --hiq-modal-background-color: white;
+  --hiq-modal-background-color: hsl(0, 0%, 100%);
+
+  /* close */
+  --hiq-btn-close-width: 1.5rem;
+  --hiq-btn-close-height: 1.5rem;
+  --hiq-btn-close-color: var(--hiq-text-color);
+  --hiq-btn-close-hover-color: var(--hiq-text-color);
 
   /* Custom variables */
   --hiq-grid-gutter: 1rem;
-  --hiq-header-background-color: white;
+  --hiq-header-background-color: hsl(0, 0%, 100%);
   --hiq-footer-background-color: var(--hiq-color-gray-8);
   --hiq-sidebar-border-color: var(--hiq-border-color);
 }

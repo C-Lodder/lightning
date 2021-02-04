@@ -1,18 +1,22 @@
 /* floats */
 
-.float-right {
+.float-right,
+.float-end {
   float: right !important;
 }
 
-.float-left {
+.float-left,
+.float-start {
   float: left !important;
 }
 
 html[dir=rtl] {
-  .float-right {
+  .float-right,
+  .float-end {
     float: left !important;
   }
 
+  .float-start,
   .float-left {
     float: right !important;
   }

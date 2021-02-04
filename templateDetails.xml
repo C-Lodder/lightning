@@ -18,6 +18,7 @@
 		<filename>template_thumbnail.png</filename>
 		<folder>css</folder>
 		<folder>favicon</folder>
+		<folder>fields</folder>
 		<folder>helper</folder>
 		<folder>html</folder>
 		<folder>js</folder>
@@ -114,6 +115,10 @@
 					description="TPL_LIGHTNING_IMGCACHEFOLDER_DESC"
 					default="autosized"
 				/>
+			</fieldset>
+
+			<fieldset name="css" label="CSS Overrides" addfieldpath="/templates/lightning/fields">
+				<field type="css" />
 			</fieldset>
 		</fields>
 	</config>

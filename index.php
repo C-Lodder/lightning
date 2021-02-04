@@ -40,6 +40,12 @@ if ($fontAwesome)
 
 // Fetch CSS
 $css = file_get_contents(__DIR__ . '/css/template.css');
+$customVariables = '';
+
+if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/custom-variables.css'))
+{
+	$customVariables = file_get_contents(JPATH_SITE . '/templates/' . $this->template . '/css/custom-variables.css');
+}
 
 // Logo file or site title param
 if ($this->params->get('logoFile'))
@@ -107,7 +113,7 @@ $cachesStyleSheets = json_encode(array_values($styles));
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<?php echo $metas; ?>
-	<style><?php echo $css; ?></style>
+	<style><?php echo $css . $customVariables; ?></style>
 </head>
 <body class="site-grid site <?php echo $pageclass . $hasSidebar; ?>">
 	<header class="grid-child container-header full-width header <?php echo $this->countModules('banner') ? 'has-banner' : ''; ?>">
