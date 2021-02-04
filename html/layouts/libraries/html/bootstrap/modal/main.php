@@ -69,7 +69,7 @@ if (isset($params['keyboard']))
 if (isset($params['url']))
 {
 	$url        = 'data-url="' . $params['url'] . '"';
-	$iframeHtml = htmlspecialchars(LayoutHelper::render('joomla.modal.iframe', $displayData), ENT_COMPAT, 'UTF-8');
+	$iframeHtml = htmlspecialchars(LayoutHelper::render('libraries.html.bootstrap.modal.iframe', $displayData), ENT_COMPAT, 'UTF-8');
 }
 
 HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
@@ -81,16 +81,16 @@ HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/modal.css', [
 				// Header
 				if (!isset($params['closeButton']) || isset($params['title']) || $params['closeButton'])
 				{
-					echo LayoutHelper::render('joomla.modal.header', $displayData);
+					echo LayoutHelper::render('libraries.html.bootstrap.modal.header', $displayData);
 				}
 
 				// Body
-				echo LayoutHelper::render('joomla.modal.body', $displayData);
+				echo LayoutHelper::render('libraries.html.bootstrap.modal.body', $displayData);
 
 				// Footer
 				if (isset($params['footer']))
 				{
-					echo LayoutHelper::render('joomla.modal.footer', $displayData);
+					echo LayoutHelper::render('libraries.html.bootstrap.modal.footer', $displayData);
 				}
 			?>
 		</div>
