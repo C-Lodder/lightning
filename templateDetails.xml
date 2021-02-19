@@ -53,25 +53,10 @@
 		<fields name="params">
 			<fieldset name="advanced">
 				<field
-					name="logoFile"
-					type="media"
-					default=""
-					label="TPL_LIGHTNING_LOGO_LABEL"
-				/>
-
-				<field
-					name="siteTitle"
-					type="text"
-					default=""
-					label="JGLOBAL_TITLE"
-					filter="string"
-				/>
-
-				<field
 					name="siteDescription"
 					type="text"
 					default=""
-					label="JGLOBAL_DESCRIPTION"
+					label="TPL_LIGHTNING_SITE_DESCRIPTION"
 					filter="string"
 				/>
 
@@ -96,7 +81,37 @@
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
+			</fieldset>
 
+			<fieldset name="logo" label="TPL_LIGHTNING_FIELDSET_LOGO">
+				<field
+					name="logoFile"
+					type="media"
+					default=""
+					label="TPL_LIGHTNING_LOGO_LABEL"
+				/>
+				<field
+					name="logoSvg"
+					type="textarea"
+					default=""
+					label="TPL_LIGHTNING_LOGO_SVG_LABEL"
+					description="TPL_LIGHTNING_LOGO_SVG_DESC"
+					filter="raw"
+				/>
+				<field
+					name="siteTitle"
+					type="text"
+					default=""
+					label="TPL_LIGHTNING_SITE_TITLE"
+					filter="string"
+				/>
+			</fieldset>
+
+			<fieldset name="css" label="TPL_LIGHTNING_FIELDSET_CSS_OVERRIDES" addfieldpath="/templates/lightning/fields">
+				<field type="css" />
+			</fieldset>
+
+			<fieldset name="optimize" label="TPL_LIGHTNING_FIELDSET_OPTIMIZE">
 				<field
 					name="auto-resize"
 					type="radio"
@@ -116,10 +131,6 @@
 					description="TPL_LIGHTNING_IMGCACHEFOLDER_DESC"
 					default="autosized"
 				/>
-			</fieldset>
-
-			<fieldset name="css" label="CSS Overrides" addfieldpath="/templates/lightning/fields">
-				<field type="css" />
 			</fieldset>
 		</fields>
 	</config>

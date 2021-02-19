@@ -48,17 +48,19 @@ if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/custom-vari
 }
 
 // Logo file or site title param
+$logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" height="50"><path fill="hsl(210, 100%, 50%)" d="M403.712 201.04H256.288L329.792 0 105.216 307.888H252.64l-73.504 201.04z"/></svg>';
+
 if ($this->params->get('logoFile'))
 {
 	$logo = '<img src="' . Uri::root() . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES) . '" alt="' . $sitename . '">';
 }
+elseif ($this->params->get('logoSvg'))
+{
+	$logo = $this->params->get('logoSvg');
+}
 elseif ($this->params->get('siteTitle'))
 {
 	$logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
-}
-else
-{
-	$logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" height="50"><path fill="hsl(210, 100%, 50%)" d="M403.712 201.04H256.288L329.792 0 105.216 307.888H252.64l-73.504 201.04z"/></svg>';
 }
 
 $hasSidebar = '';

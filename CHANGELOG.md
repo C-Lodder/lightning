@@ -3,6 +3,7 @@
 ## WIP
 - Add GUI to override CSS variables
 - Add option to load Font Awesome
+- Add option for an SVG logo
 - Default colour tweaks
 - Fix navbar menu item alignment
 - Fix navbar search position
