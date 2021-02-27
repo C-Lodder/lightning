@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 0.0.14
 - Add GUI to override CSS variables
 - Add option to load Font Awesome
 - Add option for an SVG logo

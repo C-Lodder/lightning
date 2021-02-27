@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" client="site" method="upgrade">
 	<name>lightning</name>
-	<version>0.0.13</version>
+	<version>0.0.14</version>
 	<creationDate>9th March 2020</creationDate>
 	<author>JoomJunk</author>
 	<authorEmail>admin@joomjunk.co.uk</authorEmail>
