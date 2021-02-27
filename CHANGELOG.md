@@ -1,6 +1,9 @@
 # Changelog
 
 ## 0.0.15
+- Fix webmanifest file extension
+
+## 0.0.15
 - Fix missing files
 
 ## 0.0.14
