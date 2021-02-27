@@ -1,0 +1,14 @@
+/* Alert */
+
+@import '../mixins/alert.css';
+
+.alert {
+  position: relative;
+  padding: var(--hiq-alert-padding);
+  margin-bottom: 1rem;
+  border-style: solid;
+  border-width: var(--hiq-alert-border-width);
+  border-radius: var(--hiq-border-radius);
+
+  @mixin alert-variant;
+}

@@ -5,7 +5,7 @@
  * @copyright Copyright (c)2020 Nicholas K. Dionysopoulos
  * @author    Nicholas K. Dionysopoulos <nicholas@dionysopoulos.me>
  * @license   MIT
- * @version   1.0.1
+ * @version   1.0.2
  *
  * Your server must have the PHP GD extension installed and enabled.
  */
@@ -407,7 +407,12 @@ class ImageResizer
 		$twitterImage = $allImages[self::TWITTER_WIDTH] ?? (Uri::root(false) . $image);
 
 		$doc->setMetaData('og:image', $ogImage);
-		$doc->setMetaData('twitter:image', $twitterImage);
+
+		// Only set a separate twitter:image meta if the OpenGraph image (og:image) is different than the Twitter image.
+		if ($ogImage != $twitterImage)
+		{
+			$doc->setMetaData('twitter:image', $twitterImage);
+		}
 	}
 
 	public function getImageFileType(?string $file): ?string

@@ -5,12 +5,14 @@
 - Add option to load Font Awesome
 - Add option for an SVG logo
 - Default colour tweaks
+- Fix alert styling
 - Fix navbar menu item alignment
 - Fix navbar search position
 - Fix default "theme-switcher" parameter value
 - Fix default heading for modules
 - Fix select option background colour for dark theme
-- Fix modal layout path
+- Fix pagination items not wrapping
+- Update ImageResizer to v1.0.2
 - Sample data plugin now only installs Lightning specific data
 - Template CSS file now 20% smaller
 

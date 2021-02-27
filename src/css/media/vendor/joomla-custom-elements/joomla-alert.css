@@ -1,0 +1,59 @@
+/* Alert */
+
+@import '../../../mixins/alert.css';
+
+joomla-alert {
+  position: relative;
+  display: block;
+  min-width: 250px;
+  padding: var(--hiq-alert-padding);
+  margin-bottom: 1rem;
+  border-style: solid;
+  border-width: var(--hiq-alert-border-width);
+  border-radius: var(--hiq-border-radius);
+  opacity: 0;
+  transition: opacity var(--hiq-speed) var(--hiq-easing);
+
+  &.joomla-alert--show {
+    display: block;
+    opacity: 1;
+  }
+
+  .joomla-alert--close,
+  .joomla-alert-button--close {
+    padding: .25rem .5rem;
+    float: right;
+    color: inherit;
+  }
+
+  .joomla-alert--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 1em;
+    height: 1em;
+    box-sizing: content-box;
+    font-size: 2rem;
+  }
+
+  .joomla-alert--close,
+  button.joomla-alert-button--close {
+    line-height: 1;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+
+  @mixin alert-variant;
+}
+
+/* RTL overrides */
+html[dir=rtl] joomla-alert {
+  .joomla-alert--close,
+  .joomla-alert-button--close {
+    right: auto;
+    left: 0;
+    float: left;
+  }
+}

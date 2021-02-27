@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020 JoomJunk. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
 namespace Joomla\CMS\Document\Renderer\Html;
 
 \defined('JPATH_PLATFORM') || die;

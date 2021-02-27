@@ -27,4 +27,8 @@
   &.badge-danger {
     background-color: var(--hiq-color-danger);
   }
+
+  &.badge-pill {
+    border-radius: 50%;
+  }
 }

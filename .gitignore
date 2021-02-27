@@ -27,3 +27,6 @@ Desktop.ini
 
 # Never ignore #
 !/.gitignore
+
+# ZIP files
+*.zip

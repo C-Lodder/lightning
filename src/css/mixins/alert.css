@@ -1,0 +1,38 @@
+/* Alert mixin */
+
+@define-mixin alert-variant {
+  &.alert-primary,
+  &[type="primary"] {
+    color: var(--hiq-alert-primary-text);
+    background-color: var(--hiq-alert-primary-bg);
+    border-color: var(--hiq-alert-primary-border);
+  }
+
+  &.alert-info,
+  &[type="info"] {
+    color: var(--hiq-alert-info-text);
+    background-color: var(--hiq-alert-info-bg);
+    border-color: var(--hiq-alert-info-border);
+  }
+
+  &.alert-success,
+  &[type="success"] {
+    color: var(--hiq-alert-success-text);
+    background-color: var(--hiq-alert-success-bg);
+    border-color: var(--hiq-alert-success-border);
+  }
+
+  &.alert-warning,
+  &[type="warning"] {
+    color: var(--hiq-alert-warning-text);
+    background-color: var(--hiq-alert-warning-bg);
+    border-color: var(--hiq-alert-warning-border);
+  }
+
+  &.alert-danger,
+  &[type="danger"] {
+    color: var(--hiq-alert-danger-text);
+    background-color: var(--hiq-alert-danger-bg);
+    border-color: var(--hiq-alert-danger-border);
+  }
+}

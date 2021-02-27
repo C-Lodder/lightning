@@ -70,7 +70,8 @@ apply mixin to:
   [type='submit'],
   [type='reset'],
   .button,
-  .btn;
+  .btn,
+  .btn-link;
 
 :--button {
   @mixin button;

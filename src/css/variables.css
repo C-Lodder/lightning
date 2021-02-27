@@ -335,10 +335,30 @@
   --hiq-btn-close-color: var(--hiq-text-color);
   --hiq-btn-close-hover-color: var(--hiq-text-color);
 
+  /* alert */
+  --hiq-alert-padding: 18px 15px;
+  --hiq-alert-border-width: 1px;
+  --hiq-alert-primary-text: #24292e;
+  --hiq-alert-primary-bg: #dbedff;
+  --hiq-alert-primary-border: rgba(4,66,137,.2);
+  --hiq-alert-info-text: #24292e;
+  --hiq-alert-info-bg: #dbfdff;
+  --hiq-alert-info-border: rgba(4,66,137,.2);
+  --hiq-alert-warning-text: #24292e;
+  --hiq-alert-warning-bg: #fffbdd;
+  --hiq-alert-warning-border: rgba(176,136,0,.2);
+  --hiq-alert-danger-text: #24292e;
+  --hiq-alert-danger-bg: #ffe3e6;
+  --hiq-alert-danger-border: rgba(158,28,35,.2);
+  --hiq-alert-success-text: #24292e;
+  --hiq-alert-success-bg: #dcffe4;
+  --hiq-alert-success-border: rgba(23,111,44,.2);
+
   /* Custom variables */
   --hiq-grid-gutter: 1rem;
   --hiq-header-background-color: hsl(0, 0%, 100%);
   --hiq-footer-background-color: var(--hiq-color-gray-8);
+  --hiq-footer-text-color: var(--hiq-text-color);
   --hiq-sidebar-border-color: var(--hiq-border-color);
 }
 
@@ -373,6 +393,23 @@
 
   /* modal */
   --hiq-modal-background-color: hsl(215, 21%, 11%);
+
+  /* alert*/
+  --hiq-alert-primary-text: #79c0ff;
+  --hiq-alert-primary-bg: rgba(56,139,253,.1);
+  --hiq-alert-primary-border: rgba(56,139,253,.4);
+  --hiq-alert-info-text: #79c0ff;
+  --hiq-alert-info-bg: rgba(82, 227, 251, .1);
+  --hiq-alert-info-border: rgba(56,207,253,.4);
+  --hiq-alert-warning-text: #e3b341;
+  --hiq-alert-warning-bg: rgba(187,128,9,.1);
+  --hiq-alert-warning-border: rgba(187,128,9,.4);
+  --hiq-alert-danger-text: #ff7b72;
+  --hiq-alert-danger-bg: rgba(248,81,73,.1);
+  --hiq-alert-danger-border: rgba(248,81,73,.4);
+  --hiq-alert-success-text: #56d364;
+  --hiq-alert-success-bg: rgba(46,160,67,.1);
+  --hiq-alert-success-border: rgba(46,160,67,.4);
 
   /* dropdown */
   --hiq-dropdown-background-color: hsl(216, 28%, 7%);

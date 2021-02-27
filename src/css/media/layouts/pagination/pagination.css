@@ -3,6 +3,7 @@
 .pagination {
   display: flex;
   padding-inline-start: 0;
+  flex-flow: row wrap;
   list-style: none;
 }
 
