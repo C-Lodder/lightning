@@ -12,6 +12,7 @@
 - Fix default heading for modules
 - Fix select option background colour for dark theme
 - Fix pagination items not wrapping
+- Fix theme switcher toggle direction in RTL
 - Update ImageResizer to v1.0.2
 - Sample data plugin now only installs Lightning specific data
 - Template CSS file now 20% smaller

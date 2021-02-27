@@ -51,3 +51,13 @@
     transform: translateX(calc(var(--switcher-width) - 100%));
   }
 }
+
+/* RTL overrides */
+html[dir=rtl] .color-scheme-switch {
+  input:first-child:checked ~ label {
+    transform: translateX(calc(var(--switcher-width) - 100%));
+  }
+  input:nth-child(3):checked ~ label {
+    transform: translateX(0);
+  }
+}
