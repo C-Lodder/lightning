@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.15
+## WIP
 - Fix webmanifest file extension
 
 ## 0.0.15
