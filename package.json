@@ -16,7 +16,7 @@
     "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "archiver": "^5.3.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^4.1.10",
