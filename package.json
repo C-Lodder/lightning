@@ -16,21 +16,21 @@
     "lint": "npx stylelint src/css/**/*.css"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
-    "archiver": "^5.2.0",
-    "autoprefixer": "^10.2.4",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.2.6",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "archiver": "^5.3.0",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.1",
+    "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-selectors": "^6.0.0",
-    "postcss-discard-comments": "^4.0.2",
-    "postcss-each": "^0.10.0",
+    "postcss-discard-comments": "^5.0.0",
+    "postcss-each": "^1.0.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^7.0.3",
-    "postcss-nested": "^5.0.4",
-    "stylelint": "^13.11.0",
-    "stylelint-config-standard": "^20.0.0",
-    "terser": "^5.6.0"
+    "postcss-nested": "^5.0.5",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0",
+    "terser": "^5.6.1"
   }
 }
