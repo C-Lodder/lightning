@@ -34,7 +34,7 @@ $css = file_get_contents(__DIR__ . '/css/template.css');
 // Logo file or site title param
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . Uri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '">';
+	$logo = '<img src="' . Uri::root() . '/' . htmlspecialchars($this->params->get('logoFile'), ENT_COMPAT, 'UTF-8') . '" alt="' . $sitename . '">';
 }
 elseif ($this->params->get('siteTitle'))
 {

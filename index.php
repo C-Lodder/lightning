@@ -52,7 +52,7 @@ $logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" h
 
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . Uri::root() . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES) . '" alt="' . $sitename . '">';
+	$logo = '<img src="' . Uri::root() . '/' . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES, 'UTF-8') . '" alt="' . $sitename . '">';
 }
 elseif ($this->params->get('logoSvg'))
 {
