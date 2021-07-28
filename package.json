@@ -28,7 +28,7 @@
     "postcss-each": "^1.1.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-mixins": "^8.1.0",
-    "postcss-nested": "^5.0.5",
+    "postcss-nested": "^5.0.6",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "terser": "^5.7.1"
