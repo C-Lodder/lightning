@@ -66,19 +66,20 @@ async function ProcessCss() {
 }
 
 if (isMainThread) {
-  // Delete the webfonts directory from the main thread
-  const pathsToRemove = [
+  // Delete the dist directories from the main thread
+  const dirsToRemove = [
     `${__dirname}/webfonts`,
-    `${__dirname}/css`
+    `${__dirname}/css`,
   ]
-  pathsToRemove.forEach((path) => {
-    stat(path, (err, stats) => {
-      if (stats.isDirectory()) {
-        rm(path, { recursive: true }, (err) => {
-          if (err) throw err
-        })
+  dirsToRemove.forEach(async(path) => {
+    try {
+      const dir = await stat(path)
+      if (dir.isDirectory()) {
+        rm(path, { recursive: true, force: true })
       }
-    })
+    } catch (error) {
+      console.log(error)
+    }
   })
 
   const worker = new Worker(__filename)
