@@ -1,5 +1,5 @@
 const { Worker, isMainThread, parentPort } = require('worker_threads')
-const { readFile, mkdir, writeFile, rmdir, copyFile } = require('fs').promises
+const { readFile, mkdir, writeFile, rm, copyFile } = require('fs').promises
 const postcss = require('postcss')
 
 const plugins = [
@@ -67,12 +67,12 @@ async function ProcessCss() {
 
 if (isMainThread) {
   // Delete the webfonts directory from the main thread
-  rmdir(`${__dirname}/webfonts`, { recursive: true }, (err) => {
+  rm(`${__dirname}/webfonts`, { recursive: true }, (err) => {
     if (err) throw err
   })
 
   // Delete the CSS directory from the main thread
-  rmdir(`${__dirname}/css`, { recursive: true }, (err) => {
+  rm(`${__dirname}/css`, { recursive: true }, (err) => {
     if (err) throw err
   })
 
