@@ -1,6 +1,6 @@
 /* Animations */
 
-// slide-fade
+/* slide-fade */
 .slide-fade-enter-active {
   transition: all .3s cubic-bezier(.4, 0, .2, 1);
 }
