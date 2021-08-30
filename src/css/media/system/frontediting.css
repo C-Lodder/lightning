@@ -7,32 +7,7 @@
 .jmodedit {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   display: block;
   z-index: 1001;
-
-  .jmodinside {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-}
-
-html[dir=rtl] .btn.jmodedit {
-  right: auto;
-  left: 0;
-}
-
-.jfedit-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1002;
-}
-
-.navbar-menu > ul > li .jfedit-menu {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--hiq-button-vertical-padding) var(--hiq-button-horizontal-padding) !important;
-  color: #fff;
 }

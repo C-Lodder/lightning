@@ -335,6 +335,12 @@
   --hiq-btn-close-color: var(--hiq-text-color);
   --hiq-btn-close-hover-color: var(--hiq-text-color);
 
+  /* tooltip */
+  --hiq-tooltip-background-color: hsl(0, 0%, 100%);
+  --hiq-tooltip-border-color: var(--hiq-color-gray-4);
+  --hiq-tooltip-color: var(--hiq-text-color);
+  --hiq-tooltip-padding: .5rem;
+
   /* alert */
   --hiq-alert-padding: 18px 15px;
   --hiq-alert-border-width: 1px;
@@ -410,6 +416,10 @@
   --hiq-alert-success-text: #56d364;
   --hiq-alert-success-bg: rgba(46,160,67,.1);
   --hiq-alert-success-border: rgba(46,160,67,.4);
+
+  /* tooltip */
+  --hiq-tooltip-background-color: var(--hiq-dark-2);
+  --hiq-tooltip-border-color: var(--hiq-border-color);
 
   /* dropdown */
   --hiq-dropdown-background-color: hsl(216, 28%, 7%);

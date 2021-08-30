@@ -3,6 +3,7 @@
 ## WIP
 - Fix webmanifest file extension
 - Fix inadequate escaping on the logo parameter
+- Fix frontend editing styling
 
 ## 0.0.15
 - Fix missing files

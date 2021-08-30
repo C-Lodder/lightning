@@ -1,0 +1,21 @@
+/* Tooltip */
+
+[role="tooltip"]:not(.show) {
+  right: 2em;
+  z-index: 1070;
+  display: none;
+  max-width: 100%;
+  padding: var(--hiq-tooltip-padding);
+  margin: .5rem;
+  color: var(--hiq-tooltip-color);
+  text-align: start;
+  background: var(--hiq-tooltip-background-color);
+  border: 1px solid var(--hiq-tooltip-border-color);
+  border-radius: var(--hiq-border-radius);
+}
+
+:focus + [role="tooltip"],
+:hover + [role="tooltip"] {
+  position: absolute;
+  display: block;
+}
