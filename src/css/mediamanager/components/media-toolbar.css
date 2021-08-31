@@ -45,9 +45,9 @@
 
 .media-loader {
   position: absolute;
-  right: 100%;
+  inset-inline-end: 100%;
   bottom: 0;
-  left: 0;
+  inset-inline-start: 0;
   z-index: 10;
   height: var(--mediamanager-toolbar-loader-height);
   background-image: var(--mediamanager-toolbar-loader-color);
@@ -57,10 +57,10 @@
 
 @keyframes mediaLoader {
   from {
-    right: 100%;
+    inset-inline-end: 100%;
   }
 
   to {
-    right: 0;
+    inset-inline-end: 0;
   }
 }

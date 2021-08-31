@@ -54,7 +54,7 @@
   .mod-menu__sub {
     position: absolute;
     top: 100%;
-    left: 0;
+    inset-inline-start: 0;
     z-index: 3;
     display: none;
     min-width: 12rem;
@@ -89,8 +89,8 @@
 
   @media (--hiq-upper-font-range) {
     .navbar-end {
-      margin-left: auto;
-      margin-right: 2rem;
+      margin-inline-start: auto;
+      margin-inline-end: 2rem;
     }
   }
 }
@@ -119,7 +119,7 @@
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      inset-inline-start: 0;
       top: -12px;
     }
 

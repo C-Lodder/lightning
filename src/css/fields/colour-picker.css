@@ -22,7 +22,7 @@ colour-picker {
 colour-swatch {
   position: absolute;
   top: 50%;
-  left: 3px;
+  inset-inline-start: 3px;
   z-index: 2;
   width: 28px;
   height: 28px;

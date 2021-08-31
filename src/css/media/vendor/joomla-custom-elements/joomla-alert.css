@@ -29,7 +29,7 @@ joomla-alert {
   .joomla-alert--close {
     position: absolute;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
     z-index: 2;
     width: 1em;
     height: 1em;
@@ -52,8 +52,6 @@ joomla-alert {
 html[dir=rtl] joomla-alert {
   .joomla-alert--close,
   .joomla-alert-button--close {
-    right: auto;
-    left: 0;
     float: left;
   }
 }

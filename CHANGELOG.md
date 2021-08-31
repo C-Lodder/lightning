@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Make use of more CSS logical properties
 - Fix webmanifest file extension
 - Fix inadequate escaping on the logo parameter
 - Fix frontend editing styling

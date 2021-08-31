@@ -44,7 +44,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 100%;
+    inset-inline-end: 100%;
     z-index: 2;
     display: block;
     width: 0;
@@ -65,9 +65,4 @@
 
 .breadcrumb-item + .breadcrumb-item::before {
   display: none;
-}
-
-/* RTL override */
-html[dir=rtl] .media-breadcrumb-item::after, .media-breadcrumb-item::before {
-  right: 100%;
 }

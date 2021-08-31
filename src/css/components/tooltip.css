@@ -1,7 +1,7 @@
 /* Tooltip */
 
 [role="tooltip"]:not(.show) {
-  right: 2em;
+  inset-inline-end: 2em;
   z-index: 1070;
   display: none;
   max-width: 100%;

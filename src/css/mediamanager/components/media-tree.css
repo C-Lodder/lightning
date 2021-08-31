@@ -43,7 +43,7 @@ ul.media-tree {
   &::before {
     position: absolute;
     top: calc(var(--mediamanager-sidebar-tree-line-height) / 2);
-    left: 0;
+    inset-inline-start: 0;
     width: 10px;
     height: 1px;
     margin: auto;
@@ -54,7 +54,7 @@ ul.media-tree {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 1px;
     height: 100%;
     content: "";
@@ -68,7 +68,7 @@ ul.media-tree {
   li {
     padding-inline-start: 10px;
     &::before, &::after {
-      left: 5px;
+      inset-inline-start: 5px;
     }
   }
 }
@@ -119,17 +119,4 @@ ul.media-tree {
 
 .media-tree-item.active > a .item-name {
   font-weight: bold;
-}
-
-/* RTL override */
-html[dir=rtl] {
-  .media-browser-table .dimension, .media-browser-table .size,
-  .media-browser-table .created, .media-browser-table .modified {
-    direction: ltr;
-  }
-
-  .media-tree-item li::before, .media-tree-item li::after {
-    right: 5px;
-    left: 0;
-  }
 }
