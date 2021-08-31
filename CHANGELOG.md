@@ -5,6 +5,7 @@
 - Fix webmanifest file extension
 - Fix inadequate escaping on the logo parameter
 - Fix frontend editing styling
+- Fix colour picker swatch position
 
 ## 0.0.15
 - Fix missing files

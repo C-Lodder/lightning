@@ -1,6 +1,8 @@
 /* Colour Picker */
 
 colour-picker {
+  display: block;
+
   .panel {
     position: absolute;
     top: auto;
