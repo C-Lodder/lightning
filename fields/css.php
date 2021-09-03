@@ -69,16 +69,50 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 					$override = $value[1];
 				}
 
+				$bg = $val;
+
 				// Get the type of variable to determine the input type
 				$type = $helper->detectCssVariableType($val);
-				$inputType = $type === 'color' ? 'text' : $type;
 
+				// If the variable is mapped to another variable, we'll need to traverse until we get the final colour.
+				if ($type === 'mapped')
+				{
+					$var = $val;
+					do
+					{
+						// Remove wrapped "var()" from string
+						$trimmed = $helper->trimVariable($var);
+
+						// Firstly check if the variable belongs in the dark variables array, then the default array
+						if (isset($variables['dark'][$trimmed]))
+						{
+							$var = is_array($variables['dark'][$trimmed]) ? $variables['dark'][$trimmed][0] : $variables['dark'][$trimmed];
+						}
+						else if (isset($variables['default'][$trimmed]))
+						{
+							$var = is_array($variables['default'][$trimmed]) ? $variables['default'][$trimmed][0] : $variables['default'][$trimmed];
+						}
+						else
+						{
+							// If if can't be found, break the loop
+							break;
+						}
+
+						// Update the variables for the next loop
+						$type = $helper->detectCssVariableType($var);
+						$bg = $var;
+					}
+					while ($type === 'mapped');
+				}
+
+				$inputType = $type === 'color' ? 'text' : $type;
 				$badgeClass = $colourScheme === 'dark' ? 'bg-dark' : 'bg-info';
 
 				$html .= '<tr data-colour-scheme="' . $colourScheme . '">';
 				$html .= '<td><span class="badge ' . $badgeClass . '">' . $colourScheme . '</span></td>';
 				$html .= '<td class="css-variable">' . $variable . '</td>';
 				$html .= '<td>';
+
 				if ($type === 'color')
 				{
 					$html .= '<div class="has-swatch">';
@@ -86,13 +120,12 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 				$html .= '<input readonly type="' . $inputType . '" class="form-control css-default" value=\'' . htmlspecialchars($val, ENT_QUOTES) . '\'>';
 				if ($type === 'color')
 				{
-					$html .= '<colour-swatch style="background-color:' . htmlspecialchars($val, ENT_QUOTES) . '"></colour-swatch>';
+					$html .= '<colour-swatch style="background-color:' . htmlspecialchars($bg, ENT_QUOTES) . '"></colour-swatch>';
 					$html .= '</div>';
 				}
 				$html .= '</td>';
 				$html .= '<td>';
 				
-				// If value is a variable call var(--hiq-xxxx), we'll need to run a while loop to to continue searching for it
 				// Add ability to create dark override for default
 				if ($type === 'color')
 				{

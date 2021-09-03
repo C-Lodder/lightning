@@ -11,14 +11,19 @@ const saveCss = () => {
     }
   }
 
-  document.querySelectorAll('.has-changed').forEach(row => {
+  const overrides = Array.from(document.querySelectorAll('.css-override'))
+  for (const override of overrides) {
+    const value = override.value.trim()
+    if (value === '') {
+      continue;
+    }
+    const row = override.closest('tr')
     const colourScheme = row.getAttribute('data-colour-scheme')
     const variable = row.querySelector('.css-variable').innerText
-    const value = row.querySelector('.css-override').value
-    if (value.trim() !== '') {
-      obj.css[colourScheme][variable] = value
-    }
-  })
+
+    // Update the object
+    obj.css[colourScheme][variable] = value
+  }
 
   fetch('index.php?option=com_ajax&template=lightning&method=saveCss&format=json', {
     method: 'POST',

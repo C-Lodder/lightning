@@ -147,11 +147,23 @@ class TplLightningHelper
 		{
 			$type = 'color';
 		}
-		else if (is_numeric($variable))
+		else if (substr($variable, 0, 4) === 'var(')
 		{
-			$type = 'number';
+			$type = 'mapped';
 		}
 
 		return $type;
+	}
+
+	/**
+	 * Trim the "var()" wrapper
+	 * E.g var(--xx) becomes --xx
+	 */
+	public function trimVariable($variable)
+	{
+		$trimmed = substr($variable, 0, -1);
+		$trimmed = substr($trimmed, 4);
+
+		return $trimmed;
 	}
 }
