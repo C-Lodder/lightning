@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Improvements to CSS variable overrides
 - Make use of more CSS logical properties
 - Fix webmanifest file extension
 - Fix inadequate escaping on the logo parameter
