@@ -10,6 +10,7 @@
 - Fix inpup-group border radius
 - Fix offline_image not being shown if enabled
 - Fix custom SVG logo not being shown on error and offline views
+- Fix social login buttons not showing on offline page
 
 ## 0.0.15
 - Fix missing files

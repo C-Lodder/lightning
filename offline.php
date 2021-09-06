@@ -18,6 +18,7 @@ use Joomla\CMS\Uri\Uri;
 /** @var JDocumentHtml $this */
 
 $twofactormethods = AuthenticationHelper::getTwoFactorMethods();
+$extraButtons     = AuthenticationHelper::getLoginButtons('form-login');
 $app              = Factory::getApplication();
 
 // Template params
@@ -108,6 +109,37 @@ elseif ($this->params->get('siteTitle'))
 								<input name="secretkey" id="secretkey" type="text">
 							</p>
 							<?php endif; ?>
+							
+							<?php foreach($extraButtons as $button):
+								$dataAttributeKeys = array_filter(array_keys($button), function ($key) {
+									return substr($key, 0, 5) == 'data-';
+								});
+								?>
+								<div class="mod-login__submit form-group">
+									<button type="button"
+											class="btn btn-secondary btn-block mt-4 <?php echo $button['class'] ?? '' ?>"
+											<?php foreach ($dataAttributeKeys as $key): ?>
+											<?php echo $key ?>="<?php echo $button[$key] ?>"
+											<?php endforeach; ?>
+											<?php if ($button['onclick']): ?>
+											onclick="<?php echo $button['onclick'] ?>"
+											<?php endif; ?>
+											title="<?php echo Text::_($button['label']) ?>"
+											id="<?php echo $button['id'] ?>"
+											>
+										<?php if (!empty($button['icon'])): ?>
+											<span class="<?php echo $button['icon'] ?>"></span>
+										<?php elseif (!empty($button['image'])): ?>
+											<?php echo HTMLHelper::_('image', $button['image'], Text::_($button['tooltip'] ?? ''), [
+												'class' => 'icon',
+											], true) ?>
+										<?php elseif (!empty($button['svg'])): ?>
+											<?php echo $button['svg']; ?>
+										<?php endif; ?>
+										<?php echo Text::_($button['label']) ?>
+									</button>
+								</div>
+							<?php endforeach; ?>
 
 							<p>
 								<button type="submit" name="Submit"><?php echo Text::_('JLOGIN'); ?></button>
