@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 1.0.0
 - Improvements to CSS variable overrides
 - Make use of more CSS logical properties
 - Fix webmanifest file extension
