@@ -1,6 +1,7 @@
 /* Input Group */
 
 .input-group {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -15,29 +16,16 @@
     --hiq-button-height: var(--hiq-input-height);
   }
 
-  > .input-group-append {
-    display: flex;
+  &:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
+  &:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-end-end-radius: 0;
+    border-start-end-radius: 0;
+  }
+
+  > :not(:first-child):not(.dropdown-menu):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     margin-inline-start: -1px;
-  }
-
-  > .input-group-prepend:not(:last-child) > * {
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
-  }
-
-  > .input-group-append:not(:first-child) > * {
     border-start-start-radius: 0;
-    border-start-end-radius: 0;
-  }
-
-  > .form-control:not(:first-child) {
-    border-start-start-radius: 0;
-    border-start-end-radius: 0;
-  }
-
-  > .form-control:not(:last-child) {
     border-end-start-radius: 0;
-    border-end-end-radius: 0;
   }
 }
 

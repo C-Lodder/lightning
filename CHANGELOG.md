@@ -7,6 +7,7 @@
 - Fix inadequate escaping on the logo parameter
 - Fix frontend editing styling
 - Fix colour picker swatch position
+- Fix inpup-group border radius
 
 ## 0.0.15
 - Fix missing files

@@ -30,6 +30,7 @@ if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 }
+
 HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Font Awesome
@@ -116,6 +117,7 @@ $cachesStyleSheets = json_encode(array_values($styles));
 <head>
 	<?php echo $metas; ?>
 	<style><?php echo $css . $customVariables; ?></style>
+	<?php echo $scripts; ?>
 </head>
 <body class="site-grid site <?php echo $pageclass . $hasSidebar; ?>">
 	<header class="grid-child container-header full-width header <?php echo $this->countModules('banner') ? 'has-banner' : ''; ?>">
@@ -220,7 +222,5 @@ $cachesStyleSheets = json_encode(array_values($styles));
 			})
 		})()
 	</script>
-
-	<?php echo $scripts; ?>
 </body>
 </html>

@@ -61,5 +61,4 @@
       return event.matches ? applyClass(THEME.dark) : applyClass(THEME.light)
     }
   })
-
 })()
