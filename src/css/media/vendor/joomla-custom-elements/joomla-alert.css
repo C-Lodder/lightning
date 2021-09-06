@@ -11,13 +11,8 @@ joomla-alert {
   border-style: solid;
   border-width: var(--hiq-alert-border-width);
   border-radius: var(--hiq-border-radius);
-  opacity: 0;
-  transition: opacity var(--hiq-speed) var(--hiq-easing);
-
-  &.joomla-alert--show {
-    display: block;
-    opacity: 1;
-  }
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
 
   .joomla-alert--close,
   .joomla-alert-button--close {
@@ -38,7 +33,11 @@ joomla-alert {
   }
 
   .joomla-alert--close,
-  button.joomla-alert-button--close {
+  button.joomla-alert-button--close,
+  .joomla-alert--close:hover,
+  button.joomla-alert-button--close:hover,
+  .joomla-alert--close:focus,
+  button.joomla-alert-button--close:focus {
     line-height: 1;
     cursor: pointer;
     background-color: transparent;
@@ -46,6 +45,15 @@ joomla-alert {
   }
 
   @mixin alert-variant;
+}
+
+@keyframes joomla-alert-fade-in {
+  0% { opacity: 0; }
+}
+
+@keyframes joomla-alert-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* RTL overrides */

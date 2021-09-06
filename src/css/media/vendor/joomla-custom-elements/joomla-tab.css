@@ -4,7 +4,16 @@ joomla-tab {
   display: flex;
   flex-direction: column;
 
-  > ul {
+  &[orientation=horizontal]:not([view=accordion]) {
+    margin-bottom: 0;
+  }
+
+  &[orientation=horizontal]:not([view=accordion]) div[role=tablist] {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  > div[role=tablist] {
     display: flex;
     background-color: var(--hiq-tabs-background-color);
     border-color: var(--hiq-border-color) var(--hiq-border-color) currentColor;
@@ -19,19 +28,23 @@ joomla-tab {
     white-space: nowrap;
   }
 
-  a[role=tab] {
+  button[role=tab],
+  button[role=region] {
     display: block;
     color: var(--hiq-text-color);
     padding: .75em 1em;
     position: relative;
     box-shadow: 1px 0 0 rgba(0, 0, 0, .05);
     text-decoration: none;
+    background-color: transparent;
+    border: 0;
 
-    &[active] {
+    &[aria-expanded=true],
+    &:focus,
+    &:hover {
       border-inline-start: 0 none;
       border-inline-end: 0 none;
-      border-start-start-radius: 0;
-      border-end-start-radius: 0;
+      border-radius: 0;
       box-shadow: 2px 0 1px -1px rgba(0, 0, 0, .08) inset, -2px 0 1px -1px rgba(0, 0, 0, .08) inset, 0 1px 0 rgba(0, 0, 0, .02) inset;
 
       &::after {
@@ -47,7 +60,7 @@ joomla-tab {
     }
   }
 
-  > section {
+  > joomla-tab-element {
     position: relative;
     display: none;
     border: 1px solid var(--hiq-border-color);
@@ -59,84 +72,87 @@ joomla-tab {
       display: block;
     }
   }
-}
 
-joomla-tab[orientation=vertical] {
-  flex-direction: row;
-  align-items: flex-start;
+  &[orientation=vertical] {
+    flex-direction: row;
+    align-items: flex-start;
 
-  > ul {
-    flex-direction: column;
-    min-width: 250px;
-    height: auto;
-    border: 1px solid var(--hiq-border-color);
-    border-radius: .25rem;
-    box-shadow: none;
-    overflow: hidden;
-    white-space: normal;
-  }
+    > div[role=tablist] {
+      flex-direction: column;
+      min-width: 250px;
+      height: auto;
+      border: 1px solid var(--hiq-border-color);
+      border-radius: .25rem;
+      box-shadow: none;
+      overflow: hidden;
+      white-space: normal;
+    }
 
-  a {
-    display: block;
-    color: var(--hiq-text-color);
-    padding: .75em 1em;
-    position: relative;
-    border-bottom: 1px solid var(--hiq-border-color);
-    box-shadow: none;
-    text-decoration: none;
+    button[role=tab]:last-of-type {
+      border-bottom: 0;
+    }
 
-    &[active] {
-      border-inline-start: 0 none;
-      border-inline-end: 0 none;
-      background-color: rgba(0, 0, 0, .03);
-      background-image: none;
-      box-shadow: 2px 0 1px -1px rgba(0, 0, 0, .08) inset, -2px 0 1px -1px rgba(0, 0, 0, .08) inset, 0 1px 0 rgba(0, 0, 0, .02) inset;
+    button[role=tab] {
+      padding: .75em 1em;
+      position: relative;
+      border-bottom: 1px solid var(--hiq-border-color);
+      box-shadow: none;
+      text-decoration: none;
 
-      &::after {
-        inset-inline-start: -1px;
-        width: 5px;
-        height: auto;
-        top: 0;
-        bottom: 0;
+      &[aria-expanded=true],
+      &:focus,
+      &:hover {
+        border-inline-start: 0 none;
+        border-inline-end: 0 none;
+        background-color: rgba(0, 0, 0, .03);
+        background-image: none;
+        box-shadow: 2px 0 1px -1px rgba(0, 0, 0, .08) inset, -2px 0 1px -1px rgba(0, 0, 0, .08) inset, 0 1px 0 rgba(0, 0, 0, .02) inset;
+
+        &::after {
+          inset-inline-start: -1px;
+          width: 5px;
+          height: auto;
+          top: 0;
+          bottom: 0;
+        }
       }
     }
+
+    > joomla-tab-element {
+      flex-grow: 1;
+      border: 0 none;
+      box-shadow: none;
+      padding: 15px;
+    }
   }
 
-  li:last-of-type a {
-    border-bottom: 0;
-  }
-
-  > section {
-    flex-grow: 1;
-    border: 0 none;
-    box-shadow: none;
-    padding: 15px;
-  }
-}
-
-joomla-tab[view=accordion] {
-  ul {
-    flex-direction: column;
-  }
-
-  section {
-    display: none;
-    padding: 15px;
-
-    &[active] {
-      display: block;
-      background-color: var(--hiq-body-background-color);
-      border-bottom: 1px solid var(--hiq-border-color);
+  &[view=accordion] {
+    > div[role=tablist] {
+      flex: 1;
+      flex-direction: column;
     }
 
-    a[role=tab] {
-      border-bottom: 1px solid var(--hiq-border-color);
+    joomla-tab-element {
+      display: none;
+      padding: 15px;
 
-      &[active]::after {
-        width: 5px;
-        height: 100%;
-        top: 0;
-        inset-inline-start: 0;
+      &[active] {
+        display: block;
+        background-color: var(--hiq-body-background-color);
+        border-bottom: 1px solid var(--hiq-border-color);
+     }
+
+      button[role=tab],
+      button[role=region] {
+        border-bottom: 1px solid var(--hiq-border-color);
+
+        &[aria-expanded=true]::after,
+        &:hover::after {
+          width: 5px;
+          height: 100%;
+          top: 0;
+          inset-inline-start: 0;
+        }
       }
     }
   }

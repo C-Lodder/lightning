@@ -1,6 +1,7 @@
 /* hidden */
 /* Use by Joomla */
 
-.hidden {
+.hidden,
+[hidden] {
   display: none !important;
 }
