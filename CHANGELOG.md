@@ -8,6 +8,8 @@
 - Fix frontend editing styling
 - Fix colour picker swatch position
 - Fix inpup-group border radius
+- Fix offline_image not being shown if enabled
+- Fix custom SVG logo not being shown on error and offline views
 
 ## 0.0.15
 - Fix missing files
