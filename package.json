@@ -18,10 +18,10 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "archiver": "^5.3.0",
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.6",
     "cssnano": "^5.0.8",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
+    "postcss": "^8.3.8",
+    "postcss-cli": "^9.0.1",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-selectors": "^6.0.0",
     "postcss-discard-comments": "^5.0.1",
@@ -31,6 +31,6 @@
     "postcss-nested": "^5.0.6",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "terser": "^5.7.2"
+    "terser": "^5.9.0"
   }
 }
