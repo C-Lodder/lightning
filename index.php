@@ -21,13 +21,16 @@ $pageclass     = $app->getMenu()->getActive()->getParams()->get('pageclass_sfx')
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 
-// Template params
+// Load switcher CSS
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 }
 
-HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
+// Fetch CSS
+HTMLHelper::_('stylesheet', 'template.css', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('stylesheet', 'custom-variables.css', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('stylesheet', 'user.css', ['version' => 'auto', 'relative' => true]);
 
 // Font Awesome
 if ($fontAwesome)
@@ -35,14 +38,9 @@ if ($fontAwesome)
 	HTMLHelper::_('stylesheet', 'fontawesome.css', ['version' => 'auto', 'relative' => true]);
 }
 
-// Fetch CSS
-$css = file_get_contents(__DIR__ . '/css/template.css');
-$customVariables = '';
-
-if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/custom-variables.css'))
-{
-	$customVariables = file_get_contents(JPATH_SITE . '/templates/' . $this->template . '/css/custom-variables.css');
-}
+// Load switcher JS
+// This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
+HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Logo file or site title param
 $logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" height="50"><path fill="hsl(210, 100%, 50%)" d="M403.712 201.04H256.288L329.792 0 105.216 307.888H252.64l-73.504 201.04z"/></svg>';
@@ -108,7 +106,6 @@ $debug        = $this->getBuffer('modules', 'debug', $attribs = ['style' => 'non
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<jdoc:include type="metas" />
-	<style><?php echo $css . $customVariables; ?></style>
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </head>

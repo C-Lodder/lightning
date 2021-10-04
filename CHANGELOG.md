@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add support for user.css
 - Reduce flash of unstyled content
 - Fix separator menu item dropdowns
 
