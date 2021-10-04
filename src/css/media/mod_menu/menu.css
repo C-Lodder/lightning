@@ -29,8 +29,8 @@
       }
     }
 
-    > li.active a,
-    > li a:hover {
+    > li.active > a,
+    > li > a:hover {
       margin-bottom: -2px;
       border-bottom: 2px solid var(--hiq-color-primary);
     }

@@ -2,6 +2,7 @@
 
 ## WIP
 - Reduce flash of unstyled content
+- Fix separator menu item dropdowns
 
 ## 1.0.0
 - Improvements to CSS variable overrides
