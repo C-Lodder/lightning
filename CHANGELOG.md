@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Reduce flash of unstyled content
+
 ## 1.0.0
 - Improvements to CSS variable overrides
 - Make use of more CSS logical properties

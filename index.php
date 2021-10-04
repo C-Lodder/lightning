@@ -13,10 +13,6 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
-include_once __DIR__ . '/helper/metas.php';
-include_once __DIR__ . '/helper/styles.php';
-include_once __DIR__ . '/helper/scripts.php';
-
 /** @var JDocumentHtml $this */
 
 $app           = Factory::getApplication();
@@ -106,18 +102,15 @@ $bottomA      = $this->getBuffer('modules', 'bottom-a', $attribs = ['style' => '
 $bottomB      = $this->getBuffer('modules', 'bottom-b', $attribs = ['style' => 'default']);
 $footer       = $this->getBuffer('modules', 'footer', $attribs = ['style' => 'none']);
 $debug        = $this->getBuffer('modules', 'debug', $attribs = ['style' => 'none']);
-$metas        = $this->getBuffer('metas');
-$styles       = $this->getBuffer('styles');
-$scripts      = $this->getBuffer('scripts');
 
-$cachesStyleSheets = json_encode(array_values($styles));
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<?php echo $metas; ?>
+	<jdoc:include type="metas" />
 	<style><?php echo $css . $customVariables; ?></style>
-	<?php echo $scripts; ?>
+	<jdoc:include type="styles" />
+	<jdoc:include type="scripts" />
 </head>
 <body class="site-grid site <?php echo $pageclass . $hasSidebar; ?>">
 	<header class="grid-child container-header full-width header <?php echo $this->countModules('banner') ? 'has-banner' : ''; ?>">
@@ -213,14 +206,5 @@ $cachesStyleSheets = json_encode(array_values($styles));
 	<?php endif; ?>
 
 	<?php echo $debug; ?>
-
-	<script>
-		(() => {
-			const styles = <?php echo $cachesStyleSheets; ?>;
-			styles.forEach(item => {
-				document.body.insertAdjacentHTML('beforeend', item);
-			})
-		})()
-	</script>
 </body>
 </html>
