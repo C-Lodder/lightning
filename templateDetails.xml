@@ -51,7 +51,7 @@
 	</languages>
 
 	<config>
-		<fields name="params">
+		<fields name="params" addfieldpath="/templates/lightning/fields">
 			<fieldset name="advanced">
 				<field
 					name="siteDescription"
@@ -108,7 +108,7 @@
 				/>
 			</fieldset>
 
-			<fieldset name="css" label="TPL_LIGHTNING_FIELDSET_CSS_OVERRIDES" addfieldpath="/templates/lightning/fields">
+			<fieldset name="css" label="TPL_LIGHTNING_FIELDSET_CSS_OVERRIDES">
 				<field type="css" />
 			</fieldset>
 
@@ -131,6 +131,13 @@
 					label="TPL_LIGHTNING_IMGCACHEFOLDER_LABEL"
 					description="TPL_LIGHTNING_IMGCACHEFOLDER_DESC"
 					default="autosized"
+				/>
+			</fieldset>
+
+			<fieldset name="about" label="TPL_LIGHTNING_FIELDSET_ABOUT">
+				<field
+					name="about"
+					type="about"
 				/>
 			</fieldset>
 		</fields>

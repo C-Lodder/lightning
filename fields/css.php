@@ -21,12 +21,9 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 	protected $type = 'Css';
 
 	/**
-	 * @return void
+	 * @var  boolean
 	 */
-	protected function getLabel()
-	{
-		return;
-	}
+	protected $hiddenLabel = true;
 
 	/**
 	 * @return mixed
