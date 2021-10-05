@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 1.1.0
 - Add support for user.css
 - Reduce flash of unstyled content
 - Fix separator menu item dropdowns
