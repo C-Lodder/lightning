@@ -17,12 +17,13 @@ $images = json_decode($displayData->images);
 ?>
 <?php if (!empty($images->image_fulltext)) : ?>
 	<?php
+	$img = substr($images->image_fulltext, 0, strpos($images->image_fulltext, '?'));
 	$templateParams = \Joomla\CMS\Factory::getApplication()->getTemplate(true)->params;
 	$autoResize     = $templateParams->get('auto-resize', 1);
 
 	$imageLayout    = new FileLayout('lightning.picture_element');
 	$pictureElement = $imageLayout->render([
-		'file'          => $images->image_fulltext,
+		'file'          => $img,
 		'caption'       => $images->image_fulltext_caption,
 		'alt'           => $images->image_fulltext_alt,
 		'resize'        => $autoResize,

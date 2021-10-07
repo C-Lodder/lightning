@@ -575,7 +575,7 @@ class ImageResizer
 
 			$absoluteFileUri = $uri->toString();
 
-			if (strpos($absoluteFileUri, Uri::base(false)) !== 0)
+			if (strpos($absoluteFileUri, Uri::base(false)) !== false)
 			{
 				return null;
 			}
