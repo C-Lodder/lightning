@@ -44,9 +44,11 @@
   input:first-child:checked ~ label {
     transform: translateX(0);
   }
+
   input:nth-child(2):checked ~ label {
     transform: translateX(calc(calc(var(--switcher-width) / 2) - 50%));
   }
+
   input:nth-child(3):checked ~ label {
     transform: translateX(calc(var(--switcher-width) - 100%));
   }
@@ -57,6 +59,7 @@ html[dir=rtl] .color-scheme-switch {
   input:first-child:checked ~ label {
     transform: translateX(calc(var(--switcher-width) - 100%));
   }
+
   input:nth-child(3):checked ~ label {
     transform: translateX(0);
   }

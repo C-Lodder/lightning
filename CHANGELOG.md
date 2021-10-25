@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Tweak some CSS for stylelint update
+
 ## 1.1.1
 - Fix image resize/optimiser
 - Fix CSS overrides not loading on error or offline pages 

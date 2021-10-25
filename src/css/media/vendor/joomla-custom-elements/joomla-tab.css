@@ -8,11 +8,6 @@ joomla-tab {
     margin-bottom: 0;
   }
 
-  &[orientation=horizontal]:not([view=accordion]) div[role=tablist] {
-    width: 100%;
-    margin-bottom: 0;
-  }
-
   > div[role=tablist] {
     display: flex;
     background-color: var(--hiq-tabs-background-color);
@@ -26,6 +21,11 @@ joomla-tab {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+  }
+
+  &[orientation=horizontal]:not([view=accordion]) div[role=tablist] {
+    width: 100%;
+    margin-bottom: 0;
   }
 
   button[role=tab],
@@ -77,6 +77,7 @@ joomla-tab {
     flex-direction: row;
     align-items: flex-start;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     > div[role=tablist] {
       flex-direction: column;
       min-width: 250px;
@@ -92,6 +93,7 @@ joomla-tab {
       border-bottom: 0;
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     button[role=tab] {
       padding: .75em 1em;
       position: relative;
@@ -126,7 +128,9 @@ joomla-tab {
     }
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   &[view=accordion] {
+    /* stylelint-disable-next-line no-descending-specificity */
     > div[role=tablist] {
       flex: 1;
       flex-direction: column;
@@ -140,8 +144,9 @@ joomla-tab {
         display: block;
         background-color: var(--hiq-body-background-color);
         border-bottom: 1px solid var(--hiq-border-color);
-     }
+      }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       button[role=tab],
       button[role=region] {
         border-bottom: 1px solid var(--hiq-border-color);

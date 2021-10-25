@@ -58,11 +58,11 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--hiq-border-color);
 
   .close {
-    padding: 1rem 1rem;
+    padding: 1rem;
     margin: -1rem -1rem -1rem auto;
   }
 }
