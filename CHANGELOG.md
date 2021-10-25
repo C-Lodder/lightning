@@ -2,6 +2,8 @@
 
 ## WIP
 - Fix image resize/optimiser
+- Fix CSS overrides not loading on error or offline pages 
+- Fix `user.css` not loading on error or offline pages 
 
 ## 1.1.0
 - Add support for user.css

@@ -23,14 +23,28 @@ $app              = Factory::getApplication();
 
 // Template params
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
+$fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
+
+// Load switcher CSS
 if ($themeSwitcher)
 {
 	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
 }
-HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Fetch CSS
-$css = file_get_contents(__DIR__ . '/css/template.css');
+HTMLHelper::_('stylesheet', 'template.css', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('stylesheet', 'custom-variables.css', ['version' => 'auto', 'relative' => true]);
+HTMLHelper::_('stylesheet', 'user.css', ['version' => 'auto', 'relative' => true]);
+
+// Font Awesome
+if ($fontAwesome)
+{
+	HTMLHelper::_('stylesheet', 'fontawesome.css', ['version' => 'auto', 'relative' => true]);
+}
+
+// Load switcher JS
+// This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
+HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
@@ -54,7 +68,8 @@ elseif ($this->params->get('siteTitle'))
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<jdoc:include type="metas" />
-	<style><?php echo $css; ?></style>
+	<jdoc:include type="styles" />
+	<jdoc:include type="scripts" />
 </head>
 <body class="site-grid site">
 	<div class="grid-child container-header full-width">
@@ -155,8 +170,5 @@ elseif ($this->params->get('siteTitle'))
 			</div>
 		</div>
 	</div>
-
-	<jdoc:include type="styles" />
-	<jdoc:include type="scripts" />
 </body>
 </html>
