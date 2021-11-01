@@ -2,6 +2,7 @@
 
 ## WIP
 - Tweak some CSS for stylelint update
+- Fix error in PHP 7.2
 
 ## 1.1.1
 - Fix image resize/optimiser

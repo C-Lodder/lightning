@@ -46,10 +46,7 @@ class TplLightningHelper
 			$string .= '}';
 
 			// Write to file
-			file_put_contents(
-				JPATH_SITE . '/templates/lightning/css/custom-variables.css',
-				$string,
-			);
+			file_put_contents(JPATH_SITE . '/templates/lightning/css/custom-variables.css', $string);
 
 			$response = Text::_('CSS variables saved');
 		}
