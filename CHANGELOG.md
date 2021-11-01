@@ -1,8 +1,8 @@
 # Changelog
 
-## WIP
+## 1.1.2
 - Tweak some CSS for stylelint update
-- Fix error in PHP 7.2
+- Fix error in settings on PHP 7.2
 
 ## 1.1.1
 - Fix image resize/optimiser
