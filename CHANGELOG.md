@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.1.2
+- Move to Web Asset Manager for assets
 - Tweak some CSS for stylelint update
 - Fix error in settings on PHP 7.2
 
@@ -85,7 +86,7 @@
 - Build script improvements
 
 ## 0.0.7
-- Add dark theme styling for Madia Manager
+- Add dark theme styling for Media Manager
 - Media Manager now uses CSS Grid
 - Fix pagenavigation plugin styling
 - Fix sidebar padding on smaller devices

@@ -9,7 +9,6 @@
 defined('JPATH_PLATFORM') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
@@ -30,9 +29,9 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 	 */
 	protected function getInput()
 	{
-		HTMLHelper::_('script', Uri::root() . 'templates/lightning/js/fields/colour-picker.min.js', ['version' => 'auto'], ['type' => 'module']);
-		HTMLHelper::_('script', Uri::root() . 'templates/lightning/js/fields/custom-variables.min.js', ['version' => 'auto'], ['type' => 'module']);
-		HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/fields/colour-picker.css', ['version' => 'auto']);
+		$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+		$wa->getRegistry()->addRegistryFile('templates/lightning/joomla.asset.json');
+		$wa->usePreset('colour-picker');
 
 		// Load helper
 		\JLoader::register('TplLightningHelper', dirname(__DIR__) . '/helper.php');

@@ -11,7 +11,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
@@ -76,5 +75,6 @@ if ($menusEditing && $mod->module === 'mod_menu')
 
 if ($count)
 {
-	HTMLHelper::_('stylesheet', 'system/frontediting.css', ['version' => 'auto', 'relative' => true]);
+	$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+	$wa->useStyle('frontediting.css');
 }

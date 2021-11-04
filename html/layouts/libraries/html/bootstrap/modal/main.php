@@ -8,7 +8,7 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Utilities\ArrayHelper;
@@ -35,6 +35,8 @@ extract($displayData);
  * @param   string  $body      Markup for the modal body. Appended after the <iframe> if the URL option is set
  *
  */
+
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
 $modalClasses = array('modal');
 
@@ -72,7 +74,7 @@ if (isset($params['url']))
 	$iframeHtml = htmlspecialchars(LayoutHelper::render('libraries.html.bootstrap.modal.iframe', $displayData), ENT_COMPAT, 'UTF-8');
 }
 
-HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
+$wa->useStyle('modal.css');
 ?>
 <div id="<?php echo $selector; ?>" role="dialog" <?php echo ArrayHelper::toString($modalAttributes); ?> <?php echo $url ?? ''; ?> <?php echo isset($url) ? 'data-iframe="'.trim($iframeHtml).'"' : ''; ?>>
 	<div class="modal-dialog modal-lg<?php echo $modalDialogClass; ?>">

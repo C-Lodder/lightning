@@ -8,13 +8,14 @@
 
 defined('JPATH_BASE') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
 $list = $displayData['list'];
 
-HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/pagination.css', ['version' => 'auto']);
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->useStyle('pagination.css');
 
 ?>
 <nav role="navigation" aria-label="<?php echo Text::_('JLIB_HTML_PAGINATION'); ?>">

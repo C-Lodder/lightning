@@ -8,11 +8,11 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
-use Joomla\CMS\HTML\HTMLHelper;
 
-HTMLHelper::_('script', 'mod_menu/menu.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
-HTMLHelper::_('stylesheet', 'mod_menu/menu.min.css', ['version' => 'auto', 'relative' => true]);
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->usePreset('menu');
 
 $id = '';
 

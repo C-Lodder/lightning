@@ -8,13 +8,14 @@
 
 defined('JPATH_BASE') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Registry\Registry;
 
-HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/pagination.css', ['version' => 'auto']);
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->useStyle('pagination.css');
 
 $list  = $displayData['list'];
 $pages = $list['pages'];

@@ -9,12 +9,12 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 
-HTMLHelper::_('stylesheet', Uri::root() . 'templates/lightning/css/pagination.css', ['version' => 'auto']);
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->useStyle('pagination.css');
 
 $lang = Factory::getLanguage(); ?>
 

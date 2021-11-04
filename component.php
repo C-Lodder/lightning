@@ -11,23 +11,25 @@ defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-// Fetch CSS
-$css = file_get_contents(__DIR__ . '/css/template.css');
+/** @var Joomla\CMS\Document\HtmlDocument $this */
 
-if (Factory::getApplication()->input->get('option') === 'com_media')
-{
-	Joomla\CMS\HTML\HTMLHelper::_('stylesheet',
-		Joomla\CMS\Uri\Uri::root() . 'templates/lightning/css/modal.css', ['version' => 'auto']);
-}
-HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
+$wa = $this->getWebAssetManager();
+
+// Load template CSS
+$wa->usePreset('template.lightning');
+
+// Load switcher JS
+// This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
+$wa->useScript('switch.js');
 
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
+	<jdoc:include type="metas" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style><?php echo $css; ?></style>
-	<jdoc:include type="head" />
+	<jdoc:include type="styles" />
+	<jdoc:include type="scripts" />
 </head>
 <body>
 	<jdoc:include type="message" />

@@ -15,8 +15,9 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 
-/** @var JDocumentHtml $this */
+/** @var Joomla\CMS\Document\HtmlDocument $this */
 
+$wa               = $this->getWebAssetManager();
 $twofactormethods = AuthenticationHelper::getTwoFactorMethods();
 $extraButtons     = AuthenticationHelper::getLoginButtons('form-login');
 $app              = Factory::getApplication();
@@ -28,23 +29,21 @@ $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather
 // Load switcher CSS
 if ($themeSwitcher)
 {
-	HTMLHelper::_('stylesheet', 'switch.css', ['version' => 'auto', 'relative' => true]);
+	$wa->useStyle('switch.css');
 }
 
-// Fetch CSS
-HTMLHelper::_('stylesheet', 'template.css', ['version' => 'auto', 'relative' => true]);
-HTMLHelper::_('stylesheet', 'custom-variables.css', ['version' => 'auto', 'relative' => true]);
-HTMLHelper::_('stylesheet', 'user.css', ['version' => 'auto', 'relative' => true]);
+// Load template CSS
+$wa->usePreset('template.lightning');
 
 // Font Awesome
 if ($fontAwesome)
 {
-	HTMLHelper::_('stylesheet', 'fontawesome.css', ['version' => 'auto', 'relative' => true]);
+	$wa->useStyle('fontawesome.css');
 }
 
 // Load switcher JS
 // This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
-HTMLHelper::_('script', 'switch.min.js', ['version' => 'auto', 'relative' => true], ['type' => 'module']);
+$wa->useScript('switch.js');
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');

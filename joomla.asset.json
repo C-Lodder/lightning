@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "lightning",
+  "version": "1.1.2",
+  "description": "Joomla 4 template using HiQ CSS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.lightning.css",
+      "type": "style",
+      "uri": "template.css"
+    },
+    {
+      "name": "template.lightning.custom-variables.css",
+      "type": "style",
+      "uri": "custom-variables.css"
+    },
+    {
+      "name": "template.lightning.user",
+      "type": "style",
+      "uri": "user.css"
+    },
+    {
+      "name": "template.lightning",
+      "type": "preset",
+      "dependencies": [
+        "template.lightning.css#style",
+        "template.lightning.custom-variables.css#style",
+        "template.lightning.user#style"
+      ]
+    },
+    {
+      "name": "switch.css",
+      "type": "style",
+      "uri": "switch.css"
+    },
+    {
+      "name": "fontawesome.css",
+      "type": "style",
+      "uri": "fontawesome.css"
+    },
+    {
+      "name": "switch.js",
+      "type": "script",
+      "uri": "switch.js",
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "modal.css",
+      "type": "style",
+      "uri": "modal.css"
+    },
+    {
+      "name": "pagination.css",
+      "type": "style",
+      "uri": "pagination.css"
+    },
+    {
+      "name": "frontediting.css",
+      "type": "style",
+      "uri": "system/frontediting.css"
+    },
+    {
+      "name": "menu",
+      "type": "style",
+      "uri": "mod_menu/menu.min.css"
+    },
+    {
+      "name": "menu",
+      "type": "script",
+      "uri": "mod_menu/menu.min.js",
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "menu",
+      "type": "preset",
+      "dependencies": [
+        "menu#style",
+        "menu#script"
+      ]
+    },
+    {
+      "name": "colour-picker",
+      "type": "style",
+      "uri": "templates/lightning/css/fields/colour-picker.css"
+    },
+    {
+      "name": "colour-picker",
+      "type": "script",
+      "uri": "templates/lightning/js/fields/colour-picker.min.js",
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "custom-variables",
+      "type": "script",
+      "uri": "templates/lightning/js/fields/custom-variables.min.js",
+      "attributes": {
+        "type": "module"
+      }
+    },
+    {
+      "name": "colour-picker",
+      "type": "preset",
+      "dependencies": [
+        "colour-picker#script",
+        "custom-variables#script",
+        "colour-picker#style"
+      ]
+    }
+  ]
+}
