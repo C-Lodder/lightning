@@ -1,7 +1,9 @@
 # Changelog
 
-## 1.1.2
+## WIP
 - Move to Web Asset Manager for assets
+
+## 1.1.2
 - Tweak some CSS for stylelint update
 - Fix error in settings on PHP 7.2
 
