@@ -27,7 +27,7 @@
     "postcss-discard-comments": "^5.0.1",
     "postcss-each": "^1.1.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-mixins": "^8.1.0",
+    "postcss-mixins": "^9.0.1",
     "postcss-nested": "^5.0.6",
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
