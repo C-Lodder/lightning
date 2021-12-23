@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add support for Google fonts
 - Move to Web Asset Manager for assets
 
 ## 1.1.2

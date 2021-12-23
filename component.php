@@ -8,9 +8,6 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Factory;
-
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
 $wa = $this->getWebAssetManager();
