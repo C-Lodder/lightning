@@ -2,6 +2,10 @@
 
 ## WIP
 - Add support for Google fonts
+- Add text colour utility classes
+- Add support for button groups
+- Add small button utility
+- Add ability to hide component on homepage
 - Move to Web Asset Manager for assets
 
 ## 1.1.2

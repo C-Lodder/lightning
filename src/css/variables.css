@@ -131,6 +131,8 @@
   /* button variables */
   --hiq-button-vertical-padding: .4rem;
   --hiq-button-horizontal-padding: .75rem;
+  --hiq-button-small-vertical-padding: .25rem;
+  --hiq-button-small-horizontal-padding: .4rem;
   --hiq-button-border-width: 1px;
   --hiq-button-border-radius: var(--hiq-border-radius);
   --hiq-button-font-weight: var(--hiq-font-weight-medium);

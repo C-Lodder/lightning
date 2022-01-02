@@ -15,10 +15,12 @@ use Joomla\CMS\Uri\Uri;
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
 $app           = Factory::getApplication();
+$menuObj       = $app->getMenu();
 $wa            = $this->getWebAssetManager();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$pageclass     = $app->getMenu()->getActive()->getParams()->get('pageclass_sfx');
+$pageclass     = $menuObj->getActive()->getParams()->get('pageclass_sfx');
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
+$hideComponent = (boolean)$this->params->get('hide-component', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 $googleFont    = $this->params->get('google-font', '');
 
@@ -113,6 +115,11 @@ $bottomB      = $this->getBuffer('modules', 'bottom-b', $attribs = ['style' => '
 $footer       = $this->getBuffer('modules', 'footer', $attribs = ['style' => 'none']);
 $debug        = $this->getBuffer('modules', 'debug', $attribs = ['style' => 'none']);
 
+// If we're on the homepage and `hideComponent` is true, set the buffer as an empty string
+if ($menuObj->getActive() == $menuObj->getDefault() && $hideComponent)
+{
+	$component = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

@@ -1,0 +1,17 @@
+/* Text */
+
+.text-warning {
+  color: var(--hiq-color-warning);
+}
+
+.text-danger {
+  color: var(--hiq-color-danger);
+}
+
+.text-success {
+  color: var(--hiq-color-success);
+}
+
+.text-primary {
+  color: var(--hiq-color-primary);
+}

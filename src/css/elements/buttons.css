@@ -86,3 +86,9 @@ apply mixin to:
 fieldset[disabled] [role='button'] {
   pointer-events: none;
 }
+
+/* Small button */
+.btn-sm {
+  padding: var(--hiq-button-small-vertical-padding) var(--hiq-button-small-horizontal-padding);
+  font-size: var(--hiq-font-size-small);
+}
