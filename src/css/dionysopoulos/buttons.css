@@ -1,0 +1,69 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+.btn-primary {
+    --button-background-color: var(--hiq-color-info);
+    --button-border-color: var(--hiq-color-info);
+    --button-text-color: white;
+}
+
+.btn-secondary {
+    //--button-background-color: var(--hiq-color-gray-5);
+    //--button-border-color: var(--hiq-color-gray-5);
+    --button-background-color: var(--hiq-color-gray-3);
+    --button-border-color: var(--hiq-color-gray-3);
+    --button-text-color: white;
+}
+
+.btn-light {
+    --button-background-color: var(--hiq-color-gray-7);
+    --button-border-color: var(--hiq-color-gray-7);
+    --button-text-color: var(--hiq-color-gray-1);
+}
+
+.btn-dark {
+    --button-background-color: var(--hiq-color-gray-1);
+    --button-border-color: var(--hiq-color-gray-1);
+    --button-text-color: var(--hiq-color-gray-7);
+}
+
+.btn-success {
+    --button-background-color: var(--hiq-color-success);
+    --button-border-color: var(--hiq-color-success);
+    --button-text-color: var(--hiq-color-gray-1);
+}
+
+.btn-warning {
+    --button-background-color: var(--hiq-color-warning);
+    --button-border-color: var(--hiq-color-warning);
+    --button-text-color: var(--hiq-color-gray-1);
+}
+
+.btn-danger {
+    --button-background-color: var(--hiq-color-danger);
+    --button-border-color: var(--hiq-color-danger);
+    --button-text-color: white;
+}
+
+.btn-link {
+    --button-background-color: transparent;
+    --button-border-color: transparent;
+    --button-text-color: var(--hiq-link-color);
+    --button-active-background-color: transparent;
+    --button-active-border-color: transparent;
+    --button-active-background-color: transparent;
+
+    &:focus,
+    &:hover,
+    &:active {
+        text-decoration: underline;
+        outline: none;
+    }
+}

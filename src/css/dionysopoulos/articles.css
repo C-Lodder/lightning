@@ -1,0 +1,109 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+
+/* Left justify article text */
+div[itemprop="articleBody"] {
+    font-size: 110%;
+    line-height: 140%;
+    text-align: left;
+    text-justify: inter-word;
+
+    p {
+        margin-bottom: 12pt;
+    }
+
+    pre {
+        text-align: left;
+        overflow-x: scroll;
+    }
+}
+
+/* Increase the margins around article headings in Dark Mode (it matters for my long form content) */
+html.is-dark div[itemprop="articleBody"] {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1em 0 !important;
+    }
+}
+
+/* Hide the "Article info" header */
+dl.article-info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: flex-start;
+    color: var(--hiq-color-gray-4);
+
+    dt {
+        display: none;
+    }
+
+    dd {
+        display: block;
+        margin-right: .75em;
+    }
+
+    a {
+        color: var(--hiq-link-color-alt);
+    }
+}
+
+html.is-dark {
+    dl.article-info {
+        color: var(--hiq-color-gray-6);
+
+        a {
+            color: var(--hiq-link-color-alt);
+        }
+    }
+}
+
+/* Rounded author image */
+.author-image {
+    display: inline;
+    border-radius: 16px;
+    margin-bottom: .5em;
+}
+
+aside.akenage-comments-counter--blog {
+    margin: .75em 0;
+}
+
+/* Divider between blog category articles */
+div.com-content-category-blog__items ~ div.com-content-category-blog__items,
+div.com-content-category-blog__item ~ div.com-content-category-blog__item{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--hiq-color-primary);
+}
+
+div.com-content-category-blog__navigation {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--hiq-color-gray-7);
+}
+
+/* Hover effect for article images in the blog view */
+div.com-content-category-blog figure {
+    transition: filter 0.3s ease-in;
+    filter: grayscale(70%);
+
+    &:hover {
+        filter: none;
+    }
+}
+
+/* About Me page */
+img.img-polaroid {
+    border: thin solid var(--hiq-color-gray-6);
+    padding: 0.5rem 0.5rem 1rem;
+    margin: .25rem;
+}

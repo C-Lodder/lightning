@@ -22,6 +22,8 @@ $menu          = $app->getMenu()->getActive();
 $pageclass     = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
+$autoResize    = (boolean) $this->params->get('auto-resize', 0);
+$logoFile      = $this->params->get('logoFile');
 
 // Template params
 if ($themeSwitcher)
@@ -47,7 +49,33 @@ $logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" h
 
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . Uri::root() . '/' . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES, 'UTF-8') . '" alt="' . $sitename . '">';
+	$width  = (int) $this->params->get('logoWidth', 0);
+	$height = (int) $this->params->get('logoHeight', 0);
+
+	if (($width <= 0) || ($height <= 0))
+	{
+		if ($autoResize)
+		{
+			$resizer = ImageResizer::getInstance();
+
+			try
+			{
+				[$width, $height] = $resizer->getImageSize($logoFile);
+			}
+			catch (Exception $e)
+			{
+				$width  = 50;
+				$height = 50;
+			}
+		}
+		else
+		{
+			$width  = 50;
+			$height = 50;
+		}
+	}
+
+	$logo = sprintf('<img src="%s%s" alt="%s" width="%s" height="%s">', Uri::root(), htmlspecialchars($logoFile, ENT_QUOTES), $sitename, $width, $height);
 }
 elseif ($this->params->get('logoSvg'))
 {

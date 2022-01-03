@@ -1,0 +1,53 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+/* alert */
+
+.alert {
+  display: block;
+  padding: .25em .5em;
+  color: #fff;
+  background-color: var(--hiq-color-primary);
+  border: 4px solid rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    color: #fff;
+  }
+
+  h3 {
+    font-size: var(--hiq-font-size-4);
+  }
+
+  h4 {
+    font-size: var(--hiq-font-size-5);
+  }
+
+  h5, h6 {
+    font-size: var(--hiq-font-size-6);
+  }
+
+  &.alert-info {
+    background-color: var(--hiq-color-info);
+  }
+
+  &.alert-success {
+    background-color: var(--hiq-color-success);
+    color: var(--hiq-color-gray-1);
+  }
+
+  &.alert-warning {
+    background-color: var(--hiq-color-warning);
+    color: var(--hiq-color-gray-1);
+  }
+
+  &.alert-danger {
+    background-color: var(--hiq-color-danger);
+  }
+}

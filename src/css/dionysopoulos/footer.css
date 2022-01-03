@@ -1,0 +1,25 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+footer > div.copyright {
+    margin: 1rem;
+
+    p {
+        margin: 0;
+        text-align: center;
+        color: var(--hiq-color-gray-7);
+        font-size: var(--hiq-font-size-small);
+        font-style: italic;
+    }
+}
+
+footer ul.mod-menu li.nav-item+li.nav-item {
+    margin-right: 1em !important;
+}

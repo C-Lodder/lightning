@@ -18,6 +18,7 @@ const plugins = [
 
 const files = {
   'src/css/hiq.css':                                              'css/template.css',
+  'src/css/dionysopoulos.css':                                    'css/user.css',
   'src/css/switch.css':                                           'css/switch.css',
   'src/css/fields/colour-picker.css':                             'css/fields/colour-picker.css',
   'src/css/media/vendor/joomla-custom-elements/joomla-tab.css':   'css/vendor/joomla-custom-elements/joomla-tab.css',

@@ -1,0 +1,25 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+div.card {
+    &>h3 {
+        color: var(--hiq-color-gray-4);
+        border-bottom: 1px solid var(--hiq-color-primary);
+    }
+}
+
+html.is-dark {
+    div.card {
+        &>h3 {
+            color: var(--hiq-color-gray-6);
+            border-bottom: 2px solid var(--hiq-color-primary);
+        }
+    }
+}

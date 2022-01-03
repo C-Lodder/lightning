@@ -19,9 +19,11 @@ $menuObj       = $app->getMenu();
 $wa            = $this->getWebAssetManager();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $pageclass     = $menuObj->getActive()->getParams()->get('pageclass_sfx');
-$themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
-$hideComponent = (boolean)$this->params->get('hide-component', 1);
-$fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
+$themeSwitcher = (boolean) $this->params->get('theme-switcher', 1);
+$hideComponent = (boolean) $this->params->get('hide-component', 1);
+$fontAwesome   = (boolean) $this->params->get('font-awesome-thats-actually-rather-shit', 1);
+$autoResize    = (boolean) $this->params->get('auto-resize', 0);
+$logoFile      = $this->params->get('logoFile');
 $googleFont    = $this->params->get('google-font', '');
 
 // Load switcher CSS
@@ -59,9 +61,35 @@ $wa->useScript('switch.js');
 // Logo file or site title param
 $logo = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.928 508.928" height="50"><path fill="hsl(210, 100%, 50%)" d="M403.712 201.04H256.288L329.792 0 105.216 307.888H252.64l-73.504 201.04z"/></svg>';
 
-if ($this->params->get('logoFile'))
+if ($logoFile)
 {
-	$logo = '<img src="' . Uri::root() . '/' . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES, 'UTF-8') . '" alt="' . $sitename . '">';
+	$width  = (int) $this->params->get('logoWidth', 0);
+	$height = (int) $this->params->get('logoHeight', 0);
+
+	if (($width <= 0) || ($height <= 0))
+	{
+		if ($autoResize)
+		{
+			$resizer = ImageResizer::getInstance();
+
+			try
+			{
+				[$width, $height] = $resizer->getImageSize($logoFile);
+			}
+			catch (Exception $e)
+			{
+				$width  = 50;
+				$height = 50;
+			}
+		}
+		else
+		{
+			$width  = 50;
+			$height = 50;
+		}
+	}
+
+	$logo = sprintf('<img src="%s%s" alt="%s" width="%s" height="%s">', Uri::root(), htmlspecialchars($logoFile, ENT_QUOTES), $sitename, $width, $height);
 }
 elseif ($this->params->get('logoSvg'))
 {
@@ -97,6 +125,18 @@ $this->addHeadLink($faviconPath . '/favicon-16x16.png', 'icon', 'rel', ['sizes' 
 $this->addHeadLink($faviconPath . '/site.webmanifest.json', 'manifest');
 $this->addHeadLink($faviconPath . '/safari-pinned-tab.svg', 'mask-icon', 'rel', ['color' => '#006bd6']);
 $this->addHeadLink($faviconPath . '/favicon.ico', 'shortcut icon');
+
+// DNS pre-fetching. It accelerates loading of external resources on medium to high latency connection
+// -- ReCAPTCHA
+$this->addHeadLink("https://www.google.com", 'dns-prefetch');
+$this->addHeadLink("https://www.gstatic.com", 'dns-prefetch');
+// -- Our CDN (downloads, static resources)
+$this->addHeadLink("https://cdn.dionysopoulos.me", 'dns-prefetch');
+
+// Asset preloading
+$this->addHeadLink(sprintf('%smedia/vendor/fontawesome-free/webfonts/fa-solid-900.woff2', Uri::root(true)), 'preload', 'rel', ['as'          => 'font',
+                                                                                                                               'crossorigin' => 'anonymous',
+]);
 
 $menu         = $this->getBuffer('modules', 'menu', $attribs = ['style' => 'none']);
 $search       = $this->getBuffer('modules', 'search', $attribs = ['style' => 'none']);
@@ -217,6 +257,11 @@ if ($menuObj->getActive() == $menuObj->getDefault() && $hideComponent)
 	<footer class="grid-child container-footer full-width footer">
 		<div class="container">
 			<?php echo $footer; ?>
+		</div>
+		<div class="container copyright">
+			<p>
+				Copyright &copy;2007-<?= date('Y') ?> Nikolaos Dionysopoulos. All legal rights reserved.
+			</p>
 		</div>
 	</footer>
 	<?php endif; ?>

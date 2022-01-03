@@ -1,0 +1,42 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+
+ul.tags > li > a.label {
+    font-size: 1.0rem;
+    margin: .5rem 1rem;
+}
+
+div.tagscloud > span.tag {
+    display: inline-block;
+    margin: 1rem 1.5rem;
+    min-width: 5rem;
+}
+
+footer ul.mod-menu li.nav-item {
+    margin: 1rem 1rem 1rem 0;
+}
+
+@media (--hiq-upper-font-range) {
+    ul.tags > li > a.label {
+        font-size: 0.75rem;
+    }
+
+    div.tagscloud > span.tag {
+        margin: inherit;
+        min-width: inherit;
+        min-height: inherit;
+    }
+
+    footer ul.mod-menu li.nav-item {
+        //margin: 0;
+    }
+}
+

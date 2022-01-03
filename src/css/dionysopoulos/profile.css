@@ -1,0 +1,73 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+div.com-users-profile-basic-container {
+    display: flex;
+    flex-flow: row wrap;
+
+    > div {
+        padding: 0 .5em;
+    }
+
+    .com-users-profile-basic-avatar {
+        text-align: center;
+        flex-shrink: 1;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .com-users-profile-basic-info {
+        flex-grow: 3;
+
+        .username {
+            font-family: var(--hiq-font-family-monospace);
+            color: var(--hiq-color-success);
+        }
+
+        .email {
+            font-size: var(--hiq-font-size-5);
+        }
+
+        .member-since {
+            margin-top: 1em;
+            font-size: var(--hiq-font-size-5);
+        }
+
+        .last-visited {
+            font-size: var(--hiq-font-size-5);
+        }
+
+        .edit-profile {
+            margin-top: 1em;
+
+            > a.btn {
+                min-width: 50%;
+            }
+        }
+    }
+
+    .com-users-profile-sociallogin {
+        margin-top: 2em;
+
+        h2 {
+            font-size: var(--hiq-font-size-4);
+        }
+    }
+}
+
+div.com-users-profile__edit {
+    div[class^="com-users-profile-fieldset"] ~ div[class^="com-users-profile-fieldset"] {
+        border-top: 2px solid var(--hiq-color-primary);
+        margin-top: 2em;
+        padding-top: 2em;
+    }
+}

@@ -1,0 +1,173 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+div.akeeba-sociallogin-linkunlink-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: baseline;
+    align-items: flex-start;
+
+    > a.btn {
+        margin: .25em;
+        border-color: transparent;
+    }
+}
+
+.akeeba-sociallogin-buttons {
+    display: inline;
+}
+
+.akeeba-sociallogin-link-button-j4, .plg_system_webauthn_login_button, div.mod-login__submit > button, .akeeba-sociallogin-unlink-button {
+    background-image: none !important;
+    border: none !important;
+    border-radius: var(--button-border-radius);
+    display: block;
+    margin: .25em 0;
+    padding: .7em .9em .5em !important;
+    width: 100% !important;
+    max-width: 24em;
+    height: 1.75em;
+    vertical-align: baseline;
+    font-size: 9pt;
+    text-align: left;
+    text-shadow: none;
+    box-sizing: content-box;
+    box-shadow: none;
+    border-color: black;
+    font-weight: bold !important;
+    max-height: inherit !important;
+
+    @if $socialLoginMonochrome == 1 {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+
+    span[class^="icon-social-"], svg {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        margin: -0.25em 0.5em 0 0;
+        padding: 0.125em;
+        background-position: 0.125em 0.125em;
+        background-size: 1.5em 1.5em;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+}
+
+#akeeba-engage-login {
+    .akeeba-sociallogin-button {
+        font-size: 10.2pt;
+    }
+}
+
+.akeeba-sociallogin-link-button-email, div.mod-login__submit > button[name="submit"] {
+    background-color: var(--hiq-color-primary);
+    color: white;
+
+    &>span {
+        display: inline-block !important;
+        margin-left: .5em;
+        margin-right: 1em;
+    }
+}
+
+.plg_system_webauthn_login_button {
+    @if $socialLoginMonochrome == 0 {
+        background-color: var(--hiq-color-gray-6);
+        color: var(--hiq-color-gray-1) !important;
+    }
+
+    &:hover {
+        background-color: var(--hiq-color-gray-7);
+    }
+}
+
+.akeeba-sociallogin-link-button-apple, .akeeba-sociallogin-unlink-button-apple {
+    @if $socialLoginMonochrome == 0 {
+        background-color: #000000;
+        color: #ffffff !important;
+    }
+
+    &:hover {
+        background-color: #000000;
+    }
+
+    span.icon-social-apple {
+        background-image: url("../../../media/plg_sociallogin_apple/images/apple-white.png");
+        background-size: 1.3em 1.5em;
+    }
+}
+
+.akeeba-sociallogin-link-button-facebook, .akeeba-sociallogin-unlink-button-facebook {
+    @if $socialLoginMonochrome == 0 {
+        background-color: #1877F2;
+        color: #ffffff !important;
+    }
+
+    &:hover {
+        background-color: #1877F2;
+    }
+
+    span.icon-social-facebook {
+        background-image: url("../../../media/plg_sociallogin_facebook/images/fb_white_29.png");
+    }
+}
+
+.akeeba-sociallogin-link-button-github, .akeeba-sociallogin-unlink-button-github {
+    @if $socialLoginMonochrome == 0 {
+        background-color: black;
+        color: white !important;
+    }
+
+    &:hover {
+        background-color: black;
+    }
+
+    span.icon-social-github {
+        padding: 0;
+        margin-left: 0.2em;
+        background-position: 0 0;
+        background-color: #ffffff;
+        background-image: url("../../../images/social/github.svg");
+        border-radius: 1em;
+    }
+}
+
+.akeeba-sociallogin-link-button-microsoft, .akeeba-sociallogin-unlink-button-microsoft {
+    @if $socialLoginMonochrome == 0 {
+        background-color: rgb(47, 47, 47);
+        color: white !important;
+    }
+
+    &:hover {
+        background-color: rgb(47, 47, 47);
+    }
+
+    span.icon-social-microsoft {
+        background-image: url("../../../images/social/microsoft.svg");
+    }
+}
+
+.akeeba-sociallogin-link-button-twitter, .akeeba-sociallogin-unlink-button-twitter {
+    @if $socialLoginMonochrome == 0 {
+        background-color: #1DA1F2;
+        color: white !important;
+    }
+
+    &:hover {
+        background-color: #1DA1F2;
+    }
+
+    span.icon-social-twitter {
+        background-image: url("../../../images/social/twitter_white.svg");
+        background-position: 0.125em 0.125em;
+    }
+}

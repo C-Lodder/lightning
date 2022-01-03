@@ -1,0 +1,42 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+.mod-login {
+    label {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
+}
+
+div.com-users-login-buttons {
+    display: flex;
+    flex-flow: row wrap;
+
+    & > button {
+        margin-right: .75em;
+    }
+}
+
+div.com-users-login__options {
+    margin-top: 1em;
+    border-top: 2px solid var(--hiq-color-primary);
+
+    & > a {
+        display: block;
+        margin: .5em 0;
+    }
+}

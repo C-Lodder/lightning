@@ -1,0 +1,16 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+/* Add a custom background behind the SVG social icons (super important in Dark Mode!) */
+.nicholas-socialmedia a > img {
+    background-color: white;
+    border-radius: 16px;
+    display: inline;
+}

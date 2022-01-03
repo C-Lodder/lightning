@@ -47,8 +47,8 @@
 	</positions>
 
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.tpl_lightning.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_lightning.sys.ini</language>
+		<language tag="en-GB">en-GB/tpl_lightning.ini</language>
+		<language tag="en-GB">en-GB/tpl_lightning.sys.ini</language>
 	</languages>
 
 	<config>
@@ -109,6 +109,7 @@
 					type="fonts"
 					default=""
 					label="TPL_LIGHTNING_GOOGLE_FONTS"
+					showon="google-fonts-api-key!:"
 				/>
 			</fieldset>
 
@@ -119,6 +120,29 @@
 					default=""
 					label="TPL_LIGHTNING_LOGO_LABEL"
 				/>
+
+				<field
+						name="logoWidth"
+						label="TPL_LIGHTNING_LOGOWIDTH_LABEL"
+						type="number"
+						min="0"
+						max="320"
+						step="1"
+						default="0"
+						showon="logofile!:"
+				/>
+
+				<field
+						name="logoHeight"
+						label="TPL_LIGHTNING_LOGOHEIGHT_LABEL"
+						type="number"
+						min="0"
+						max="320"
+						step="1"
+						default="0"
+						showon="logofile!:"
+				/>
+
 				<field
 					name="logoSvg"
 					type="textarea"

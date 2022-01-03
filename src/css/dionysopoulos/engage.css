@@ -1,0 +1,50 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+footer.akengage-comment-properties {
+    div[itemprop="author"] {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+
+html.is-dark {
+    section.akengage-outer-container {
+        h3.akengage-title {
+            font-size: var(--hiq-font-size-4);
+            color: var(--hiq-color-primary);
+        }
+
+        div.akengage-list-container ol.akengage-comment-list li.akengage-comment-item article[class^=akengage-comment] {
+            background-color: transparent !important;
+
+            footer.akengage-comment-properties {
+                padding: .25em;
+                background-color: var(--hiq-color-gray-2);
+                color: var(--hiq-color-gray-5);
+
+                div.akengange-commenter-name {
+                    color: var(--hiq-color-gray-6);
+                }
+
+                a.akengage-commenter-profile img {
+                    border-radius: 16px;
+                }
+            }
+        }
+
+        div.akengage-comment-form {
+            button[type="submit"] {
+                margin-top: 1em;
+            }
+        }
+    }
+}
+

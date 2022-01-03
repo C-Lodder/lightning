@@ -1,0 +1,40 @@
+/*
+ * @package     Lightning
+ *
+ * @copyright   Copyright (C) 2020-2021 Nicholas K. Dionysopoulos. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ * This template is a derivative work of the Lightning template which is
+ * Copyright (C) 2020 JoomJunk.
+ */
+
+header > nav.navbar {
+
+    div.navbar-brand {
+        margin-right: 1.125rem;
+    }
+
+    div.navbar-menu {
+        ul.mod-menu {
+            flex-grow: 1;
+        }
+
+        .mod-finder {
+            margin-left: 1.125rem;
+            margin-right: 1.125rem;
+
+            label {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: auto;
+                margin: 0;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+

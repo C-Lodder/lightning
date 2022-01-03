@@ -9,6 +9,7 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\FileLayout;
 
 $params = $displayData->params;
@@ -17,7 +18,7 @@ $images = json_decode($displayData->images);
 ?>
 <?php if (!empty($images->image_fulltext)) : ?>
 	<?php
-	$img = substr($images->image_fulltext, 0, strpos($images->image_fulltext, '?'));
+	$img = (HTMLHelper::cleanImageURL($images->image_intro))->url;
 	$templateParams = \Joomla\CMS\Factory::getApplication()->getTemplate(true)->params;
 	$autoResize     = $templateParams->get('auto-resize', 1);
 
