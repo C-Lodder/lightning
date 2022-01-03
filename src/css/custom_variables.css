@@ -139,8 +139,8 @@
   --hiq-horizontal-rule-color: var(--hiq-color-primary);
 
   /* links */
-  --hiq-link-color: var(--hiq-color-primary);
-  --hiq-link-color-alt: var(--hiq-color-primary);
+  --hiq-link-color: #932220;
+  --hiq-link-color-alt: #932220;
   --hiq-link-hover-color: var(--hiq-color-info);
   --hiq-link-active-color: var(--hiq-color-info);
   --hiq-link-visited-color: var(--hiq-link-color);
@@ -200,7 +200,7 @@
 
   --hiq-figcaption-margin-top: .5rem;
   --hiq-figcaption-font-weight: var(--hiq-font-weight-normal);
-  --hiq-figcaption-text-color: var(--hiq-color-gray-5);
+  --hiq-figcaption-text-color: var(--hiq-color-gray-4);
 
   /* images */
   --hiq-image-border-radius: var(--hiq-border-radius);
@@ -403,15 +403,19 @@
 :root.is-dark {
   --hiq-dark-1: var(--hiq-color-gray-1);
   --hiq-dark-2: var(--hiq-color-gray-2);
-  --hiq-color-primary: hsl(1, 65%, 54%);
-  --hiq-link-color-alt: hsl(1, 65%, 58%);
-  --hiq-link-color: var(--hiq-color-primary);
+  --hiq-color-primary: #e1423f;
+  //--hiq-link-color-alt: hsl(1, 65%, 58%);
+  --hiq-link-color-alt: #ff6b68;
+  --hiq-link-color: #ff6b68;
+  --hiq-button-background-color: hsl(1, 65%, 54%);
 
   /* applied colors */
   --hiq-html-background-color: var(--hiq-color-gray-1);
   --hiq-body-background-color: var(--hiq-color-gray-3);
   --hiq-disabled-background-color: var(--hiq-color-gray-5);
   --hiq-disabled-text-color: var(--hiq-color-gray-3);
+
+  --hiq-figcaption-text-color: var(--hiq-color-gray-7);
 
   /* global typography settings */
   --hiq-letter-spacing-base: .04em;

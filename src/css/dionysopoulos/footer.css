@@ -8,18 +8,26 @@
  * Copyright (C) 2020 JoomJunk.
  */
 
-footer > div.copyright {
-    margin: 1rem;
+footer {
+    ul.mod-menu li.nav-item {
+        > a {
+            color: var(--white) !important;
+        }
 
-    p {
-        margin: 0;
-        text-align: center;
-        color: var(--hiq-color-gray-7);
-        font-size: var(--hiq-font-size-small);
-        font-style: italic;
+        &+li.nav-item {
+            margin-right: 1em !important;
+        }
     }
-}
 
-footer ul.mod-menu li.nav-item+li.nav-item {
-    margin-right: 1em !important;
+    & > div.copyright {
+        margin: 1rem;
+
+        p {
+            margin: 0;
+            text-align: center;
+            color: var(--hiq-color-gray-7);
+            font-size: var(--hiq-font-size-small);
+            font-style: italic;
+        }
+    }
 }

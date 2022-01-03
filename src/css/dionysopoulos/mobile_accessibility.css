@@ -26,7 +26,7 @@ footer ul.mod-menu li.nav-item {
 
 @media (--hiq-upper-font-range) {
     ul.tags > li > a.label {
-        font-size: 0.75rem;
+        //font-size: 0.75rem;
     }
 
     div.tagscloud > span.tag {
@@ -39,4 +39,3 @@ footer ul.mod-menu li.nav-item {
         //margin: 0;
     }
 }
-
