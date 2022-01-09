@@ -4,6 +4,7 @@
   position: relative;
   display: inline-flex;
   vertical-align: middle;
+  border-radius: var(--hiq-button-border-radius);
 
   > button {
     position: relative;
@@ -16,6 +17,24 @@
   > button.active {
     z-index: 1;
   }
+
+  > button:not(:first-child),
+  > .btn-group:not(:first-child) {
+    margin-left: -var(--hiq-button-border-width);
+  }
+
+  > button:nth-child(n + 3),
+  > :not(.btn-check) + button,
+  > .btn-group:not(:first-child) > button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  > button:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .btn-toolbar {
@@ -25,27 +44,5 @@
 
   .input-group {
     width: auto;
-  }
-}
-
-.btn-group {
-  border-radius: var(--hiq-button-border-radius);
-
-  > button:not(:first-child),
-  > .btn-group:not(:first-child) {
-    margin-left: -var(--hiq-button-border-width);
-  }
-
-  > button:not(:last-child):not(.dropdown-toggle),
-  > .btn-group:not(:last-child) > button {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  > button:nth-child(n + 3),
-  > :not(.btn-check) + button,
-  > .btn-group:not(:first-child) > button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
   }
 }
