@@ -20,7 +20,7 @@ $wa            = $this->getWebAssetManager();
 $sitename      = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $pageclass     = $menuObj->getActive()->getParams()->get('pageclass_sfx');
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
-$hideComponent = (boolean)$this->params->get('hide-component', 1);
+$hideComponent = (boolean)$this->params->get('hide-component', 0);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 $googleFont    = $this->params->get('google-font', '');
 

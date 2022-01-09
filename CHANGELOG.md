@@ -2,6 +2,7 @@
 
 ## WIP
 - Fix loading Google Fonts on error and offline pages
+- Fix initial value for hide-component parameter
 
 ## 1.2.0
 - Add support for Google fonts
