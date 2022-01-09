@@ -43,8 +43,8 @@ if ($fontAwesome)
 if ($googleFont !== '')
 {
 	$fontFamily = str_replace(' ', '+', $googleFont);
-	$this->getPreloadManager()->preconnect('https://fonts.googleapis.com', []);
-	$this->getPreloadManager()->preconnect('https://fonts.gstatic.com', []);
+	$this->getPreloadManager()->preconnect('https://fonts.googleapis.com', ['crossorigin' => 'anonymous']);
+	$this->getPreloadManager()->preconnect('https://fonts.gstatic.com', ['crossorigin' => 'anonymous']);
 	$this->addHeadLink('https://fonts.googleapis.com/css2?family=' . $fontFamily . '&display=swap', 'stylesheet', 'rel');
 
 	$wa->addInlineStyle(':root {

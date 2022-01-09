@@ -19,6 +19,23 @@ $wa->usePreset('template.lightning');
 // This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
 $wa->useScript('switch.js');
 
+// Template params
+$fontAwesome = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
+$googleFont  = $this->params->get('google-font', '');
+
+// Google font
+if ($googleFont !== '')
+{
+	$fontFamily = str_replace(' ', '+', $googleFont);
+	$this->getPreloadManager()->preconnect('https://fonts.googleapis.com', ['crossorigin' => 'anonymous']);
+	$this->getPreloadManager()->preconnect('https://fonts.gstatic.com', ['crossorigin' => 'anonymous']);
+	$this->addHeadLink('https://fonts.googleapis.com/css2?family=' . $fontFamily . '&display=swap', 'stylesheet', 'rel');
+
+	$wa->addInlineStyle(':root {
+		--hiq-font-family-base: "' . $googleFont . '";
+	}');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

@@ -25,6 +25,7 @@ $app              = Factory::getApplication();
 // Template params
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
+$googleFont    = $this->params->get('google-font', '');
 
 // Load switcher CSS
 if ($themeSwitcher)
@@ -39,6 +40,19 @@ $wa->usePreset('template.lightning');
 if ($fontAwesome)
 {
 	$wa->useStyle('fontawesome.css');
+}
+
+// Google font
+if ($googleFont !== '')
+{
+	$fontFamily = str_replace(' ', '+', $googleFont);
+	$this->getPreloadManager()->preconnect('https://fonts.googleapis.com', ['crossorigin' => 'anonymous']);
+	$this->getPreloadManager()->preconnect('https://fonts.gstatic.com', ['crossorigin' => 'anonymous']);
+	$this->addHeadLink('https://fonts.googleapis.com/css2?family=' . $fontFamily . '&display=swap', 'stylesheet', 'rel');
+
+	$wa->addInlineStyle(':root {
+		--hiq-font-family-base: "' . $googleFont . '";
+	}');
 }
 
 // Load switcher JS
