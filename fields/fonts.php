@@ -54,6 +54,12 @@ class JFormFieldFonts extends Joomla\CMS\Form\Field\ListField
 	 */
 	protected function getOptions()
 	{
+		// If we have no API key set at all, don't proceed.
+		if ($this->getParams()->get('google-fonts-api-key', '') === '')
+		{
+			return;
+		}
+
 		$options = new Registry;
 		$options->set('userAgent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0');
 		$http = HttpFactory::getHttp($options);
