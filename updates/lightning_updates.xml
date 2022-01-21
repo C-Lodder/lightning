@@ -4,10 +4,10 @@
 		<description>Joomla 4 template using HiQ CSS</description>
 		<element>lightning</element>
 		<type>template</type>
-		<version>1.2.0</version>
+		<version>1.3.0</version>
 		<infourl title="Lightning Release Notes">https://github.com/C-Lodder/lightning/blob/master/CHANGELOG.md</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/C-Lodder/lightning/releases/download/v1.2.0/tpl_lightning-v1.2.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/C-Lodder/lightning/releases/download/v1.3.0/tpl_lightning-v1.3.0.zip</downloadurl>
 		</downloads>
 		<maintainer>Charlie Lodder</maintainer>
 		<maintainerurl>https://joomjunk.co.uk</maintainerurl>
