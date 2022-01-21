@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add French translations (thanks @MATsxm)
 - Fix loading Google Fonts on error and offline pages
 - Fix initial value for hide-component parameter
 
