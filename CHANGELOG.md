@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 1.4.0
 - Add ability to override favicon
 - Favicon now displays on error and offline pages
 - Force `color-scheme` for dark mode
