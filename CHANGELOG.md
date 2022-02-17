@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.1
+- Fix override favicon path
+
 ## 1.4.0
 - Add ability to override favicon
 - Favicon now displays on error and offline pages

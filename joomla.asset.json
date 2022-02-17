@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
   "name": "lightning",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Joomla 4 template using HiQ CSS",
   "license": "GPL-2.0-or-later",
   "assets": [

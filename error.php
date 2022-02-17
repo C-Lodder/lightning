@@ -25,7 +25,7 @@ $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 $googleFont    = $this->params->get('google-font', '');
 $faviconPath   = (boolean)$this->params->get('favicon-override', 0)
-                 ? JPATH_ROOT
+                 ? Uri::root()
                  : 'templates/' . $this->template . '/favicon';
 
 // Template params
@@ -81,7 +81,7 @@ $this->setMetaData('theme-color', '#ffffff');
 
 $imageLayout = new FileLayout('lightning.favicon');
 $imageLayout->render([
-	'path' => 'templates/' . $this->template . '/favicon',
+	'path' => $faviconPath,
 ]);
 ?>
 <!DOCTYPE html>
