@@ -371,6 +371,8 @@
 }
 
 :root.is-dark {
+  color-scheme: dark;
+
   --hiq-dark-1: hsl(216, 28%, 7%);
   --hiq-dark-2: hsl(215, 21%, 11%);
   --hiq-html-background-color: var(--hiq-dark-1);

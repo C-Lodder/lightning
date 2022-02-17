@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Force `color-scheme` for dark mode
+
 ## 1.3.0
 - Add French translations (thanks @MATsxm)
 - Fix loading Google Fonts on error and offline pages
