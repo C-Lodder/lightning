@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Fix PHP 8.1+ deprecation notices
+
 ## 1.4.1
 - Fix override favicon path
 

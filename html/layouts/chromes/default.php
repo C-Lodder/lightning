@@ -23,7 +23,7 @@ $headerTag   = htmlspecialchars($params->get('header_tag', 'h3'), ENT_QUOTES, 'U
 $headerClass = htmlspecialchars($params->get('header_class', 'is-size-4'), ENT_QUOTES, 'UTF-8');
 
 ?>
-<<?php echo $moduleTag; ?> class="<?php echo $modulePos; ?> card <?php echo htmlspecialchars($params->get('moduleclass_sfx'), ENT_QUOTES, 'UTF-8'); ?>">
+<<?php echo $moduleTag; ?> class="<?php echo $modulePos; ?> card <?php echo htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8'); ?>">
 	<?php if ($module->showtitle && $headerClass !== 'card-title') : ?>
 		<<?php echo $headerTag; ?> class="card-header <?php echo $headerClass; ?>"><?php echo $module->title; ?></<?php echo $headerTag; ?>>
 	<?php endif; ?>
