@@ -12,6 +12,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\AuthenticationHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 
@@ -26,6 +27,9 @@ $app              = Factory::getApplication();
 $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 $googleFont    = $this->params->get('google-font', '');
+$faviconPath   = (boolean)$this->params->get('favicon-override', 0)
+                 ? JPATH_ROOT
+                 : 'templates/' . $this->template . '/favicon';
 
 // Load switcher CSS
 if ($themeSwitcher)
@@ -75,6 +79,14 @@ elseif ($this->params->get('siteTitle'))
 {
 	$logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 }
+
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1');
+$this->setMetaData('theme-color', '#ffffff');
+
+$imageLayout = new FileLayout('lightning.favicon');
+$imageLayout->render([
+	'path' => 'templates/' . $this->template . '/favicon',
+]);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

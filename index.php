@@ -10,6 +10,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Uri\Uri;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
@@ -23,6 +24,9 @@ $themeSwitcher = (boolean)$this->params->get('theme-switcher', 1);
 $hideComponent = (boolean)$this->params->get('hide-component', 0);
 $fontAwesome   = (boolean)$this->params->get('font-awesome-thats-actually-rather-shit', 1);
 $googleFont    = $this->params->get('google-font', '');
+$faviconPath   = (boolean)$this->params->get('favicon-override', 0)
+                 ? JPATH_ROOT
+                 : 'templates/' . $this->template . '/favicon';
 
 // Load switcher CSS
 if ($themeSwitcher)
@@ -84,19 +88,13 @@ if ($this->countModules('sidebar-right'))
 	$hasSidebar .= ' has-sidebar-right';
 }
 
-$faviconPath = 'templates/' . $this->template . '/favicon';
-
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 $this->setMetaData('theme-color', '#ffffff');
-$this->setMetaData('msapplication-config', $faviconPath . '/browserconfig.xml');
-$this->setMetaData('msapplication-TileColor', '#ffffff');
 
-$this->addHeadLink($faviconPath . '/apple-touch-icon.png', 'apple-touch-icon', 'rel', ['sizes' => '180x180']);
-$this->addHeadLink($faviconPath . '/favicon-32x32.png', 'icon', 'rel', ['sizes' => '32x32']);
-$this->addHeadLink($faviconPath . '/favicon-16x16.png', 'icon', 'rel', ['sizes' => '16x16']);
-$this->addHeadLink($faviconPath . '/site.webmanifest.json', 'manifest');
-$this->addHeadLink($faviconPath . '/safari-pinned-tab.svg', 'mask-icon', 'rel', ['color' => '#006bd6']);
-$this->addHeadLink($faviconPath . '/favicon.ico', 'shortcut icon');
+$imageLayout = new FileLayout('lightning.favicon');
+$imageLayout->render([
+	'path' => 'templates/' . $this->template . '/favicon',
+]);
 
 $menu         = $this->getBuffer('modules', 'menu', $attribs = ['style' => 'none']);
 $search       = $this->getBuffer('modules', 'search', $attribs = ['style' => 'none']);
