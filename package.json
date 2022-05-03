@@ -18,7 +18,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "archiver": "^5.3.1",
-    "autoprefixer": "^10.4.5",
+    "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.7",
     "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
