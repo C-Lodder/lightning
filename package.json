@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "archiver": "^5.3.1",
     "autoprefixer": "^10.4.7",
-    "cssnano": "^5.1.7",
+    "cssnano": "^5.1.9",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "postcss-custom-media": "^8.0.0",
