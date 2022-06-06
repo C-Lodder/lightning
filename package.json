@@ -23,7 +23,7 @@
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "postcss-custom-media": "^8.0.0",
-    "postcss-custom-selectors": "^6.0.0",
+    "postcss-custom-selectors": "^6.0.3",
     "postcss-discard-comments": "^5.1.1",
     "postcss-each": "^1.1.0",
     "postcss-easy-import": "^4.0.0",
