@@ -17,29 +17,29 @@ const plugins = [
 ]
 
 const files = {
-  'src/css/hiq.css':                                              'css/template.css',
-  'src/css/switch.css':                                           'css/switch.css',
-  'src/css/fields/colour-picker.css':                             'css/fields/colour-picker.css',
+  'src/css/hiq.css':                                              'media/css/template.css',
+  'src/css/switch.css':                                           'media/css/switch.css',
+  'src/css/fields/colour-picker.css':                             'media/css/fields/colour-picker.css',
   'src/css/media/vendor/joomla-custom-elements/joomla-tab.css':   'css/vendor/joomla-custom-elements/joomla-tab.css',
   'src/css/media/vendor/joomla-custom-elements/joomla-alert.css': 'css/vendor/joomla-custom-elements/joomla-alert.css',
-  'src/css/media/layouts/modal/modal.css':                        'css/modal.css',
-  'src/css/media/vendor/choicesjs/choices.css':                   'css/vendor/choicesjs/choices.min.css',
-  'src/css/media/system/frontediting.css':                        'css/system/frontediting.css',
-  'src/css/media/system/fields/calendar.css':                     'css/system/fields/calendar.min.css',
+  'src/css/media/layouts/modal/modal.css':                        'media/css/modal.css',
+  'src/css/media/vendor/choicesjs/choices.css':                   'media/css/vendor/choicesjs/choices.min.css',
+  'src/css/media/system/frontediting.css':                        'media/css/system/frontediting.css',
+  'src/css/media/system/fields/calendar.css':                     'media/css/system/fields/calendar.min.css',
   'src/css/media/system/fields/joomla-field-media.css':           'css/system/fields/joomla-field-media.min.css',
-  'src/css/media/mod_menu/menu.css':                              'css/mod_menu/menu.min.css',
-  'src/css/media/layouts/pagination/pagination.css':              'css/pagination.css',
-  'src/css/mediamanager/mediamanager.css':                        'css/com_media/mediamanager.min.css',
+  'src/css/media/mod_menu/menu.css':                              'media/css/mod_menu/menu.min.css',
+  'src/css/media/layouts/pagination/pagination.css':              'media/css/pagination.css',
+  'src/css/mediamanager/mediamanager.css':                        'media/css/com_media/mediamanager.min.css',
 }
 
 // Copy Font Awesome files
 async function CopyFontAwesome() {
   await mkdir(`${__dirname}/webfonts`)
   try {
-    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/css/all.min.css`, `${__dirname}/css/fontawesome.css`)
-    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2`, `${__dirname}/webfonts/fa-brands-400.woff2`)
-    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2`, `${__dirname}/webfonts/fa-regular-400.woff2`)
-    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2`, `${__dirname}/webfonts/fa-solid-900.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/css/all.min.css`, `${__dirname}/media/css/fontawesome.css`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2`, `${__dirname}/media/webfonts/fa-brands-400.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2`, `${__dirname}/media/webfonts/fa-regular-400.woff2`)
+    copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2`, `${__dirname}/media/webfonts/fa-solid-900.woff2`)
   } catch (error) {
     console.log(error)
   }

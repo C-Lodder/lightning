@@ -8,9 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "node build-css.js && node build-deps.js && node build-js.js && node build-zip.js",
+    "build": "node build-css.js && node build-js.js && node build-zip.js",
     "css": "node build-css.js",
-    "deps": "node build-deps.js",
     "js": "node build-js.js",
     "package": "node build-zip.js",
     "lint": "npx stylelint src/css/**/*.css"

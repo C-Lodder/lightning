@@ -6,7 +6,14 @@
 	<author>JoomJunk</author>
 	<authorEmail>admin@joomjunk.co.uk</authorEmail>
 	<copyright>Copyright (C) 2020 JoomJunk. All rights reserved.</copyright>
+	<inheritable>1</inheritable>
 	<description>TPL_LIGHTNING_XML_DESCRIPTION</description>
+
+	<media folder="media" destination="templates/site/lightning">
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+	</media>
 
 	<files>
 		<filename>component.php</filename>
@@ -16,16 +23,10 @@
 		<filename>helper.php</filename>
 		<filename>joomla.asset.json</filename>
 		<filename>templateDetails.xml</filename>
-		<filename>template_preview.png</filename>
-		<filename>template_thumbnail.png</filename>
-		<folder>css</folder>
-		<folder>favicon</folder>
 		<folder>fields</folder>
 		<folder>helper</folder>
 		<folder>html</folder>
-		<folder>js</folder>
 		<folder>language</folder>
-		<folder>webfonts</folder>
 		<folder>src</folder>
 	</files>
 
