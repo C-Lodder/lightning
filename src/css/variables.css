@@ -275,23 +275,17 @@
   --hiq-checkbox-indeterminate-width: .5rem;
 
   /* radio buttons */
-  --hiq-radio-margin-bottom: .5rem;
-  --hiq-radio-label-padding-horizontal: 2rem;
+  --hiq-radio-margin-bottom: .125rem;
+  --hiq-radio-label-padding-horizontal: 1.5em;
   --hiq-radio-label-font-weight: var(--hiq-font-weight-normal);
-  --hiq-radio-width: 1rem;
-  --hiq-radio-height: 1rem;
-  --hiq-radio-border-width: 1px;
-  --hiq-radio-border-color: transparent;
+  --hiq-radio-width: 1.2rem;
+  --hiq-radio-height: 1.2rem;
   --hiq-radio-border-radius: 50%;
   --hiq-radio-background-color: var(--hiq-color-gray-6);
-  --hiq-radio-hover-background-color: var(--hiq-color-gray-5);
-  --hiq-radio-focus-background-color: var(--hiq-color-gray-5);
   --hiq-radio-checked-border-color: var(--hiq-color-primary);
   --hiq-radio-checked-background-color: var(--hiq-color-primary);
-  --hiq-radio-check-width: .5rem;
-  --hiq-radio-check-height: .5rem;
-  --hiq-radio-check-border-radius: 50%;
   --hiq-radio-check-background-color: hsl(0, 0%, 100%);
+  --hiq-radio-background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%23fff'/></svg>");
 
   /* range inputs */
   --hiq-range-input-thumb-width: 1.5rem;

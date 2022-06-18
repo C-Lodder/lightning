@@ -1,71 +1,41 @@
 /* radio buttons */
 
 .radio {
-  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-inline-start: var(--hiq-radio-label-padding-horizontal);
+  margin-bottom: var(--hiq-radio-margin-bottom);
 
   & label {
-    position: relative;
-    margin-bottom: var(--hiq-radio-margin-bottom);
-    padding: 0 var(--hiq-radio-label-padding-horizontal);
-    font-weight: var(--hiq-radio-label-font-weight) !important;
-    line-height: 1;
-    cursor: pointer;
-    user-select: none;
-
-    /* style `::before` to look like radio button */
-    &::before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: var(--hiq-radio-width);
-      height: var(--hiq-radio-height);
-      border: var(--hiq-radio-border-width) solid var(--hiq-radio-border-color);
-      border-radius: var(--hiq-radio-border-radius);
-      background-color: var(--hiq-radio-background-color);
-      transition: background-color var(--hiq-speed) var(--hiq-easing);
-      content: '';
-    }
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: var(--hiq-radio-label-font-weight);
   }
 
-  /* visually hide input */
+  input {
+    width: var(--hiq-radio-width);
+    height: var(--hiq-radio-height);
+    margin-top: .25em;
+    margin-inline-start: -1.5em;
+    vertical-align: top;
+    background-color: var(--hiq-radio-background-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    appearance: none;
+  }
+
   & input[type='radio'] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    pointer-events: none;
+    border-radius: var(--hiq-radio-border-radius);
 
-    &:hover + label::before {
-      background-color: var(--hiq-radio-hover-background-color);
-    }
-
-    &:focus + label::before {
-      background-color: var(--hiq-radio-focus-background-color);
-      outline: var(--hiq-outline-color) solid var(--hiq-outline-width);
-    }
-
-    &:checked + label::before,
-    &[aria-checked] + label::before {
-      border-color: var(--hiq-radio-checked-border-color);
+    &:checked {
+      background-image: var(--hiq-radio-background-image);
       background-color: var(--hiq-radio-checked-background-color);
+      border-color: var(--hiq-radio-checked-border-color);
     }
 
-    /* style `::after` to look like radio button fill */
-    &:checked + label::after,
-    &[aria-checked] + label::after {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: calc(var(--hiq-radio-width) / 2);
-      width: var(--hiq-radio-check-width);
-      height: var(--hiq-radio-check-height);
-      border-radius: var(--hiq-radio-check-border-radius);
-      background-color: var(--hiq-radio-check-background-color);
-      transform: translate(-50%, -50%);
-      content: '';
+    &:focus {
+      outline: var(--hiq-outline-color) solid var(--hiq-outline-width);
     }
 
     :--not-writable + label {
@@ -77,7 +47,7 @@
       cursor: not-allowed;
     }
 
-    :--not-writable + label::before {
+    :--not-writable {
       background-color: var(--hiq-disabled-background-color);
     }
   }

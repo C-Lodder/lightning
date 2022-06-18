@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Fix radio button styling when input is inside label
 - Fix PHP 8.1+ deprecation notices
 
 ## 1.4.1
