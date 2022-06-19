@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Fix CSS specificity for input and button groups
+
 ## 1.4.2
 - Fix radio button styling when input is inside label
 - Fix PHP 8.1+ deprecation notices

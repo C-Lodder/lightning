@@ -11,7 +11,7 @@ joomla-tab {
   > div[role=tablist] {
     display: flex;
     background-color: var(--hiq-tabs-background-color);
-    border-color: var(--hiq-border-color) var(--hiq-border-color) currentColor;
+    border-color: var(--hiq-border-color) var(--hiq-border-color) currentcolor;
     border-radius: .25rem .25rem 0 0;
     border-style: solid solid none;
     border-width: 1px 1px 0;

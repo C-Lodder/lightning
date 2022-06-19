@@ -20,7 +20,7 @@
 
   > button:not(:first-child),
   > .btn-group:not(:first-child) {
-    margin-left: -var(--hiq-button-border-width);
+    margin-left: calc(-1 * var(--hiq-button-border-width));
   }
 
   > button:nth-child(n + 3),
@@ -30,7 +30,7 @@
     border-bottom-left-radius: 0;
   }
 
-  > button:not(:last-child):not(.dropdown-toggle),
+  > button:not(:last-child, .dropdown-toggle),
   > .btn-group:not(:last-child) > button {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
