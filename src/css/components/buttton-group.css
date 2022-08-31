@@ -24,8 +24,7 @@
   }
 
   > button:nth-child(n + 3),
-  > :not(.btn-check) + button,
-  > .btn-group:not(:first-child) > button {
+  > :not(.btn-check) + button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -34,6 +33,11 @@
   > .btn-group:not(:last-child) > button {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  > .btn-group:not(:first-child) > button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 
