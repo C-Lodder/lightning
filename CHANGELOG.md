@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Fix mod_login override error with Joomla 4.2+
 - Fix CSS specificity for input and button groups
 
 ## 1.4.2
