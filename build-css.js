@@ -1,5 +1,6 @@
 const { Worker, isMainThread, parentPort } = require('worker_threads')
-const { readFile, mkdir, writeFile, rm, copyFile, stat } = require('fs').promises
+const { constants } = require('fs')
+const { readFile, mkdir, writeFile, rm, copyFile, access } = require('fs').promises
 const postcss = require('postcss')
 
 const plugins = [
@@ -35,6 +36,7 @@ const files = {
 // Copy Font Awesome files
 async function CopyFontAwesome() {
   await mkdir(`${__dirname}/webfonts`)
+
   try {
     copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/css/all.min.css`, `${__dirname}/css/fontawesome.css`)
     copyFile(`${__dirname}/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2`, `${__dirname}/webfonts/fa-brands-400.woff2`)
@@ -65,22 +67,25 @@ async function ProcessCss() {
   })
 }
 
-if (isMainThread) {
-  // Delete the dist directories from the main thread
-  const dirsToRemove = [
+// Delete the dist directories
+async function removeOldDirs() {
+  const dirs = [
     `${__dirname}/webfonts`,
     `${__dirname}/css`,
   ]
-  dirsToRemove.forEach(async(path) => {
+
+  for (const path of dirs) {
     try {
-      const dir = await stat(path)
-      if (dir.isDirectory()) {
+      const canAccess = await access(path, constants.R_OK | constants.W_OK)
+      if (canAccess) {
         rm(path, { recursive: true, force: true })
       }
-    } catch (error) {
-      console.log(error)
-    }
-  })
+    } catch (e) {}
+  }
+}
+
+if (isMainThread) {
+  removeOldDirs()
 
   const worker = new Worker(__filename)
   worker.postMessage('message')
