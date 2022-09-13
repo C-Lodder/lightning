@@ -70,8 +70,7 @@ apply mixin to:
   [type='submit'],
   [type='reset'],
   .button,
-  .btn,
-  .btn-link;
+  .btn;
 
 :--button {
   @mixin button;
@@ -91,4 +90,58 @@ fieldset[disabled] [role='button'] {
 .btn-sm {
   padding: var(--hiq-button-small-vertical-padding) var(--hiq-button-small-horizontal-padding);
   font-size: var(--hiq-font-size-small);
+}
+
+.btn-link {
+  /* remove default browser appearance */
+  @mixin is-controlled;
+
+  /* prevent button text from being selected */
+  @mixin is-unselectable;
+
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: var(--hiq-button-vertical-padding) var(--hiq-button-horizontal-padding);
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--hiq-button-font-weight);
+  line-height: inherit;
+  text-align: center;
+  text-decoration: none;
+  color: var(--hiq-link-color);
+  transition: border-color var(--hiq-speed) var(--hiq-easing), color var(--hiq-speed) var(--hiq-easing), background-color var(--hiq-speed) var(--hiq-easing);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--hiq-link-hover-color);
+    background-color: transparent;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:active {
+    border-color: none;
+    background-color: transparent;
+    color: var(--hiq-link-hover-color);
+  }
+
+  /* force styling of text color if element has visited state (needed for `a` elements) */
+  &:visited {
+    color: var(--hiq-link-hover-color);
+  }
+
+  &:disabled,
+  &[aria-disabled] {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--hiq-disabled-text-color);
+    cursor: not-allowed;
+  }
 }

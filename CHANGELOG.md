@@ -1,5 +1,8 @@
 # Changelog
 
+## WIP
+- Add styling for button links
+
 ## 1.4.3
 - Fix mod_login override error with Joomla 4.2+
 - Fix CSS specificity for input and button groups
