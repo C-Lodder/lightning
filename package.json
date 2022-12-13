@@ -20,7 +20,7 @@
     "archiver": "^5.3.1",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",
     "postcss-custom-media": "^9.0.1",
     "postcss-custom-selectors": "^6.0.3",
