@@ -1,8 +1,8 @@
 /* selector for non-writable inputs */
 @custom-selector :--not-writable
-  &:disabled,
-  &[aria-disabled],
-  &[readonly];
+  :disabled,
+  [aria-disabled],
+  [readonly];
 
 /* input mixin */
 @define-mixin input {
@@ -37,7 +37,7 @@
     color: var(--hiq-input-focus-text-color);
   }
 
-  :--not-writable {
+  &:--not-writable {
     border-color: var(--hiq-disabled-border-color);
     background-color: var(--hiq-disabled-background-color);
     color: var(--hiq-disabled-text-color);

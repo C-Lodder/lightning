@@ -24,13 +24,13 @@
     "postcss-cli": "^10.1.0",
     "postcss-custom-media": "^9.1.2",
     "postcss-custom-selectors": "^7.1.2",
-    "postcss-discard-comments": "^5.1.1",
+    "postcss-discard-comments": "^5.1.2",
     "postcss-each": "^1.1.0",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^28.0.0",
-    "terser": "^5.16.4"
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1",
+    "terser": "^5.16.5"
   }
 }

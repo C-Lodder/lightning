@@ -82,7 +82,7 @@
       content: '';
     }
 
-    :--not-writable + label {
+    &:--not-writable + label {
       color: var(--hiq-disabled-text-color);
     }
 
@@ -91,7 +91,7 @@
       cursor: not-allowed;
     }
 
-    :--not-writable + label::before {
+    &:--not-writable + label::before {
       background-color: var(--hiq-disabled-background-color);
     }
   }

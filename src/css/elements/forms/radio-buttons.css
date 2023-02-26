@@ -38,7 +38,7 @@
       outline: var(--hiq-outline-color) solid var(--hiq-outline-width);
     }
 
-    :--not-writable + label {
+    &:--not-writable + label {
       color: var(--hiq-disabled-text-color);
     }
 
@@ -47,7 +47,7 @@
       cursor: not-allowed;
     }
 
-    :--not-writable {
+    &:--not-writable {
       background-color: var(--hiq-disabled-background-color);
     }
   }

@@ -2,6 +2,7 @@
 
 ## WIP
 - Add styling for button links
+- Fix incorrectly parsed CSS
 
 ## 1.4.3
 - Fix mod_login override error with Joomla 4.2+

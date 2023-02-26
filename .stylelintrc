@@ -2,14 +2,13 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "selector-type-no-unknown": null,
-    "number-leading-zero": "never",
     "alpha-value-notation": "number",
-    "string-quotes": null,
     "hue-degree-notation": null,
     "color-function-notation": null,
     "selector-attribute-quotes": null,
     "selector-class-pattern": null,
-    "max-line-length": null,
+    "import-notation": "string",
+    "value-keyword-case": null,
     "at-rule-no-unknown": [
       true,
       { "ignoreAtRules": ["mixin", "define-mixin"] }
