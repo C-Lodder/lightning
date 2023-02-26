@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 1.4.4
 - Add styling for button links
 - Fix incorrectly parsed CSS
 
