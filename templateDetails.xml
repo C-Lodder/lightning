@@ -51,6 +51,8 @@
 		<language tag="en-GB">en-GB/en-GB.tpl_lightning.sys.ini</language>
 		<language tag="fr-FR">fr-FR/fr-FR.tpl_lightning.ini</language>
 		<language tag="fr-FR">fr-FR/fr-FR.tpl_lightning.sys.ini</language>
+		<language tag="ja-JP">ja-JP/ja-JP.tpl_lightning.ini</language>
+		<language tag="ja-JP">ja-JP/ja-JP.tpl_lightning.sys.ini</language>
 	</languages>
 
 	<config>
