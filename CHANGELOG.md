@@ -2,6 +2,7 @@
 
 ## WIP
 - Rename language files
+- Fix some untranslated strings
 
 ## 1.4.4
 - Add styling for button links

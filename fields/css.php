@@ -40,15 +40,15 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 		$variables = $helper->getCssVariables();
 
 		$html = '';
-		$html .= '<p><button class="btn btn-success" type="button" data="save-css">' . Text::_('Save CSS variables') . '</button></p>';
+		$html .= '<p><button class="btn btn-success" type="button" data="save-css">' . Text::_('TPL_LIGHTNING_FIELD_CSS_SAVE') . '</button></p>';
 
 		$html .= '<table class="table align-middle" id="css-variables">';
 		$html .= '<thead>';
 		$html .= '<tr>';
-		$html .= '<th scope="col" style="width:10%">Colour scheme</th>';
-		$html .= '<th scope="col">Variable</th>';
-		$html .= '<th scope="col">Default value</th>';
-		$html .= '<th scope="col">Override</th>';
+		$html .= '<th scope="col" style="width:10%">' . Text::_('TPL_LIGHTNING_FIELD_CSS_COLUMN_COLOR_SCHEME') . '</th>';
+		$html .= '<th scope="col">' . Text::_('TPL_LIGHTNING_FIELD_CSS_COLUMN_VARIABLE') . '</th>';
+		$html .= '<th scope="col">' . Text::_('TPL_LIGHTNING_FIELD_CSS_COLUMN_DEFAULT_VALUE') . '</th>';
+		$html .= '<th scope="col">' . Text::_('TPL_LIGHTNING_FIELD_CSS_COLUMN_OVERRIDE') . '</th>';
 		$html .= '</tr>';
 		$html .= '</thead>';
 		$html .= '<tbody>';
@@ -140,7 +140,7 @@ class JFormFieldCss extends Joomla\CMS\Form\FormField
 		$html .= '</tbody>';
 		$html .= '</table>';
 
-		$html .= '<p><button class="btn btn-success" type="button" data="save-css">' . Text::_('Save CSS variables') . '</button></p>';
+		$html .= '<p><button class="btn btn-success" type="button" data="save-css">' . Text::_('TPL_LIGHTNING_FIELD_CSS_SAVE') . '</button></p>';
 
 		return $html;
 	}
