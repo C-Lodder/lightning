@@ -1,6 +1,7 @@
 # Changelog
 
 ## WIP
+- Add Japanese language (thanks @dcsjapan)
 - Rename language files
 - Fix some untranslated strings
 
