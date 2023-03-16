@@ -26,7 +26,6 @@
       "dependencies": [
         "template.lightning.css#style",
         "template.lightning.custom-variables.css#style",
-        "template.lightning.user#style"
       ]
     },
     {
@@ -74,6 +73,11 @@
       "attributes": {
         "type": "module"
       }
+    },
+    {
+      "name": "template.lightning.user",
+      "type": "script",
+      "uri": "user.js"
     },
     {
       "name": "menu",

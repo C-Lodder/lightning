@@ -34,8 +34,10 @@ if ($themeSwitcher)
 	$wa->useStyle('switch.css');
 }
 
-// Load template CSS
-$wa->usePreset('template.lightning');
+// Load assets
+$wa->usePreset('template.lightning')
+	->useStyle('template.lightning.user')
+	->useScript('template.lightning.user');
 
 // Font Awesome
 if ($fontAwesome)

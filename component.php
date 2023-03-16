@@ -12,8 +12,10 @@ defined('_JEXEC') or die;
 
 $wa = $this->getWebAssetManager();
 
-// Load template CSS
-$wa->usePreset('template.lightning');
+// Load assets
+$wa->usePreset('template.lightning')
+	->useStyle('template.lightning.user')
+	->useScript('template.lightning.user');
 
 // Load switcher JS
 // This should be loaded even if the themeSwitcher is disabled, so that the system preference will still dictate the theme
