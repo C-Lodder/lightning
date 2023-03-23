@@ -25,7 +25,7 @@
       "type": "preset",
       "dependencies": [
         "template.lightning.css#style",
-        "template.lightning.custom-variables.css#style",
+        "template.lightning.custom-variables.css#style"
       ]
     },
     {
