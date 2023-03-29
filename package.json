@@ -31,6 +31,6 @@
     "postcss-nested": "^6.0.1",
     "stylelint": "^15.2.0",
     "stylelint-config-standard": "^31.0.0",
-    "terser": "^5.16.6"
+    "terser": "^5.16.8"
   }
 }
