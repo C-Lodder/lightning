@@ -24,7 +24,7 @@
     "postcss-cli": "^11.0.0",
     "postcss-custom-media": "^10.0.6",
     "postcss-custom-selectors": "^7.1.10",
-    "postcss-discard-comments": "^7.0.0",
+    "postcss-discard-comments": "^7.0.1",
     "postcss-each": "^1.1.0",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^10.0.1",
