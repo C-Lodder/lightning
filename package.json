@@ -22,7 +22,7 @@
     "cssnano": "^7.0.3",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
-    "postcss-custom-media": "^10.0.6",
+    "postcss-custom-media": "^10.0.7",
     "postcss-custom-selectors": "^7.1.10",
     "postcss-discard-comments": "^7.0.1",
     "postcss-each": "^1.1.0",
