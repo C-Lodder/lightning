@@ -4,6 +4,7 @@
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Session\Session;
 
 class TplLightningHelper
 {
@@ -12,6 +13,12 @@ class TplLightningHelper
 	 */
 	public static function saveCssAjax()
 	{
+		// Validate the CSRF token before processing the request
+		if (!Session::checkToken())
+		{
+			return Text::_('JINVALID_TOKEN');
+		}
+
 		$json = Factory::getApplication()->input->json->getArray();
 
 		$helper = new TplLightningHelper();

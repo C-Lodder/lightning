@@ -25,7 +25,7 @@ const saveCss = () => {
     obj.css[colourScheme][variable] = value
   }
 
-  fetch('index.php?option=com_ajax&template=lightning&method=saveCss&format=json', {
+  fetch(`index.php?option=com_ajax&template=lightning&method=saveCss&format=json&${Joomla.getOptions('csrf.token')}=1`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
